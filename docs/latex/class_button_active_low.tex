@@ -1,0 +1,109 @@
+\doxysection{Button\+Active\+Low Class Reference}
+\hypertarget{class_button_active_low}{}\label{class_button_active_low}\index{ButtonActiveLow@{ButtonActiveLow}}
+
+
+Class to handle button input with active-\/low logic and debounce handling.  
+
+
+
+
+{\ttfamily \#include $<$gpio\+\_\+hx.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_button_active_low_ae7fc86303f2120285645327b89101ca8}{Button\+Active\+Low}} (uint8\+\_\+t button\+Pin, uint64\+\_\+t debounce\+Duration)
+\begin{DoxyCompactList}\small\item\em Constructor to initialize the button with the pin and debounce time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_active_low_a126e6cfd1f12623c909a894add7758a7}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the button state and handles debouncing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_active_low_a5f08e451325da7a8dda4edeb11843f05}{is\+Pressed}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the button is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle button input with active-\/low logic and debounce handling. 
+
+This class provides functionality to handle a button connected to a GPIO pin with active-\/low logic. It includes debouncing to prevent false triggering due to mechanical switch bouncing.\hypertarget{class_button_active_low_autotoc_md20}{}\doxysubsubsubsection{\texorpdfstring{Example Usage}{Example Usage}}\label{class_button_active_low_autotoc_md20}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gpio__hx_8h}{gpio\_hx.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{class_button_active_low}{ButtonActiveLow}}\ button(2,\ 50);\ \ \textcolor{comment}{//\ Initialize\ button\ on\ GPIO\ pin\ 2\ with\ 50\ ms\ debounce\ time}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{heat_x_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
+\DoxyCodeLine{\ \ Serial.begin(9600);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{heat_x_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
+\DoxyCodeLine{\ \ button.update();\ \ \textcolor{comment}{//\ Update\ button\ state}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (button.isPressed())\ \{}
+\DoxyCodeLine{\ \ \ \ Serial.println(\textcolor{stringliteral}{"{}Button\ is\ pressed!"{}});}
+\DoxyCodeLine{\ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ Serial.println(\textcolor{stringliteral}{"{}Button\ is\ not\ pressed."{}});}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ delay(100);\ \ \textcolor{comment}{//\ Small\ delay\ to\ avoid\ flooding\ the\ Serial\ monitor}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/11-\/21 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Kevin Hinrichs 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_button_active_low_ae7fc86303f2120285645327b89101ca8}\index{ButtonActiveLow@{ButtonActiveLow}!ButtonActiveLow@{ButtonActiveLow}}
+\index{ButtonActiveLow@{ButtonActiveLow}!ButtonActiveLow@{ButtonActiveLow}}
+\doxysubsubsection{\texorpdfstring{ButtonActiveLow()}{ButtonActiveLow()}}
+{\footnotesize\ttfamily \label{class_button_active_low_ae7fc86303f2120285645327b89101ca8} 
+Button\+Active\+Low\+::\+Button\+Active\+Low (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{button\+Pin}{, }\item[{uint64\+\_\+t}]{debounce\+Duration}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor to initialize the button with the pin and debounce time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button\+Pin} & The GPIO pin to which the button is connected. \\
+\hline
+{\em debounce\+Duration} & The debounce time in milliseconds. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_button_active_low_a5f08e451325da7a8dda4edeb11843f05}\index{ButtonActiveLow@{ButtonActiveLow}!isPressed@{isPressed}}
+\index{isPressed@{isPressed}!ButtonActiveLow@{ButtonActiveLow}}
+\doxysubsubsection{\texorpdfstring{isPressed()}{isPressed()}}
+{\footnotesize\ttfamily \label{class_button_active_low_a5f08e451325da7a8dda4edeb11843f05} 
+bool Button\+Active\+Low\+::is\+Pressed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the button is pressed. 
+
+This method uses active-\/low logic, meaning it returns true when the button state is LOW. \begin{DoxyReturn}{Returns}
+true if the button is pressed, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_button_active_low_a126e6cfd1f12623c909a894add7758a7}\index{ButtonActiveLow@{ButtonActiveLow}!update@{update}}
+\index{update@{update}!ButtonActiveLow@{ButtonActiveLow}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_button_active_low_a126e6cfd1f12623c909a894add7758a7} 
+void Button\+Active\+Low\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the button state and handles debouncing. 
+
+This method should be called in a loop to monitor and update the button\textquotesingle{}s state. It ensures that the button state changes only after the debounce duration has elapsed. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kevin\+Hinrichs/\+Documents/\+Arduino/heat\+X/src/\mbox{\hyperlink{gpio__hx_8h}{gpio\+\_\+hx.\+h}}\end{DoxyCompactItemize}

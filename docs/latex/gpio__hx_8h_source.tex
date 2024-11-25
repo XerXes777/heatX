@@ -1,0 +1,95 @@
+\doxysection{gpio\+\_\+hx.\+h}
+\hypertarget{gpio__hx_8h_source}{}\label{gpio__hx_8h_source}\index{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/gpio\_hx.h@{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/gpio\_hx.h}}
+\mbox{\hyperlink{gpio__hx_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ GPIO\_HX\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ GPIO\_HX\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio__hx_8h_a5ded0afaa418d4d5328c95bb82f4f5fb}{setupDebug}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio__hx_8h_ad4e0c88560cf11558cafaded5334a413}{setupSerial}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_button_active_low}{ButtonActiveLow}}\ \{}
+\DoxyCodeLine{00073\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00074\ \ \ uint8\_t\ pin;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ uint64\_t\ lastMillis;\ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ uint64\_t\ debounceTime;\ \ \ }
+\DoxyCodeLine{00077\ \ \ int32\_t\ lastButtonState;\ }
+\DoxyCodeLine{00078\ \ \ int32\_t\ buttonState;\ \ \ \ \ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{class_button_active_low_ae7fc86303f2120285645327b89101ca8}{ButtonActiveLow}}(uint8\_t\ buttonPin,\ uint64\_t\ debounceDuration)}
+\DoxyCodeLine{00087\ \ \ \ \ :\ pin(buttonPin),}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ debounceTime(debounceDuration),}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ lastMillis(0),}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ lastButtonState(0),}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ buttonState(0)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ pinMode(pin,\ INPUT\_PULLUP);\ \ \textcolor{comment}{//\ Configure\ pin\ as\ input\ with\ pull-\/up}}
+\DoxyCodeLine{00093\ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_active_low_a126e6cfd1f12623c909a894add7758a7}{update}}()\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{int}\ readButtonState\ =\ digitalRead(pin);\ \ \textcolor{comment}{//\ Read\ the\ button\ state}}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ currentMillis\ =\ millis();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{//\ Check\ for\ a\ state\ change}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{if}\ (readButtonState\ !=\ lastButtonState)\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ lastMillis\ =\ currentMillis;\ \ \textcolor{comment}{//\ Record\ the\ time\ of\ the\ state\ change}}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//\ If\ debounce\ time\ has\ passed,\ update\ the\ button\ state}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{if}\ (currentMillis\ -\/\ lastMillis\ >=\ debounceTime)\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (readButtonState\ !=\ buttonState)\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ buttonState\ =\ readButtonState;\ \ \textcolor{comment}{//\ Update\ the\ stable\ state\ of\ the\ button}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ lastButtonState\ =\ readButtonState;\ \ \textcolor{comment}{//\ Save\ the\ last\ read\ state}}
+\DoxyCodeLine{00118\ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00126\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_active_low_a5f08e451325da7a8dda4edeb11843f05}{isPressed}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{return}\ buttonState\ ==\ LOW;\ \ \textcolor{comment}{//\ Returns\ true\ if\ the\ button\ is\ pressed}}
+\DoxyCodeLine{00128\ \ \ \}}
+\DoxyCodeLine{00129\ \};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gpio_off_delay}{GpioOffDelay}}\ \{}
+\DoxyCodeLine{00152\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00153\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ offStartTime\ =\ 0;\ \ \ }
+\DoxyCodeLine{00154\ \ \ \textcolor{keywordtype}{bool}\ isOffDelayActive\ =\ \textcolor{keyword}{false};\ \ \ \ }
+\DoxyCodeLine{00155\ \ \ \textcolor{keywordtype}{bool}\ powerOn\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00156\ \ \ \textcolor{keyword}{const}\ uint8\_t\ pin;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00157\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ offDelayTime;\ }
+\DoxyCodeLine{00159\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00165\ \ \ \mbox{\hyperlink{class_gpio_off_delay_a294de6fec0146fefa085b5521b64c87c}{GpioOffDelay}}(uint8\_t\ controlPin,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ delayTime)}
+\DoxyCodeLine{00166\ \ \ \ \ :\ pin(controlPin),\ offDelayTime(delayTime)\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ pinMode(pin,\ OUTPUT);\ \ \ \ \textcolor{comment}{//\ Set\ the\ GPIO\ pin\ as\ an\ output}}
+\DoxyCodeLine{00168\ \ \ \ \ digitalWrite(pin,\ LOW);\ \ \textcolor{comment}{//\ Ensure\ the\ pin\ starts\ in\ the\ OFF\ state}}
+\DoxyCodeLine{00169\ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00177\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gpio_off_delay_a7baf8445d063dd5ade36f03b4f8fc3af}{update}}()\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{if}\ (powerOn)\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ digitalWrite(pin,\ HIGH);\ \ \ \textcolor{comment}{//\ Turn\ the\ GPIO\ pin\ on}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ isOffDelayActive\ =\ \textcolor{keyword}{false};\ \ \textcolor{comment}{//\ Reset\ delay\ flag}}
+\DoxyCodeLine{00181\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isOffDelayActive)\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ offStartTime\ =\ millis();\ \ \textcolor{comment}{//\ Save\ the\ time\ when\ off\ delay\ starts}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ isOffDelayActive\ =\ \textcolor{keyword}{true};\ \ \textcolor{comment}{//\ Set\ the\ delay\ flag}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ off\ delay\ time\ has\ elapsed}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isOffDelayActive\ \&\&\ (millis()\ -\/\ offStartTime\ >=\ offDelayTime))\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ digitalWrite(pin,\ LOW);\ \ \ \ \textcolor{comment}{//\ Turn\ the\ GPIO\ pin\ off}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ isOffDelayActive\ =\ \textcolor{keyword}{false};\ \ \textcolor{comment}{//\ Reset\ delay\ flag}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00198\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gpio_off_delay_a35c46e9f011acb0f8c38129928f81ad3}{control}}(\textcolor{keywordtype}{bool}\ state)\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ powerOn\ =\ state;}
+\DoxyCodeLine{00200\ \ \ \}}
+\DoxyCodeLine{00201\ \};}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ GPIO\_HX\_H}}
+
+\end{DoxyCode}

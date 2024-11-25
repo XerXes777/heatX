@@ -1,0 +1,147 @@
+\doxysection{globals\+\_\+hx.\+h}
+\hypertarget{globals__hx_8h_source}{}\label{globals__hx_8h_source}\index{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/globals\_hx.h@{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/globals\_hx.h}}
+\mbox{\hyperlink{globals__hx_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ GLOBALS\_HX\_H}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ GLOBALS\_HX\_H}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ \_PIN\_DEBUG\_CH0\ 1\ \ \ }}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ \_PIN\_DEBUG\_CH1\ 2\ \ \ }}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ \_PIN\_DEBUG\_CH2\ 4\ \ \ }}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ \_PIN\_DEBUG\_CH3\ 5\ \ \ }}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ \_PIN\_DEBUG\_CH4\ 6\ \ \ }}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ \_PIN\_DEBUG\_POTI\ 7\ \ }}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ \_PIN\_I2C\_SDA\ 8\ \ }}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ \_PIN\_I2C\_SCL\ 9\ \ }}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ \_PIN\_SPI2\_CS\ 10\ \ \ \ }}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ \_PIN\_SPI2\_MOSI\ 11\ \ }}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ \_PIN\_SPI2\_CLK\ 12\ \ \ }}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ \_PIN\_SPI2\_MISO\ 13\ \ }}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ \_PIN\_START\ 14\ \ }}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ \_PIN\_STOP\ 15\ \ \ }}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ \_PIN\_ENC\_BUTTON\ 16\ \ }}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ \_PIN\_ENC\_B\ 17\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ \_PIN\_ENC\_A\ 18\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ \_PIN\_HEATING\ 21\ \ }}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ \_PIN\_FAN\ 38\ \ \ \ \ \ }}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ \_PIN\_BUZZER\ 47\ \ \ }}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ \_PIN\_RGB\_LED\ 48\ \ }}
+\DoxyCodeLine{00082\ \ \ \textcolor{comment}{//\ End\ of\ GPIO\_Config}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ \_LCD\_I2C\_ADDRESS\ 0x27\ \ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ \_LCD\_ROWS\ 4\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \_LCD\_COLS\ 20\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ \_SERIAL\_BAUD\ 115200\ \ }}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ \_ENC\_CYCLES\ 20\ \ }}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ \_BUTTON\_DEBOUNCE\_TIME\ 1\ \ }}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ \_TEMPSENSOR\_I2C\_ADDRESS\_1\ 0x76\ \ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ \_TEMPSENSOR\_I2C\_ADDRESS\_2\ 0x77\ \ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ SEALEVELPRESSURE\_HPA\ (1013.25)\ \ }}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ \_PWM\_FREQUENCY\ 5000\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ \_PWM\_RESOLUTION\ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ \_PWM\_MAX\_VALUE\ ((1\ <<\ \_PWM\_RESOLUTION)\ -\/\ 1)\ \ }}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ \_TEMP\_MIN\ 40\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ \_TEMP\_MAX\ 80\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ \_TEMP\_PRESET\ \_TEMP\_MAX\ \ }}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ \_HUM\_MIN\ 0\ \ \ \ \ \ }}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ \_HUM\_MAX\ 60\ \ \ \ \ }}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ \_HUM\_PRESET\ 10\ \ }}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ \_FAN\_MIN\ 25\ \ \ \ \ }}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ \_FAN\_MAX\ 80\ \ \ \ \ }}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ \_FAN\_PRESET\ 50\ \ }}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ \_TIME\_MIN\ 1\ \ \ \ \ }}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ \_TIME\_MAX\ 72\ \ \ \ }}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ \_TIME\_PRESET\ 5\ \ }}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ \_FAN\_OFFDELAY\ 3000\ \ }}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ \_PID\_TEMP\_KP\_PRESET\ 2.0\ \ }}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ \_PID\_TEMP\_KI\_PRESET\ 5.0\ \ }}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ \_PID\_TEMP\_KD\_PRESET\ 1.0\ \ }}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ \_PID\_HUM\_KP\_PRESET\ 2.0\ \ }}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ \_PID\_HUM\_KI\_PRESET\ 5.0\ \ }}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ \_PID\_HUM\_KD\_PRESET\ 1.0\ \ }}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ \_PID\_FAN\_KP\_PRESET\ 1.5\ \ }}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ \_PID\_FAN\_KI\_PRESET\ 4.0\ \ }}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ \_PID\_FAN\_KD\_PRESET\ 0.5\ \ }}
+\DoxyCodeLine{00183\ \ \ \textcolor{comment}{//\ End\ of\ Peripheral\_Config}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ \_SETUP\_DELAY\ 70\ \ }}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ \_PLA\_PRESET\ 50\ \ \ \ \ }}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ \_PETG\_PRESET\ 60\ \ \ \ }}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#define\ \_ASA\_PRESET\ 65\ \ \ \ \ }}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ \_ABS\_PRESET\ 70\ \ \ \ \ }}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ \_PP\_PRESET\ 70\ \ \ \ \ \ }}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ \_PA\_PRESET\ 70\ \ \ \ \ \ }}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ \_PC\_PRESET\ 70\ \ \ \ \ \ }}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ \_TPU\_PRESET\ 50\ \ \ \ \ }}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ \_MATERIAL\_COUNT\ 8\ \ }}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ \_MENU\_HOME\_PAGE\ 1\ \ \ }}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ \_MENU\_SETUP\_PAGE\ 2\ \ }}
+\DoxyCodeLine{00219\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{globals__hx_8h_ac1ab4cb907953c28f68239e7b89ed822}{enumHeatMode}}\ \{}
+\DoxyCodeLine{00220\ \ \ \mbox{\hyperlink{globals__hx_8h_ac1ab4cb907953c28f68239e7b89ed822acdd0c1136e1f0fd2a520a88ec9148d33}{TEMP\_CONTROL}},\ \ }
+\DoxyCodeLine{00221\ \ \ \mbox{\hyperlink{globals__hx_8h_ac1ab4cb907953c28f68239e7b89ed822a38d8f092eda359a5f9f8eb890b66a74b}{HUM\_CONTROL}}\ \ \ \ }
+\DoxyCodeLine{00222\ \};}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00225\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5e}{enumMenuState}}\ \{}
+\DoxyCodeLine{00226\ \ \ \mbox{\hyperlink{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5ea36c513185a505e2a07400b9a18772271}{MENU\_HOME}},\ \ \ \ \ \ }
+\DoxyCodeLine{00227\ \ \ \mbox{\hyperlink{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5ea881c719770509dd29b91525f2cd0e8b0}{MENU\_SETTINGS}},\ \ }
+\DoxyCodeLine{00228\ \ \ \mbox{\hyperlink{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5ea0cfb721fcd476dca109b7e4d5b9be8eb}{MENU\_INFO}}\ \ \ \ \ \ \ }
+\DoxyCodeLine{00229\ \};}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00234\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00235\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_menu_state_ab9497d83453ce2e9b5043a4b6531b932}{currentPage}};\ \ }
+\DoxyCodeLine{00236\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_menu_state_a003f3983b01777c7bb50d6ef285d8dd0}{totalPages}};\ \ \ }
+\DoxyCodeLine{00237\ \}\ \mbox{\hyperlink{struct_menu_state}{MenuState}};}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00242\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00243\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_sensor_data_a0a1593ad64f79756c14d208ce7b17adb}{temperature}};\ \ }
+\DoxyCodeLine{00244\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_sensor_data_a29ce8f1d86589b1c5af915ec961742f2}{humidity}};\ \ \ \ \ }
+\DoxyCodeLine{00245\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_sensor_data_a577045427252e6a30398938d2dc4f5ab}{press}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00246\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_sensor_data_abfcc92ca348d24825ac7b8d1225f2cdd}{altitude}};\ \ \ \ \ }
+\DoxyCodeLine{00247\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_sensor_data_ac7c9429a03f29ae786d5a687ae804699}{isActive}};\ \ \ \ \ \ }
+\DoxyCodeLine{00248\ \}\ \mbox{\hyperlink{struct_sensor_data}{SensorData}};}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00254\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00255\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_heating_values_a24467c2123c864dfef1d39052b6b78f9}{temperature}};\ \ }
+\DoxyCodeLine{00256\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_heating_values_a3b2df2260aa7434e746c35f7e1f86f4e}{humidity}};\ \ \ \ \ }
+\DoxyCodeLine{00257\ \}\ \mbox{\hyperlink{struct_heating_values}{HeatingValues}};}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00262\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00263\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_countdown_a7e419565ffc27d0fcc7cf66cccec4887}{hours}};\ \ \ \ }
+\DoxyCodeLine{00264\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_countdown_a049801a1c7840e52f6ce8ed19122d37c}{minutes}};\ \ }
+\DoxyCodeLine{00265\ \}\ \mbox{\hyperlink{struct_countdown}{Countdown}};}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00270\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00271\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_material_preset_ae87d62263ef7d8182d32dae6c185bb3e}{name}};\ \ }
+\DoxyCodeLine{00272\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_material_preset_a3d8cdb13301860e9074f49dceb2da43a}{value}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00273\ \}\ \mbox{\hyperlink{struct_material_preset}{MaterialPreset}};}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00279\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_heating_values}{HeatingValues}}\ \mbox{\hyperlink{globals__hx_8h_a9ed253ac67d95c3b86eee9bdd2acc62c}{actualHeatingValue}};}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00285\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_countdown}{Countdown}}\ \mbox{\hyperlink{globals__hx_8h_a3c74384ad48f8c601eca48c15d5144e5}{actualCountdown}};}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00291\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_heating_values}{HeatingValues}}\ \mbox{\hyperlink{globals__hx_8h_afb9928ebd3ee1139a026184f7cf7c02e}{targetHeatingValue}};}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00297\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_countdown}{Countdown}}\ \mbox{\hyperlink{globals__hx_8h_a1c520326511c8cb96e6e246b1c168983}{targetCountdown}};}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00313\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_material_preset}{MaterialPreset}}\ \mbox{\hyperlink{globals__hx_8h_ab1d9afab7c0378a5e02013d6798c012f}{materialPresets}}[\mbox{\hyperlink{group___material___config_gaac0667ed99a719112490b27b6dcfb133}{\_MATERIAL\_COUNT}}];}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00319\ \textcolor{keyword}{extern}\ String\ \mbox{\hyperlink{globals__hx_8h_ad3b99bea74e0b1913eb0d76ddccd0f15}{materialNames}}[\mbox{\hyperlink{group___material___config_gaac0667ed99a719112490b27b6dcfb133}{\_MATERIAL\_COUNT}}];}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00332\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{globals__hx_8h_a55460c4dc172dab2f60b1e2f0bf23bed}{mapFloat}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ in\_min,\ \textcolor{keywordtype}{float}\ in\_max,\ \textcolor{keywordtype}{float}\ out\_min,\ \textcolor{keywordtype}{float}\ out\_max);}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ GLOBALS\_HX\_H}}
+
+\end{DoxyCode}

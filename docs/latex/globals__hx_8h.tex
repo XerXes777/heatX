@@ -1,0 +1,360 @@
+\doxysection{C\+:/\+Users/\+Kevin\+Hinrichs/\+Documents/\+Arduino/heat\+X/src/globals\+\_\+hx.h File Reference}
+\hypertarget{globals__hx_8h}{}\label{globals__hx_8h}\index{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/globals\_hx.h@{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/globals\_hx.h}}
+
+
+Static project information for heatX.  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_menu_state}{Menu\+State}}
+\begin{DoxyCompactList}\small\item\em Represents the state of the menu. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_sensor_data}{Sensor\+Data}}
+\begin{DoxyCompactList}\small\item\em Holds data from the BME280 sensor. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_heating_values}{Heating\+Values}}
+\begin{DoxyCompactList}\small\item\em Contains target values for heating and humidity control. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_countdown}{Countdown}}
+\begin{DoxyCompactList}\small\item\em Represents a countdown timer. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_material_preset}{Material\+Preset}}
+\begin{DoxyCompactList}\small\item\em Represents a material preset for heating configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___p_i_n___debug_ga96846bfd4c30901ee754fc642015696a}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+CH0}}~1
+\begin{DoxyCompactList}\small\item\em GPIO pin for debug. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___debug_ga91817955e4f5ab04601776eb2b84b52b}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+CH1}}~2
+\begin{DoxyCompactList}\small\item\em GPIO pin for debug. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___debug_gac29a59a415b6f48afdea0c66f3048295}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+CH2}}~4
+\begin{DoxyCompactList}\small\item\em GPIO pin for debug. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___debug_ga8d62bb91969566af4610dad55461afba}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+CH3}}~5
+\begin{DoxyCompactList}\small\item\em GPIO pin for debug. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___debug_gac09cabd8933f8e06f82ced755ac9fee4}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+CH4}}~6
+\begin{DoxyCompactList}\small\item\em GPIO pin for debug. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___debug_ga7f6af44a91b62659762fc0adc1d123d1}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+POTI}}~7
+\begin{DoxyCompactList}\small\item\em GPIO pin for debug. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___i2_c_gae0daf9824065bac09748eabf1a9523e9}{\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SDA}}~8
+\begin{DoxyCompactList}\small\item\em GPIO pin for I²C SDA (data line) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___i2_c_gab534e39d9b5744e5a4020717dd501eb5}{\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SCL}}~9
+\begin{DoxyCompactList}\small\item\em GPIO pin for I²C SCL (clock line) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___s_p_i_ga8a13cd7768112dd7650a686168db0792}{\+\_\+\+PIN\+\_\+\+SPI2\+\_\+\+CS}}~10
+\begin{DoxyCompactList}\small\item\em GPIO pin for SPI2 CS. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___s_p_i_ga70298a675f37fb98cb9858c8b9fbc90a}{\+\_\+\+PIN\+\_\+\+SPI2\+\_\+\+MOSI}}~11
+\begin{DoxyCompactList}\small\item\em GPIO pin for SPI2 MOSI. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___s_p_i_gab370e70396bafec2ce1e255d908df14a}{\+\_\+\+PIN\+\_\+\+SPI2\+\_\+\+CLK}}~12
+\begin{DoxyCompactList}\small\item\em GPIO pin for SPI2 CLK. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___s_p_i_gac0a1132741d6b20df0c3c59ecc32ba5c}{\+\_\+\+PIN\+\_\+\+SPI2\+\_\+\+MISO}}~13
+\begin{DoxyCompactList}\small\item\em GPIO pin for SPI2 MISO. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___control_ga07f31b741c0a80a37bfed7db69ce49ea}{\+\_\+\+PIN\+\_\+\+START}}~14
+\begin{DoxyCompactList}\small\item\em GPIO pin for the START button. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___control_ga2f2a7258fab45a9e87836c80ed73e170}{\+\_\+\+PIN\+\_\+\+STOP}}~15
+\begin{DoxyCompactList}\small\item\em GPIO pin for the STOP button. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___control_ga477d705367d4012ee7117892e2e8f3a3}{\+\_\+\+PIN\+\_\+\+ENC\+\_\+\+BUTTON}}~16
+\begin{DoxyCompactList}\small\item\em GPIO pin for encoder button. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___control_ga41c71b8478c20e05b798ff18df68ef00}{\+\_\+\+PIN\+\_\+\+ENC\+\_\+B}}~17
+\begin{DoxyCompactList}\small\item\em GPIO pin for encoder B. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___control_ga774acabbbfb3ffed1a0cf86ee28adf9c}{\+\_\+\+PIN\+\_\+\+ENC\+\_\+A}}~18
+\begin{DoxyCompactList}\small\item\em GPIO pin for encoder A. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___output_ga4fc1f0684e28426ebe7bf4acf8defa3d}{\+\_\+\+PIN\+\_\+\+HEATING}}~21
+\begin{DoxyCompactList}\small\item\em GPIO pin for heating control. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___output_ga664bcbe0fe4c70da3daaa149423b4160}{\+\_\+\+PIN\+\_\+\+FAN}}~38
+\begin{DoxyCompactList}\small\item\em GPIO pin for fan control. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___output_ga2a188d6efba2a679644a338795dbc736}{\+\_\+\+PIN\+\_\+\+BUZZER}}~47
+\begin{DoxyCompactList}\small\item\em GPIO pin for buzzer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___output_gac5f0bf08977aaead0d2600a221e3e298}{\+\_\+\+PIN\+\_\+\+RGB\+\_\+\+LED}}~48
+\begin{DoxyCompactList}\small\item\em GPIO pin for RGB LED (requires 5V solder joint!) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___l_c_d___config_gadfed1bd46db6294233cb205e679ab88d}{\+\_\+\+LCD\+\_\+\+I2\+C\+\_\+\+ADDRESS}}~0x27
+\begin{DoxyCompactList}\small\item\em I²C address for the LCD. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___l_c_d___config_ga1279ed244a3b216bb5cc0ebb7f30948d}{\+\_\+\+LCD\+\_\+\+ROWS}}~4
+\begin{DoxyCompactList}\small\item\em Number of rows on the LCD. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___l_c_d___config_ga83372468204dd8f50d7e5afdc372e3f8}{\+\_\+\+LCD\+\_\+\+COLS}}~20
+\begin{DoxyCompactList}\small\item\em Number of columns on the LCD. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___serial___config_gacc3b3c3178068fd096e20b5268d2fb40}{\+\_\+\+SERIAL\+\_\+\+BAUD}}~115200
+\begin{DoxyCompactList}\small\item\em Baud rate for serial communication. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___encoder___config_ga2a60d84715acf282719112f8190724c5}{\+\_\+\+ENC\+\_\+\+CYCLES}}~20
+\begin{DoxyCompactList}\small\item\em Number of cycles per encoder rotation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___button___config_gaf97cd36017e4962959c20a5944ab5155}{\+\_\+\+BUTTON\+\_\+\+DEBOUNCE\+\_\+\+TIME}}~1
+\begin{DoxyCompactList}\small\item\em Button debounce time in milliseconds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___temperature___sensor_gae2dd933b350afbc14b71bd47b47158c3}{\+\_\+\+TEMPSENSOR\+\_\+\+I2\+C\+\_\+\+ADDRESS\+\_\+1}}~0x76
+\begin{DoxyCompactList}\small\item\em I2C first address for the BME280 sensor. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___temperature___sensor_gadd1f69e584523621166082ba7b9fdcaa}{\+\_\+\+TEMPSENSOR\+\_\+\+I2\+C\+\_\+\+ADDRESS\+\_\+2}}~0x77
+\begin{DoxyCompactList}\small\item\em I2C sec address for the BME280 sensor. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___temperature___sensor_ga3fd1be5675628ccdd1cd809ee995b2e7}{SEALEVELPRESSURE\+\_\+\+HPA}}~(1013.\+25)
+\begin{DoxyCompactList}\small\item\em Standard sea level pressure in h\+Pa. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_gab94ad1d90ce4e427a510019a4ecf021a}{\+\_\+\+PWM\+\_\+\+FREQUENCY}}~5000
+\begin{DoxyCompactList}\small\item\em PWM frequency in Hz. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_gabc48367db8bfeaef909b93b85db1ccb0}{\+\_\+\+PWM\+\_\+\+RESOLUTION}}~12
+\begin{DoxyCompactList}\small\item\em PWM resolution in bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_gaf6259c6420c48ed234179a8c8e816112}{\+\_\+\+PWM\+\_\+\+MAX\+\_\+\+VALUE}}~((1 $<$$<$ \mbox{\hyperlink{group___heating___config_gabc48367db8bfeaef909b93b85db1ccb0}{\+\_\+\+PWM\+\_\+\+RESOLUTION}}) -\/ 1)
+\begin{DoxyCompactList}\small\item\em Maximum PWM value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_ga62bfc53f6368e7124c81dc7c55cbfa4c}{\+\_\+\+TEMP\+\_\+\+MIN}}~40
+\begin{DoxyCompactList}\small\item\em Minimum temperature in °C. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_ga0cc341fee5a88ea0fbf7a59f2786a977}{\+\_\+\+TEMP\+\_\+\+MAX}}~80
+\begin{DoxyCompactList}\small\item\em Maximum temperature in °C. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_ga8ee7579b38c7fbd8447ab1bfd808997b}{\+\_\+\+TEMP\+\_\+\+PRESET}}~\mbox{\hyperlink{group___heating___config_ga0cc341fee5a88ea0fbf7a59f2786a977}{\+\_\+\+TEMP\+\_\+\+MAX}}
+\begin{DoxyCompactList}\small\item\em Default preset temperature. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_gaa195dc333ceb869c8ead53c1fa67ac41}{\+\_\+\+HUM\+\_\+\+MIN}}~0
+\begin{DoxyCompactList}\small\item\em Minimum humidity in \%. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_ga4513a40dc05f042f31a3d51658ff361a}{\+\_\+\+HUM\+\_\+\+MAX}}~60
+\begin{DoxyCompactList}\small\item\em Maximum humidity in \%. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_gad40049bb1109af3fb804ea2728671331}{\+\_\+\+HUM\+\_\+\+PRESET}}~10
+\begin{DoxyCompactList}\small\item\em Default preset humidity in \%. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_ga7465f7a52a815bcac9fc8af1e78b3ec3}{\+\_\+\+FAN\+\_\+\+MIN}}~25
+\begin{DoxyCompactList}\small\item\em Minimum fan power in \%. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_ga710226137859a4a9b14a04d1f0e42705}{\+\_\+\+FAN\+\_\+\+MAX}}~80
+\begin{DoxyCompactList}\small\item\em Maximum fan power in \%. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_ga445da4b3183b13214b1e0dc53d088e3e}{\+\_\+\+FAN\+\_\+\+PRESET}}~50
+\begin{DoxyCompactList}\small\item\em Default preset fan power in \%. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_ga04444d77c6cab4517c56c8fb3dd28ca4}{\+\_\+\+TIME\+\_\+\+MIN}}~1
+\begin{DoxyCompactList}\small\item\em Minimum time in hours. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_ga9db0138e5e19d91ec143d27cc5b39bf1}{\+\_\+\+TIME\+\_\+\+MAX}}~72
+\begin{DoxyCompactList}\small\item\em Maximum time in hours. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_ga06bb44c452215f122d9d9c2acf08690d}{\+\_\+\+TIME\+\_\+\+PRESET}}~5
+\begin{DoxyCompactList}\small\item\em Default preset time in hours. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_gaea4ded38812e550fcd4a1763808e67fa}{\+\_\+\+FAN\+\_\+\+OFFDELAY}}~3000
+\begin{DoxyCompactList}\small\item\em Fan delay time in milliseconds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_d___config_ga1557935ef4e5c1d6cddc3b23e19f2503}{\+\_\+\+PID\+\_\+\+TEMP\+\_\+\+KP\+\_\+\+PRESET}}~2.\+0
+\begin{DoxyCompactList}\small\item\em Proportional gain for temperature control. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_d___config_ga86ee09604de200e53bc8bcbd742b89a4}{\+\_\+\+PID\+\_\+\+TEMP\+\_\+\+KI\+\_\+\+PRESET}}~5.\+0
+\begin{DoxyCompactList}\small\item\em Integral gain for temperature control. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_d___config_ga3999d9d0cfdfb3c22faa600870b25d03}{\+\_\+\+PID\+\_\+\+TEMP\+\_\+\+KD\+\_\+\+PRESET}}~1.\+0
+\begin{DoxyCompactList}\small\item\em Derivative gain for temperature control. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_d___config_ga5d658333229c717a66d0dcba124beb1a}{\+\_\+\+PID\+\_\+\+HUM\+\_\+\+KP\+\_\+\+PRESET}}~2.\+0
+\begin{DoxyCompactList}\small\item\em Proportional gain for humidity control. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_d___config_gae20370dbdf32a75c7d681f9eb0657a14}{\+\_\+\+PID\+\_\+\+HUM\+\_\+\+KI\+\_\+\+PRESET}}~5.\+0
+\begin{DoxyCompactList}\small\item\em Integral gain for humidity control. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_d___config_ga4af03b066dcb655ba892a0cc55fda337}{\+\_\+\+PID\+\_\+\+HUM\+\_\+\+KD\+\_\+\+PRESET}}~1.\+0
+\begin{DoxyCompactList}\small\item\em Derivative gain for humidity control. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_d___config_ga9c7c25293bc2c02902606a977769170c}{\+\_\+\+PID\+\_\+\+FAN\+\_\+\+KP\+\_\+\+PRESET}}~1.\+5
+\begin{DoxyCompactList}\small\item\em Proportional gain for fan control. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_d___config_gacdcce5eb58666e48ba8fe5acc4efe964}{\+\_\+\+PID\+\_\+\+FAN\+\_\+\+KI\+\_\+\+PRESET}}~4.\+0
+\begin{DoxyCompactList}\small\item\em Integral gain for fan control. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_d___config_ga07c77ae07e906b27e45bdb468a43ef48}{\+\_\+\+PID\+\_\+\+FAN\+\_\+\+KD\+\_\+\+PRESET}}~0.\+5
+\begin{DoxyCompactList}\small\item\em Derivative gain for fan control. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___system___config_ga4b6847d0edb5e4fd71bb8f7d34a1e6bd}{\+\_\+\+SETUP\+\_\+\+DELAY}}~70
+\begin{DoxyCompactList}\small\item\em Delay during setup in milliseconds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___material___config_ga8787edcefcffcaa1491e31e0cdc68150}{\+\_\+\+PLA\+\_\+\+PRESET}}~50
+\begin{DoxyCompactList}\small\item\em Preset temperature for PLA (°C) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___material___config_ga2acca300bf25aa446636b2ab5dfec9c1}{\+\_\+\+PETG\+\_\+\+PRESET}}~60
+\begin{DoxyCompactList}\small\item\em Preset temperature for PETG (°C) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___material___config_ga4b04a678f9d64d87178771f75d18ad51}{\+\_\+\+ASA\+\_\+\+PRESET}}~65
+\begin{DoxyCompactList}\small\item\em Preset temperature for ASA (°C) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___material___config_gac95cae9a620800d60c890b57fa7eedc2}{\+\_\+\+ABS\+\_\+\+PRESET}}~70
+\begin{DoxyCompactList}\small\item\em Preset temperature for ABS (°C) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___material___config_ga0419e0b1ec6cb533c383f18999384dcf}{\+\_\+\+PP\+\_\+\+PRESET}}~70
+\begin{DoxyCompactList}\small\item\em Preset temperature for PP (°C) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___material___config_ga9e7fabad66d3f07106b3be4ab39bde01}{\+\_\+\+PA\+\_\+\+PRESET}}~70
+\begin{DoxyCompactList}\small\item\em Preset temperature for PA (°C) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___material___config_ga4133b82b21325d17862721a3c82f6dde}{\+\_\+\+PC\+\_\+\+PRESET}}~70
+\begin{DoxyCompactList}\small\item\em Preset temperature for PC (°C) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___material___config_gac46fc0b032e054a56078bcc668ab6111}{\+\_\+\+TPU\+\_\+\+PRESET}}~50
+\begin{DoxyCompactList}\small\item\em Preset temperature for TPU (°C) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___material___config_gaac0667ed99a719112490b27b6dcfb133}{\+\_\+\+MATERIAL\+\_\+\+COUNT}}~8
+\begin{DoxyCompactList}\small\item\em Total number of material presets. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___menu___config_ga20b56203f471fb54e2a860353e396ff4}{\+\_\+\+MENU\+\_\+\+HOME\+\_\+\+PAGE}}~1
+\begin{DoxyCompactList}\small\item\em Home page ID for menu. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___menu___config_gaf37431b2ef2bf228804ee09d09d04939}{\+\_\+\+MENU\+\_\+\+SETUP\+\_\+\+PAGE}}~2
+\begin{DoxyCompactList}\small\item\em Setup page ID for menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{globals__hx_8h_ac1ab4cb907953c28f68239e7b89ed822}{enum\+Heat\+Mode}} \{ \mbox{\hyperlink{globals__hx_8h_ac1ab4cb907953c28f68239e7b89ed822acdd0c1136e1f0fd2a520a88ec9148d33}{TEMP\+\_\+\+CONTROL}}
+, \mbox{\hyperlink{globals__hx_8h_ac1ab4cb907953c28f68239e7b89ed822a38d8f092eda359a5f9f8eb890b66a74b}{HUM\+\_\+\+CONTROL}}
+ \}
+\item 
+enum \mbox{\hyperlink{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5e}{enum\+Menu\+State}} \{ \mbox{\hyperlink{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5ea36c513185a505e2a07400b9a18772271}{MENU\+\_\+\+HOME}}
+, \mbox{\hyperlink{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5ea881c719770509dd29b91525f2cd0e8b0}{MENU\+\_\+\+SETTINGS}}
+, \mbox{\hyperlink{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5ea0cfb721fcd476dca109b7e4d5b9be8eb}{MENU\+\_\+\+INFO}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{globals__hx_8h_a55460c4dc172dab2f60b1e2f0bf23bed}{map\+Float}} (float x, float in\+\_\+min, float in\+\_\+max, float out\+\_\+min, float out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Maps a float value from one range to another. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_heating_values}{Heating\+Values}} \mbox{\hyperlink{globals__hx_8h_a9ed253ac67d95c3b86eee9bdd2acc62c}{actual\+Heating\+Value}}
+\begin{DoxyCompactList}\small\item\em Holds the current heating values (temperature and humidity). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_countdown}{Countdown}} \mbox{\hyperlink{globals__hx_8h_a3c74384ad48f8c601eca48c15d5144e5}{actual\+Countdown}}
+\begin{DoxyCompactList}\small\item\em Tracks the current countdown timer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_heating_values}{Heating\+Values}} \mbox{\hyperlink{globals__hx_8h_afb9928ebd3ee1139a026184f7cf7c02e}{target\+Heating\+Value}}
+\begin{DoxyCompactList}\small\item\em Holds the target heating values (temperature and humidity). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_countdown}{Countdown}} \mbox{\hyperlink{globals__hx_8h_a1c520326511c8cb96e6e246b1c168983}{target\+Countdown}}
+\begin{DoxyCompactList}\small\item\em Tracks the target countdown timer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_material_preset}{Material\+Preset}} \mbox{\hyperlink{globals__hx_8h_ab1d9afab7c0378a5e02013d6798c012f}{material\+Presets}} \mbox{[}\mbox{\hyperlink{group___material___config_gaac0667ed99a719112490b27b6dcfb133}{\+\_\+\+MATERIAL\+\_\+\+COUNT}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of material presets for heating profiles. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{globals__hx_8h_ad3b99bea74e0b1913eb0d76ddccd0f15}{material\+Names}} \mbox{[}\mbox{\hyperlink{group___material___config_gaac0667ed99a719112490b27b6dcfb133}{\+\_\+\+MATERIAL\+\_\+\+COUNT}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of material names derived from {\ttfamily material\+Presets}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Static project information for heatX. 
+
+This file contains the all the settings, macros and prototypes\hypertarget{globals__hx_8h_autotoc_md16}{}\doxysubsubsubsection{\texorpdfstring{Changelog}{Changelog}}\label{globals__hx_8h_autotoc_md16}
+
+\begin{DoxyItemize}
+\item {\bfseries{2024-\/11-\/08}}\+: Initial version created by Kevin Hinrichs
+\end{DoxyItemize}
+
+\begin{DoxyVersion}{Version}
+0.\+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/11-\/08 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Kevin Hinrichs
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 Kevin Hinrichs, Laurens Vaigt. ~\newline
+ Licensed under the MIT License. See the \href{LICENSE}{\texttt{ LICENSE}} file for details. ~\newline
+ 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{globals__hx_8h_ac1ab4cb907953c28f68239e7b89ed822}\index{globals\_hx.h@{globals\_hx.h}!enumHeatMode@{enumHeatMode}}
+\index{enumHeatMode@{enumHeatMode}!globals\_hx.h@{globals\_hx.h}}
+\doxysubsubsection{\texorpdfstring{enumHeatMode}{enumHeatMode}}
+{\footnotesize\ttfamily \label{globals__hx_8h_ac1ab4cb907953c28f68239e7b89ed822} 
+enum \mbox{\hyperlink{globals__hx_8h_ac1ab4cb907953c28f68239e7b89ed822}{enum\+Heat\+Mode}}}
+
+Heat control modes. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEMP\_CONTROL@{TEMP\_CONTROL}!globals\_hx.h@{globals\_hx.h}}\index{globals\_hx.h@{globals\_hx.h}!TEMP\_CONTROL@{TEMP\_CONTROL}}}\Hypertarget{globals__hx_8h_ac1ab4cb907953c28f68239e7b89ed822acdd0c1136e1f0fd2a520a88ec9148d33}\label{globals__hx_8h_ac1ab4cb907953c28f68239e7b89ed822} 
+TEMP\+\_\+\+CONTROL&Mode for temperature control. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HUM\_CONTROL@{HUM\_CONTROL}!globals\_hx.h@{globals\_hx.h}}\index{globals\_hx.h@{globals\_hx.h}!HUM\_CONTROL@{HUM\_CONTROL}}}\Hypertarget{globals__hx_8h_ac1ab4cb907953c28f68239e7b89ed822a38d8f092eda359a5f9f8eb890b66a74b}\label{globals__hx_8h_ac1ab4cb907953c28f68239e7b89ed822} 
+HUM\+\_\+\+CONTROL&Mode for humidity control. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5e}\index{globals\_hx.h@{globals\_hx.h}!enumMenuState@{enumMenuState}}
+\index{enumMenuState@{enumMenuState}!globals\_hx.h@{globals\_hx.h}}
+\doxysubsubsection{\texorpdfstring{enumMenuState}{enumMenuState}}
+{\footnotesize\ttfamily \label{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5e} 
+enum \mbox{\hyperlink{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5e}{enum\+Menu\+State}}}
+
+Menu states for the user interface. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MENU\_HOME@{MENU\_HOME}!globals\_hx.h@{globals\_hx.h}}\index{globals\_hx.h@{globals\_hx.h}!MENU\_HOME@{MENU\_HOME}}}\Hypertarget{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5ea36c513185a505e2a07400b9a18772271}\label{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5e} 
+MENU\+\_\+\+HOME&Home page. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MENU\_SETTINGS@{MENU\_SETTINGS}!globals\_hx.h@{globals\_hx.h}}\index{globals\_hx.h@{globals\_hx.h}!MENU\_SETTINGS@{MENU\_SETTINGS}}}\Hypertarget{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5ea881c719770509dd29b91525f2cd0e8b0}\label{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5e} 
+MENU\+\_\+\+SETTINGS&Settings page. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MENU\_INFO@{MENU\_INFO}!globals\_hx.h@{globals\_hx.h}}\index{globals\_hx.h@{globals\_hx.h}!MENU\_INFO@{MENU\_INFO}}}\Hypertarget{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5ea0cfb721fcd476dca109b7e4d5b9be8eb}\label{globals__hx_8h_a4c4a8badd1a53a751917e9bf34d5ab5e} 
+MENU\+\_\+\+INFO&Info page. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{globals__hx_8h_a55460c4dc172dab2f60b1e2f0bf23bed}\index{globals\_hx.h@{globals\_hx.h}!mapFloat@{mapFloat}}
+\index{mapFloat@{mapFloat}!globals\_hx.h@{globals\_hx.h}}
+\doxysubsubsection{\texorpdfstring{mapFloat()}{mapFloat()}}
+{\footnotesize\ttfamily \label{globals__hx_8h_a55460c4dc172dab2f60b1e2f0bf23bed} 
+float map\+Float (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{in\+\_\+min}{, }\item[{float}]{in\+\_\+max}{, }\item[{float}]{out\+\_\+min}{, }\item[{float}]{out\+\_\+max}{}\end{DoxyParamCaption})}
+
+
+
+Maps a float value from one range to another. 
+
+Similar to the Arduino {\ttfamily map()} function, but supports floating-\/point numbers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Input value to map. \\
+\hline
+{\em in\+\_\+min} & Lower bound of the input range. \\
+\hline
+{\em in\+\_\+max} & Upper bound of the input range. \\
+\hline
+{\em out\+\_\+min} & Lower bound of the output range. \\
+\hline
+{\em out\+\_\+max} & Upper bound of the output range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The mapped value in the output range. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{globals__hx_8h_a3c74384ad48f8c601eca48c15d5144e5}\index{globals\_hx.h@{globals\_hx.h}!actualCountdown@{actualCountdown}}
+\index{actualCountdown@{actualCountdown}!globals\_hx.h@{globals\_hx.h}}
+\doxysubsubsection{\texorpdfstring{actualCountdown}{actualCountdown}}
+{\footnotesize\ttfamily \label{globals__hx_8h_a3c74384ad48f8c601eca48c15d5144e5} 
+\mbox{\hyperlink{struct_countdown}{Countdown}} actual\+Countdown\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Tracks the current countdown timer. 
+
+This variable is used to store the remaining time for the heating operation. \Hypertarget{globals__hx_8h_a9ed253ac67d95c3b86eee9bdd2acc62c}\index{globals\_hx.h@{globals\_hx.h}!actualHeatingValue@{actualHeatingValue}}
+\index{actualHeatingValue@{actualHeatingValue}!globals\_hx.h@{globals\_hx.h}}
+\doxysubsubsection{\texorpdfstring{actualHeatingValue}{actualHeatingValue}}
+{\footnotesize\ttfamily \label{globals__hx_8h_a9ed253ac67d95c3b86eee9bdd2acc62c} 
+\mbox{\hyperlink{struct_heating_values}{Heating\+Values}} actual\+Heating\+Value\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Holds the current heating values (temperature and humidity). 
+
+This variable is used to track the actual temperature and humidity values in real-\/time. \Hypertarget{globals__hx_8h_ad3b99bea74e0b1913eb0d76ddccd0f15}\index{globals\_hx.h@{globals\_hx.h}!materialNames@{materialNames}}
+\index{materialNames@{materialNames}!globals\_hx.h@{globals\_hx.h}}
+\doxysubsubsection{\texorpdfstring{materialNames}{materialNames}}
+{\footnotesize\ttfamily \label{globals__hx_8h_ad3b99bea74e0b1913eb0d76ddccd0f15} 
+String material\+Names\mbox{[}\mbox{\hyperlink{group___material___config_gaac0667ed99a719112490b27b6dcfb133}{\+\_\+\+MATERIAL\+\_\+\+COUNT}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Array of material names derived from {\ttfamily material\+Presets}. 
+
+This array is populated for use in an LCD item list, containing the names of all supported materials. \Hypertarget{globals__hx_8h_ab1d9afab7c0378a5e02013d6798c012f}\index{globals\_hx.h@{globals\_hx.h}!materialPresets@{materialPresets}}
+\index{materialPresets@{materialPresets}!globals\_hx.h@{globals\_hx.h}}
+\doxysubsubsection{\texorpdfstring{materialPresets}{materialPresets}}
+{\footnotesize\ttfamily \label{globals__hx_8h_ab1d9afab7c0378a5e02013d6798c012f} 
+\mbox{\hyperlink{struct_material_preset}{Material\+Preset}} material\+Presets\mbox{[}\mbox{\hyperlink{group___material___config_gaac0667ed99a719112490b27b6dcfb133}{\+\_\+\+MATERIAL\+\_\+\+COUNT}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Array of material presets for heating profiles. 
+
+Each entry contains a material name and its corresponding heating preset values.\hypertarget{globals__hx_8h_autotoc_md17}{}\doxysubsubsubsection{\texorpdfstring{Materials\+:}{Materials\+:}}\label{globals__hx_8h_autotoc_md17}
+
+\begin{DoxyItemize}
+\item {\ttfamily "{}\+PLA"{}}\+: Preset for PLA material.
+\item {\ttfamily "{}\+PETG"{}}\+: Preset for PETG material.
+\item {\ttfamily "{}\+ASA"{}}\+: Preset for ASA material.
+\item {\ttfamily "{}\+ABS"{}}\+: Preset for ABS material.
+\item {\ttfamily "{}\+PP"{}}\+: Preset for PP material.
+\item {\ttfamily "{}\+PA"{}}\+: Preset for PA material.
+\item {\ttfamily "{}\+PC"{}}\+: Preset for PC material.
+\item {\ttfamily "{}\+TPU"{}}\+: Preset for TPU material. 
+\end{DoxyItemize}\Hypertarget{globals__hx_8h_a1c520326511c8cb96e6e246b1c168983}\index{globals\_hx.h@{globals\_hx.h}!targetCountdown@{targetCountdown}}
+\index{targetCountdown@{targetCountdown}!globals\_hx.h@{globals\_hx.h}}
+\doxysubsubsection{\texorpdfstring{targetCountdown}{targetCountdown}}
+{\footnotesize\ttfamily \label{globals__hx_8h_a1c520326511c8cb96e6e246b1c168983} 
+\mbox{\hyperlink{struct_countdown}{Countdown}} target\+Countdown\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Tracks the target countdown timer. 
+
+This variable is used to store the desired countdown duration for heating. \Hypertarget{globals__hx_8h_afb9928ebd3ee1139a026184f7cf7c02e}\index{globals\_hx.h@{globals\_hx.h}!targetHeatingValue@{targetHeatingValue}}
+\index{targetHeatingValue@{targetHeatingValue}!globals\_hx.h@{globals\_hx.h}}
+\doxysubsubsection{\texorpdfstring{targetHeatingValue}{targetHeatingValue}}
+{\footnotesize\ttfamily \label{globals__hx_8h_afb9928ebd3ee1139a026184f7cf7c02e} 
+\mbox{\hyperlink{struct_heating_values}{Heating\+Values}} target\+Heating\+Value\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Holds the target heating values (temperature and humidity). 
+
+This variable stores the desired setpoints for temperature and humidity. 

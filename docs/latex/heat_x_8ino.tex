@@ -1,0 +1,335 @@
+\doxysection{C\+:/\+Users/\+Kevin\+Hinrichs/\+Documents/\+Arduino/heat\+X/heatX.ino File Reference}
+\hypertarget{heat_x_8ino}{}\label{heat_x_8ino}\index{C:/Users/KevinHinrichs/Documents/Arduino/heatX/heatX.ino@{C:/Users/KevinHinrichs/Documents/Arduino/heatX/heatX.ino}}
+
+
+Main implementation for heatX.  
+
+
+{\ttfamily \#include $<$Item\+Int\+Range.\+h$>$}\newline
+{\ttfamily \#include $<$Item\+List.\+h$>$}\newline
+{\ttfamily \#include $<$Item\+Toggle.\+h$>$}\newline
+{\ttfamily \#include $<$Lcd\+Menu.\+h$>$}\newline
+{\ttfamily \#include $<$Menu\+Screen.\+h$>$}\newline
+{\ttfamily \#include $<$Simple\+Rotary.\+h$>$}\newline
+{\ttfamily \#include $<$display/\+Liquid\+Crystal\+\_\+\+I2\+CAdapter.\+h$>$}\newline
+{\ttfamily \#include $<$input/\+Simple\+Rotary\+Adapter.\+h$>$}\newline
+{\ttfamily \#include $<$renderer/\+Character\+Display\+Renderer.\+h$>$}\newline
+{\ttfamily \#include "{}src/globals\+\_\+hx.\+h"{}}\newline
+{\ttfamily \#include "{}src/gpio\+\_\+hx.\+h"{}}\newline
+{\ttfamily \#include "{}src/heating\+\_\+hx.\+h"{}}\newline
+{\ttfamily \#include "{}src/lcd\+\_\+hx.\+h"{}}\newline
+{\ttfamily \#include "{}src/pid\+\_\+hx.\+h"{}}\newline
+{\ttfamily \#include "{}src/sensor\+\_\+hx.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{heat_x_8ino_aa862a8a97a04212776c3ce9f5194c34b}{SET\+\_\+\+LOOP\+\_\+\+TASK\+\_\+\+STACK\+\_\+\+SIZE}} (16 \texorpdfstring{$\ast$}{*}1024)
+\begin{DoxyCompactList}\small\item\em Set loop task stack size to 16 KB. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{heat_x_8ino_aa328d1e7a632d84c82bd0ca3d0385db1}{setup\+Lcd}} ()
+\item 
+void \mbox{\hyperlink{heat_x_8ino_af5c23d87c9d55b30de788b27a791ef12}{create\+Lcd\+Symbol}} ()
+\item 
+void \mbox{\hyperlink{heat_x_8ino_ab261c6432bfad1677342a93f603d09dd}{set\+Static\+Home\+Content}} ()
+\item 
+void \mbox{\hyperlink{heat_x_8ino_a23de507e663188f3348405ffc519c36c}{update\+Home\+Content}} ()
+\item 
+void \mbox{\hyperlink{heat_x_8ino_a579e280c6c2fbd4570e7a30768534f9b}{callback\+Material\+Preset}} (uint8\+\_\+t pos)
+\item 
+void \mbox{\hyperlink{heat_x_8ino_ac12e8e3a1bc865a5d5d46478d44b2995}{callback\+Target\+Heat\+Temp}} (int pos)
+\item 
+void \mbox{\hyperlink{heat_x_8ino_a8fc67ef147de70fa9374c349bbaf9b9a}{callback\+Target\+Heat\+Hum}} (int pos)
+\item 
+void \mbox{\hyperlink{heat_x_8ino_afbed5c4dc5adb83f351dc66ac7334b24}{callback\+Target\+Heat\+Time}} (int pos)
+\item 
+void \mbox{\hyperlink{heat_x_8ino_a850c6f91b4c513456014a92731a16c90}{callback\+Target\+Heat\+Mode}} (int pos)
+\item 
+void \mbox{\hyperlink{heat_x_8ino_a48c40d11b91a2f8ff20686a886f55ab4}{callback\+Int\+Range}} (int pos)
+\item 
+void \mbox{\hyperlink{heat_x_8ino_a45a793e62a89cedbd7830904ad635195}{callback\+Toggle}} (bool is\+On)
+\item 
+void \mbox{\hyperlink{heat_x_8ino_a32562aa49449920491a49c507ad75189}{setup\+Heat\+Sensor}} ()
+\item 
+void \mbox{\hyperlink{heat_x_8ino_a04a3dbd85157d0446e417060c6cadc8b}{check\+Heat\+Sensor\+Status}} ()
+\item 
+void \mbox{\hyperlink{heat_x_8ino_a43737df33f28d8942e3ce8d08bf4d6c7}{setup\+Heating}} ()
+\item 
+void \mbox{\hyperlink{heat_x_8ino_a369f1e42a3e954a60a9102258678299d}{control\+Heating}} ()
+\item 
+void \mbox{\hyperlink{heat_x_8ino_ad02b3c09fbf1808864aef070791dc565}{control\+Fan}} (bool power\+On)
+\item 
+void \mbox{\hyperlink{heat_x_8ino_abc1245b577f45e29e0f9cca732c0d174}{set\+Countdown\+Heat\+Time}} ()
+\item 
+Liquid\+Crystal\+\_\+\+I2C \mbox{\hyperlink{heat_x_8ino_a73c0e1c0303498fc3b016dc3d72561c2}{lcd}} (\mbox{\hyperlink{group___l_c_d___config_gadfed1bd46db6294233cb205e679ab88d}{\+\_\+\+LCD\+\_\+\+I2\+C\+\_\+\+ADDRESS}}, \mbox{\hyperlink{group___l_c_d___config_ga83372468204dd8f50d7e5afdc372e3f8}{\+\_\+\+LCD\+\_\+\+COLS}}, \mbox{\hyperlink{group___l_c_d___config_ga1279ed244a3b216bb5cc0ebb7f30948d}{\+\_\+\+LCD\+\_\+\+ROWS}})
+\item 
+Lcd\+Menu \mbox{\hyperlink{heat_x_8ino_ad551ff83747c33aa97e3fff0b0a09100}{menu}} (renderer)
+\item 
+Simple\+Rotary \mbox{\hyperlink{heat_x_8ino_adbab7480027bd1cebf9e9a506202ec90}{encoder}} (\mbox{\hyperlink{group___p_i_n___control_ga774acabbbfb3ffed1a0cf86ee28adf9c}{\+\_\+\+PIN\+\_\+\+ENC\+\_\+A}}, \mbox{\hyperlink{group___p_i_n___control_ga41c71b8478c20e05b798ff18df68ef00}{\+\_\+\+PIN\+\_\+\+ENC\+\_\+B}}, \mbox{\hyperlink{group___p_i_n___control_ga477d705367d4012ee7117892e2e8f3a3}{\+\_\+\+PIN\+\_\+\+ENC\+\_\+\+BUTTON}})
+\item 
+\mbox{\hyperlink{heat_x_8ino_a58a2c7ed5209bc3a3a9b14fb7a501743}{MENU\+\_\+\+SCREEN}} (main\+Screen, main\+Items, ITEM\+\_\+\+INT\+\_\+\+RANGE("{}Heat temp"{}, \mbox{\hyperlink{group___heating___config_ga62bfc53f6368e7124c81dc7c55cbfa4c}{\+\_\+\+TEMP\+\_\+\+MIN}}, \mbox{\hyperlink{group___heating___config_ga0cc341fee5a88ea0fbf7a59f2786a977}{\+\_\+\+TEMP\+\_\+\+MAX}}, \mbox{\hyperlink{group___heating___config_ga8ee7579b38c7fbd8447ab1bfd808997b}{\+\_\+\+TEMP\+\_\+\+PRESET}}, \mbox{\hyperlink{heat_x_8ino_ac12e8e3a1bc865a5d5d46478d44b2995}{callback\+Target\+Heat\+Temp}}, "{}\%d\+C"{}, 1, true), ITEM\+\_\+\+INT\+\_\+\+RANGE("{}Heat hum"{}, \mbox{\hyperlink{group___heating___config_gaa195dc333ceb869c8ead53c1fa67ac41}{\+\_\+\+HUM\+\_\+\+MIN}}, \mbox{\hyperlink{group___heating___config_ga4513a40dc05f042f31a3d51658ff361a}{\+\_\+\+HUM\+\_\+\+MAX}}, \mbox{\hyperlink{group___heating___config_gad40049bb1109af3fb804ea2728671331}{\+\_\+\+HUM\+\_\+\+PRESET}}, \mbox{\hyperlink{heat_x_8ino_a8fc67ef147de70fa9374c349bbaf9b9a}{callback\+Target\+Heat\+Hum}}, "{}\%d\%\%"{}, 1, true), ITEM\+\_\+\+STRING\+\_\+\+LIST("{}Heat presets"{}, \mbox{\hyperlink{globals__hx_8cpp_ad3b99bea74e0b1913eb0d76ddccd0f15}{material\+Names}}, sizeof(\mbox{\hyperlink{globals__hx_8cpp_ad3b99bea74e0b1913eb0d76ddccd0f15}{material\+Names}})/sizeof(\mbox{\hyperlink{globals__hx_8cpp_ad3b99bea74e0b1913eb0d76ddccd0f15}{material\+Names}}\mbox{[}0\mbox{]}), \mbox{\hyperlink{heat_x_8ino_a579e280c6c2fbd4570e7a30768534f9b}{callback\+Material\+Preset}}), ITEM\+\_\+\+INT\+\_\+\+RANGE("{}Heat time"{}, \mbox{\hyperlink{group___heating___config_ga04444d77c6cab4517c56c8fb3dd28ca4}{\+\_\+\+TIME\+\_\+\+MIN}}, \mbox{\hyperlink{group___heating___config_ga9db0138e5e19d91ec143d27cc5b39bf1}{\+\_\+\+TIME\+\_\+\+MAX}}, \mbox{\hyperlink{group___heating___config_ga06bb44c452215f122d9d9c2acf08690d}{\+\_\+\+TIME\+\_\+\+PRESET}}, \mbox{\hyperlink{heat_x_8ino_afbed5c4dc5adb83f351dc66ac7334b24}{callback\+Target\+Heat\+Time}}, "{}\%dh"{}, 1, true), ITEM\+\_\+\+INT\+\_\+\+RANGE("{}Heat mode"{}, 0, 1, 0, \mbox{\hyperlink{heat_x_8ino_a850c6f91b4c513456014a92731a16c90}{callback\+Target\+Heat\+Mode}}, "{}\%d"{}, 1, true), ITEM\+\_\+\+TOGGLE("{}Item toggle"{}, \mbox{\hyperlink{heat_x_8ino_a45a793e62a89cedbd7830904ad635195}{callback\+Toggle}}), ITEM\+\_\+\+BASIC("{}Item Basic"{}))
+\item 
+void \mbox{\hyperlink{heat_x_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\item 
+void \mbox{\hyperlink{heat_x_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Liquid\+Crystal\+\_\+\+I2\+CAdapter \mbox{\hyperlink{heat_x_8ino_a5b99a2efb0beb744e091045c9c9d240e}{lcd\+Adapter}} \& \mbox{\hyperlink{heat_x_8ino_a5f5f7714cbf18fe59c0c401ebaf1d2c9}{lcd}}
+\item 
+Character\+Display\+Renderer renderer \& \mbox{\hyperlink{heat_x_8ino_a5b99a2efb0beb744e091045c9c9d240e}{lcd\+Adapter}}
+\item 
+\mbox{\hyperlink{class_button_active_low}{Button\+Active\+Low}} \mbox{\hyperlink{heat_x_8ino_a7e2b2ebaa6f621a70f395abbf82ee30d}{button\+Start}} (\mbox{\hyperlink{group___p_i_n___control_ga07f31b741c0a80a37bfed7db69ce49ea}{\+\_\+\+PIN\+\_\+\+START}}, \mbox{\hyperlink{group___button___config_gaf97cd36017e4962959c20a5944ab5155}{\+\_\+\+BUTTON\+\_\+\+DEBOUNCE\+\_\+\+TIME}})
+\item 
+\mbox{\hyperlink{class_button_active_low}{Button\+Active\+Low}} \mbox{\hyperlink{heat_x_8ino_a63c262e79253e0b134e65fe2056bad5e}{button\+Stop}} (\mbox{\hyperlink{group___p_i_n___control_ga2f2a7258fab45a9e87836c80ed73e170}{\+\_\+\+PIN\+\_\+\+STOP}}, \mbox{\hyperlink{group___button___config_gaf97cd36017e4962959c20a5944ab5155}{\+\_\+\+BUTTON\+\_\+\+DEBOUNCE\+\_\+\+TIME}})
+\item 
+Simple\+Rotary\+Adapter rotary\+Input \& \mbox{\hyperlink{heat_x_8ino_acf7d8e00ecb6fef8b3edcf8af74f0b63}{menu}}
+\item 
+\mbox{\hyperlink{class_custom_b_m_e280}{Custom\+BME280}} \mbox{\hyperlink{heat_x_8ino_a6e53d42b82332d4c1856e9221cd4f751}{bme}}
+\item 
+\mbox{\hyperlink{class_gpio_off_delay}{Gpio\+Off\+Delay}} \mbox{\hyperlink{heat_x_8ino_a1c279fe39eb801807160fd3b0c72a261}{fan}} (\mbox{\hyperlink{group___p_i_n___output_ga664bcbe0fe4c70da3daaa149423b4160}{\+\_\+\+PIN\+\_\+\+FAN}}, \mbox{\hyperlink{group___heating___config_gaea4ded38812e550fcd4a1763808e67fa}{\+\_\+\+FAN\+\_\+\+OFFDELAY}})
+\item 
+\mbox{\hyperlink{class_p_i_d__heat_x}{PID\+\_\+heatX}} \mbox{\hyperlink{heat_x_8ino_ab5faf99a296e03ec3932318675bd3da3}{pid\+Heating}} (\mbox{\hyperlink{group___p_i_d___config_ga1557935ef4e5c1d6cddc3b23e19f2503}{\+\_\+\+PID\+\_\+\+TEMP\+\_\+\+KP\+\_\+\+PRESET}}, \mbox{\hyperlink{group___p_i_d___config_ga86ee09604de200e53bc8bcbd742b89a4}{\+\_\+\+PID\+\_\+\+TEMP\+\_\+\+KI\+\_\+\+PRESET}}, \mbox{\hyperlink{group___p_i_d___config_ga3999d9d0cfdfb3c22faa600870b25d03}{\+\_\+\+PID\+\_\+\+TEMP\+\_\+\+KD\+\_\+\+PRESET}}, 0)
+\item 
+\mbox{\hyperlink{class_p_i_d__heat_x}{PID\+\_\+heatX}} \mbox{\hyperlink{heat_x_8ino_aef5d588b80a67ac7814ab52b8b015428}{pid\+Hum}} (\mbox{\hyperlink{group___p_i_d___config_ga5d658333229c717a66d0dcba124beb1a}{\+\_\+\+PID\+\_\+\+HUM\+\_\+\+KP\+\_\+\+PRESET}}, \mbox{\hyperlink{group___p_i_d___config_gae20370dbdf32a75c7d681f9eb0657a14}{\+\_\+\+PID\+\_\+\+HUM\+\_\+\+KI\+\_\+\+PRESET}}, \mbox{\hyperlink{group___p_i_d___config_ga4af03b066dcb655ba892a0cc55fda337}{\+\_\+\+PID\+\_\+\+HUM\+\_\+\+KD\+\_\+\+PRESET}}, 0)
+\item 
+\mbox{\hyperlink{class_p_i_d__heat_x}{PID\+\_\+heatX}} \mbox{\hyperlink{heat_x_8ino_a7b13a4b555d771079bfce93409e63000}{pid\+Fan}} (\mbox{\hyperlink{group___p_i_d___config_ga9c7c25293bc2c02902606a977769170c}{\+\_\+\+PID\+\_\+\+FAN\+\_\+\+KP\+\_\+\+PRESET}}, \mbox{\hyperlink{group___p_i_d___config_gacdcce5eb58666e48ba8fe5acc4efe964}{\+\_\+\+PID\+\_\+\+FAN\+\_\+\+KI\+\_\+\+PRESET}}, \mbox{\hyperlink{group___p_i_d___config_ga07c77ae07e906b27e45bdb468a43ef48}{\+\_\+\+PID\+\_\+\+FAN\+\_\+\+KD\+\_\+\+PRESET}}, 0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main implementation for heatX. 
+
+This file contains the main logic for controlling the heatX device.\hypertarget{heat_x_8ino_autotoc_md14}{}\doxysubsubsubsection{\texorpdfstring{Changelog}{Changelog}}\label{heat_x_8ino_autotoc_md14}
+
+\begin{DoxyItemize}
+\item {\bfseries{2024-\/11-\/08}}\+: Initial version created by Kevin Hinrichs
+\end{DoxyItemize}
+
+\begin{DoxyVersion}{Version}
+0.\+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/11-\/08 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Kevin Hinrichs
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 Kevin Hinrichs, Laurens Vaigt. ~\newline
+ Licensed under the MIT License. See the \href{LICENSE}{\texttt{ LICENSE}} file for details. ~\newline
+ 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{heat_x_8ino_a48c40d11b91a2f8ff20686a886f55ab4}\index{heatX.ino@{heatX.ino}!callbackIntRange@{callbackIntRange}}
+\index{callbackIntRange@{callbackIntRange}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{callbackIntRange()}{callbackIntRange()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a48c40d11b91a2f8ff20686a886f55ab4} 
+void callback\+Int\+Range (\begin{DoxyParamCaption}\item[{int}]{pos}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_a579e280c6c2fbd4570e7a30768534f9b}\index{heatX.ino@{heatX.ino}!callbackMaterialPreset@{callbackMaterialPreset}}
+\index{callbackMaterialPreset@{callbackMaterialPreset}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{callbackMaterialPreset()}{callbackMaterialPreset()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a579e280c6c2fbd4570e7a30768534f9b} 
+void callback\+Material\+Preset (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pos}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_a8fc67ef147de70fa9374c349bbaf9b9a}\index{heatX.ino@{heatX.ino}!callbackTargetHeatHum@{callbackTargetHeatHum}}
+\index{callbackTargetHeatHum@{callbackTargetHeatHum}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{callbackTargetHeatHum()}{callbackTargetHeatHum()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a8fc67ef147de70fa9374c349bbaf9b9a} 
+void callback\+Target\+Heat\+Hum (\begin{DoxyParamCaption}\item[{int}]{pos}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_a850c6f91b4c513456014a92731a16c90}\index{heatX.ino@{heatX.ino}!callbackTargetHeatMode@{callbackTargetHeatMode}}
+\index{callbackTargetHeatMode@{callbackTargetHeatMode}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{callbackTargetHeatMode()}{callbackTargetHeatMode()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a850c6f91b4c513456014a92731a16c90} 
+void callback\+Target\+Heat\+Mode (\begin{DoxyParamCaption}\item[{int}]{pos}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_ac12e8e3a1bc865a5d5d46478d44b2995}\index{heatX.ino@{heatX.ino}!callbackTargetHeatTemp@{callbackTargetHeatTemp}}
+\index{callbackTargetHeatTemp@{callbackTargetHeatTemp}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{callbackTargetHeatTemp()}{callbackTargetHeatTemp()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_ac12e8e3a1bc865a5d5d46478d44b2995} 
+void callback\+Target\+Heat\+Temp (\begin{DoxyParamCaption}\item[{int}]{pos}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_afbed5c4dc5adb83f351dc66ac7334b24}\index{heatX.ino@{heatX.ino}!callbackTargetHeatTime@{callbackTargetHeatTime}}
+\index{callbackTargetHeatTime@{callbackTargetHeatTime}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{callbackTargetHeatTime()}{callbackTargetHeatTime()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_afbed5c4dc5adb83f351dc66ac7334b24} 
+void callback\+Target\+Heat\+Time (\begin{DoxyParamCaption}\item[{int}]{pos}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_a45a793e62a89cedbd7830904ad635195}\index{heatX.ino@{heatX.ino}!callbackToggle@{callbackToggle}}
+\index{callbackToggle@{callbackToggle}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{callbackToggle()}{callbackToggle()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a45a793e62a89cedbd7830904ad635195} 
+void callback\+Toggle (\begin{DoxyParamCaption}\item[{bool}]{is\+On}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_a04a3dbd85157d0446e417060c6cadc8b}\index{heatX.ino@{heatX.ino}!checkHeatSensorStatus@{checkHeatSensorStatus}}
+\index{checkHeatSensorStatus@{checkHeatSensorStatus}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{checkHeatSensorStatus()}{checkHeatSensorStatus()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a04a3dbd85157d0446e417060c6cadc8b} 
+void check\+Heat\+Sensor\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_ad02b3c09fbf1808864aef070791dc565}\index{heatX.ino@{heatX.ino}!controlFan@{controlFan}}
+\index{controlFan@{controlFan}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{controlFan()}{controlFan()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_ad02b3c09fbf1808864aef070791dc565} 
+void control\+Fan (\begin{DoxyParamCaption}\item[{bool}]{power\+On}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_a369f1e42a3e954a60a9102258678299d}\index{heatX.ino@{heatX.ino}!controlHeating@{controlHeating}}
+\index{controlHeating@{controlHeating}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{controlHeating()}{controlHeating()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a369f1e42a3e954a60a9102258678299d} 
+void control\+Heating (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_af5c23d87c9d55b30de788b27a791ef12}\index{heatX.ino@{heatX.ino}!createLcdSymbol@{createLcdSymbol}}
+\index{createLcdSymbol@{createLcdSymbol}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{createLcdSymbol()}{createLcdSymbol()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_af5c23d87c9d55b30de788b27a791ef12} 
+void create\+Lcd\+Symbol (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_adbab7480027bd1cebf9e9a506202ec90}\index{heatX.ino@{heatX.ino}!encoder@{encoder}}
+\index{encoder@{encoder}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{encoder()}{encoder()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_adbab7480027bd1cebf9e9a506202ec90} 
+Simple\+Rotary encoder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___p_i_n___control_ga774acabbbfb3ffed1a0cf86ee28adf9c}{\+\_\+\+PIN\+\_\+\+ENC\+\_\+A}}}]{}{, }\item[{\mbox{\hyperlink{group___p_i_n___control_ga41c71b8478c20e05b798ff18df68ef00}{\+\_\+\+PIN\+\_\+\+ENC\+\_\+B}}}]{}{, }\item[{\mbox{\hyperlink{group___p_i_n___control_ga477d705367d4012ee7117892e2e8f3a3}{\+\_\+\+PIN\+\_\+\+ENC\+\_\+\+BUTTON}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_a73c0e1c0303498fc3b016dc3d72561c2}\index{heatX.ino@{heatX.ino}!lcd@{lcd}}
+\index{lcd@{lcd}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{lcd()}{lcd()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a73c0e1c0303498fc3b016dc3d72561c2} 
+Liquid\+Crystal\+\_\+\+I2C lcd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___l_c_d___config_gadfed1bd46db6294233cb205e679ab88d}{\+\_\+\+LCD\+\_\+\+I2\+C\+\_\+\+ADDRESS}}}]{}{, }\item[{\mbox{\hyperlink{group___l_c_d___config_ga83372468204dd8f50d7e5afdc372e3f8}{\+\_\+\+LCD\+\_\+\+COLS}}}]{}{, }\item[{\mbox{\hyperlink{group___l_c_d___config_ga1279ed244a3b216bb5cc0ebb7f30948d}{\+\_\+\+LCD\+\_\+\+ROWS}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_afe461d27b9c48d5921c00d521181f12f}\index{heatX.ino@{heatX.ino}!loop@{loop}}
+\index{loop@{loop}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_afe461d27b9c48d5921c00d521181f12f} 
+void loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_ad551ff83747c33aa97e3fff0b0a09100}\index{heatX.ino@{heatX.ino}!menu@{menu}}
+\index{menu@{menu}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_ad551ff83747c33aa97e3fff0b0a09100} 
+Lcd\+Menu menu (\begin{DoxyParamCaption}\item[{renderer}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_a58a2c7ed5209bc3a3a9b14fb7a501743}\index{heatX.ino@{heatX.ino}!MENU\_SCREEN@{MENU\_SCREEN}}
+\index{MENU\_SCREEN@{MENU\_SCREEN}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{MENU\_SCREEN()}{MENU\_SCREEN()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a58a2c7ed5209bc3a3a9b14fb7a501743} 
+MENU\+\_\+\+SCREEN (\begin{DoxyParamCaption}\item[{main\+Screen}]{}{, }\item[{main\+Items}]{}{, }\item[{ITEM\+\_\+\+INT\+\_\+\+RANGE("{}Heat temp"{}, \mbox{\hyperlink{group___heating___config_ga62bfc53f6368e7124c81dc7c55cbfa4c}{\+\_\+\+TEMP\+\_\+\+MIN}}, \mbox{\hyperlink{group___heating___config_ga0cc341fee5a88ea0fbf7a59f2786a977}{\+\_\+\+TEMP\+\_\+\+MAX}}, \mbox{\hyperlink{group___heating___config_ga8ee7579b38c7fbd8447ab1bfd808997b}{\+\_\+\+TEMP\+\_\+\+PRESET}}, \mbox{\hyperlink{heat_x_8ino_ac12e8e3a1bc865a5d5d46478d44b2995}{callback\+Target\+Heat\+Temp}}, "{}\%d\+C"{}, 1, true)}]{}{, }\item[{ITEM\+\_\+\+INT\+\_\+\+RANGE("{}Heat hum"{}, \mbox{\hyperlink{group___heating___config_gaa195dc333ceb869c8ead53c1fa67ac41}{\+\_\+\+HUM\+\_\+\+MIN}}, \mbox{\hyperlink{group___heating___config_ga4513a40dc05f042f31a3d51658ff361a}{\+\_\+\+HUM\+\_\+\+MAX}}, \mbox{\hyperlink{group___heating___config_gad40049bb1109af3fb804ea2728671331}{\+\_\+\+HUM\+\_\+\+PRESET}}, \mbox{\hyperlink{heat_x_8ino_a8fc67ef147de70fa9374c349bbaf9b9a}{callback\+Target\+Heat\+Hum}}, "{}\%d\%\%"{}, 1, true)}]{}{, }\item[{ITEM\+\_\+\+STRING\+\_\+\+LIST("{}Heat presets"{}, \mbox{\hyperlink{globals__hx_8cpp_ad3b99bea74e0b1913eb0d76ddccd0f15}{material\+Names}}, sizeof(\mbox{\hyperlink{globals__hx_8cpp_ad3b99bea74e0b1913eb0d76ddccd0f15}{material\+Names}})/sizeof(\mbox{\hyperlink{globals__hx_8cpp_ad3b99bea74e0b1913eb0d76ddccd0f15}{material\+Names}}\mbox{[}0\mbox{]}), \mbox{\hyperlink{heat_x_8ino_a579e280c6c2fbd4570e7a30768534f9b}{callback\+Material\+Preset}})}]{}{, }\item[{ITEM\+\_\+\+INT\+\_\+\+RANGE("{}Heat time"{}, \mbox{\hyperlink{group___heating___config_ga04444d77c6cab4517c56c8fb3dd28ca4}{\+\_\+\+TIME\+\_\+\+MIN}}, \mbox{\hyperlink{group___heating___config_ga9db0138e5e19d91ec143d27cc5b39bf1}{\+\_\+\+TIME\+\_\+\+MAX}}, \mbox{\hyperlink{group___heating___config_ga06bb44c452215f122d9d9c2acf08690d}{\+\_\+\+TIME\+\_\+\+PRESET}}, \mbox{\hyperlink{heat_x_8ino_afbed5c4dc5adb83f351dc66ac7334b24}{callback\+Target\+Heat\+Time}}, "{}\%dh"{}, 1, true)}]{}{, }\item[{ITEM\+\_\+\+INT\+\_\+\+RANGE("{}Heat mode"{}, 0, 1, 0, \mbox{\hyperlink{heat_x_8ino_a850c6f91b4c513456014a92731a16c90}{callback\+Target\+Heat\+Mode}}, "{}\%d"{}, 1, true)}]{}{, }\item[{ITEM\+\_\+\+TOGGLE("{}Item toggle"{}, \mbox{\hyperlink{heat_x_8ino_a45a793e62a89cedbd7830904ad635195}{callback\+Toggle}})}]{}{, }\item[{ITEM\+\_\+\+BASIC("{}Item Basic"{})}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_aa862a8a97a04212776c3ce9f5194c34b}\index{heatX.ino@{heatX.ino}!SET\_LOOP\_TASK\_STACK\_SIZE@{SET\_LOOP\_TASK\_STACK\_SIZE}}
+\index{SET\_LOOP\_TASK\_STACK\_SIZE@{SET\_LOOP\_TASK\_STACK\_SIZE}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{SET\_LOOP\_TASK\_STACK\_SIZE()}{SET\_LOOP\_TASK\_STACK\_SIZE()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_aa862a8a97a04212776c3ce9f5194c34b} 
+SET\+\_\+\+LOOP\+\_\+\+TASK\+\_\+\+STACK\+\_\+\+SIZE (\begin{DoxyParamCaption}\item[{16 \texorpdfstring{$\ast$}{*}}]{1024}{}\end{DoxyParamCaption})}
+
+
+
+Set loop task stack size to 16 KB. 
+
+\Hypertarget{heat_x_8ino_abc1245b577f45e29e0f9cca732c0d174}\index{heatX.ino@{heatX.ino}!setCountdownHeatTime@{setCountdownHeatTime}}
+\index{setCountdownHeatTime@{setCountdownHeatTime}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{setCountdownHeatTime()}{setCountdownHeatTime()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_abc1245b577f45e29e0f9cca732c0d174} 
+void set\+Countdown\+Heat\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_ab261c6432bfad1677342a93f603d09dd}\index{heatX.ino@{heatX.ino}!setStaticHomeContent@{setStaticHomeContent}}
+\index{setStaticHomeContent@{setStaticHomeContent}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{setStaticHomeContent()}{setStaticHomeContent()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_ab261c6432bfad1677342a93f603d09dd} 
+void set\+Static\+Home\+Content (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_a4fc01d736fe50cf5b977f755b675f11d}\index{heatX.ino@{heatX.ino}!setup@{setup}}
+\index{setup@{setup}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a4fc01d736fe50cf5b977f755b675f11d} 
+void setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_a43737df33f28d8942e3ce8d08bf4d6c7}\index{heatX.ino@{heatX.ino}!setupHeating@{setupHeating}}
+\index{setupHeating@{setupHeating}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{setupHeating()}{setupHeating()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a43737df33f28d8942e3ce8d08bf4d6c7} 
+void setup\+Heating (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_a32562aa49449920491a49c507ad75189}\index{heatX.ino@{heatX.ino}!setupHeatSensor@{setupHeatSensor}}
+\index{setupHeatSensor@{setupHeatSensor}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{setupHeatSensor()}{setupHeatSensor()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a32562aa49449920491a49c507ad75189} 
+void setup\+Heat\+Sensor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_aa328d1e7a632d84c82bd0ca3d0385db1}\index{heatX.ino@{heatX.ino}!setupLcd@{setupLcd}}
+\index{setupLcd@{setupLcd}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{setupLcd()}{setupLcd()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_aa328d1e7a632d84c82bd0ca3d0385db1} 
+void setup\+Lcd (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_a23de507e663188f3348405ffc519c36c}\index{heatX.ino@{heatX.ino}!updateHomeContent@{updateHomeContent}}
+\index{updateHomeContent@{updateHomeContent}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{updateHomeContent()}{updateHomeContent()}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a23de507e663188f3348405ffc519c36c} 
+void update\+Home\+Content (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{heat_x_8ino_a6e53d42b82332d4c1856e9221cd4f751}\index{heatX.ino@{heatX.ino}!bme@{bme}}
+\index{bme@{bme}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{bme}{bme}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a6e53d42b82332d4c1856e9221cd4f751} 
+\mbox{\hyperlink{class_custom_b_m_e280}{Custom\+BME280}} bme}
+
+\Hypertarget{heat_x_8ino_a7e2b2ebaa6f621a70f395abbf82ee30d}\index{heatX.ino@{heatX.ino}!buttonStart@{buttonStart}}
+\index{buttonStart@{buttonStart}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{buttonStart}{buttonStart}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a7e2b2ebaa6f621a70f395abbf82ee30d} 
+\mbox{\hyperlink{class_button_active_low}{Button\+Active\+Low}} button\+Start(\mbox{\hyperlink{group___p_i_n___control_ga07f31b741c0a80a37bfed7db69ce49ea}{\+\_\+\+PIN\+\_\+\+START}}, \mbox{\hyperlink{group___button___config_gaf97cd36017e4962959c20a5944ab5155}{\+\_\+\+BUTTON\+\_\+\+DEBOUNCE\+\_\+\+TIME}}) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___p_i_n___control_ga07f31b741c0a80a37bfed7db69ce49ea}{\+\_\+\+PIN\+\_\+\+START}}}]{}{, }\item[{\mbox{\hyperlink{group___button___config_gaf97cd36017e4962959c20a5944ab5155}{\+\_\+\+BUTTON\+\_\+\+DEBOUNCE\+\_\+\+TIME}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_a63c262e79253e0b134e65fe2056bad5e}\index{heatX.ino@{heatX.ino}!buttonStop@{buttonStop}}
+\index{buttonStop@{buttonStop}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{buttonStop}{buttonStop}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a63c262e79253e0b134e65fe2056bad5e} 
+\mbox{\hyperlink{class_button_active_low}{Button\+Active\+Low}} button\+Stop(\mbox{\hyperlink{group___p_i_n___control_ga2f2a7258fab45a9e87836c80ed73e170}{\+\_\+\+PIN\+\_\+\+STOP}}, \mbox{\hyperlink{group___button___config_gaf97cd36017e4962959c20a5944ab5155}{\+\_\+\+BUTTON\+\_\+\+DEBOUNCE\+\_\+\+TIME}}) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___p_i_n___control_ga2f2a7258fab45a9e87836c80ed73e170}{\+\_\+\+PIN\+\_\+\+STOP}}}]{}{, }\item[{\mbox{\hyperlink{group___button___config_gaf97cd36017e4962959c20a5944ab5155}{\+\_\+\+BUTTON\+\_\+\+DEBOUNCE\+\_\+\+TIME}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_a1c279fe39eb801807160fd3b0c72a261}\index{heatX.ino@{heatX.ino}!fan@{fan}}
+\index{fan@{fan}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{fan}{fan}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a1c279fe39eb801807160fd3b0c72a261} 
+\mbox{\hyperlink{class_gpio_off_delay}{Gpio\+Off\+Delay}} fan(\mbox{\hyperlink{group___p_i_n___output_ga664bcbe0fe4c70da3daaa149423b4160}{\+\_\+\+PIN\+\_\+\+FAN}}, \mbox{\hyperlink{group___heating___config_gaea4ded38812e550fcd4a1763808e67fa}{\+\_\+\+FAN\+\_\+\+OFFDELAY}}) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___p_i_n___output_ga664bcbe0fe4c70da3daaa149423b4160}{\+\_\+\+PIN\+\_\+\+FAN}}}]{}{, }\item[{\mbox{\hyperlink{group___heating___config_gaea4ded38812e550fcd4a1763808e67fa}{\+\_\+\+FAN\+\_\+\+OFFDELAY}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_a5f5f7714cbf18fe59c0c401ebaf1d2c9}\index{heatX.ino@{heatX.ino}!lcd@{lcd}}
+\index{lcd@{lcd}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{lcd}{lcd}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a5f5f7714cbf18fe59c0c401ebaf1d2c9} 
+Liquid\+Crystal\+\_\+\+I2\+CAdapter \mbox{\hyperlink{heat_x_8ino_a5b99a2efb0beb744e091045c9c9d240e}{lcd\+Adapter}}\& lcd}
+
+\Hypertarget{heat_x_8ino_a5b99a2efb0beb744e091045c9c9d240e}\index{heatX.ino@{heatX.ino}!lcdAdapter@{lcdAdapter}}
+\index{lcdAdapter@{lcdAdapter}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{lcdAdapter}{lcdAdapter}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a5b99a2efb0beb744e091045c9c9d240e} 
+Character\+Display\+Renderer renderer\& lcd\+Adapter}
+
+\Hypertarget{heat_x_8ino_acf7d8e00ecb6fef8b3edcf8af74f0b63}\index{heatX.ino@{heatX.ino}!menu@{menu}}
+\index{menu@{menu}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{menu}{menu}}
+{\footnotesize\ttfamily \label{heat_x_8ino_acf7d8e00ecb6fef8b3edcf8af74f0b63} 
+Simple\+Rotary\+Adapter rotary\+Input\& menu}
+
+\Hypertarget{heat_x_8ino_a7b13a4b555d771079bfce93409e63000}\index{heatX.ino@{heatX.ino}!pidFan@{pidFan}}
+\index{pidFan@{pidFan}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{pidFan}{pidFan}}
+{\footnotesize\ttfamily \label{heat_x_8ino_a7b13a4b555d771079bfce93409e63000} 
+\mbox{\hyperlink{class_p_i_d__heat_x}{PID\+\_\+heatX}} pid\+Fan(\mbox{\hyperlink{group___p_i_d___config_ga9c7c25293bc2c02902606a977769170c}{\+\_\+\+PID\+\_\+\+FAN\+\_\+\+KP\+\_\+\+PRESET}}, \mbox{\hyperlink{group___p_i_d___config_gacdcce5eb58666e48ba8fe5acc4efe964}{\+\_\+\+PID\+\_\+\+FAN\+\_\+\+KI\+\_\+\+PRESET}}, \mbox{\hyperlink{group___p_i_d___config_ga07c77ae07e906b27e45bdb468a43ef48}{\+\_\+\+PID\+\_\+\+FAN\+\_\+\+KD\+\_\+\+PRESET}}, 0) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___p_i_d___config_ga9c7c25293bc2c02902606a977769170c}{\+\_\+\+PID\+\_\+\+FAN\+\_\+\+KP\+\_\+\+PRESET}}}]{}{, }\item[{\mbox{\hyperlink{group___p_i_d___config_gacdcce5eb58666e48ba8fe5acc4efe964}{\+\_\+\+PID\+\_\+\+FAN\+\_\+\+KI\+\_\+\+PRESET}}}]{}{, }\item[{\mbox{\hyperlink{group___p_i_d___config_ga07c77ae07e906b27e45bdb468a43ef48}{\+\_\+\+PID\+\_\+\+FAN\+\_\+\+KD\+\_\+\+PRESET}}}]{}{, }\item[{0}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_ab5faf99a296e03ec3932318675bd3da3}\index{heatX.ino@{heatX.ino}!pidHeating@{pidHeating}}
+\index{pidHeating@{pidHeating}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{pidHeating}{pidHeating}}
+{\footnotesize\ttfamily \label{heat_x_8ino_ab5faf99a296e03ec3932318675bd3da3} 
+\mbox{\hyperlink{class_p_i_d__heat_x}{PID\+\_\+heatX}} pid\+Heating(\mbox{\hyperlink{group___p_i_d___config_ga1557935ef4e5c1d6cddc3b23e19f2503}{\+\_\+\+PID\+\_\+\+TEMP\+\_\+\+KP\+\_\+\+PRESET}}, \mbox{\hyperlink{group___p_i_d___config_ga86ee09604de200e53bc8bcbd742b89a4}{\+\_\+\+PID\+\_\+\+TEMP\+\_\+\+KI\+\_\+\+PRESET}}, \mbox{\hyperlink{group___p_i_d___config_ga3999d9d0cfdfb3c22faa600870b25d03}{\+\_\+\+PID\+\_\+\+TEMP\+\_\+\+KD\+\_\+\+PRESET}}, 0) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___p_i_d___config_ga1557935ef4e5c1d6cddc3b23e19f2503}{\+\_\+\+PID\+\_\+\+TEMP\+\_\+\+KP\+\_\+\+PRESET}}}]{}{, }\item[{\mbox{\hyperlink{group___p_i_d___config_ga86ee09604de200e53bc8bcbd742b89a4}{\+\_\+\+PID\+\_\+\+TEMP\+\_\+\+KI\+\_\+\+PRESET}}}]{}{, }\item[{\mbox{\hyperlink{group___p_i_d___config_ga3999d9d0cfdfb3c22faa600870b25d03}{\+\_\+\+PID\+\_\+\+TEMP\+\_\+\+KD\+\_\+\+PRESET}}}]{}{, }\item[{0}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{heat_x_8ino_aef5d588b80a67ac7814ab52b8b015428}\index{heatX.ino@{heatX.ino}!pidHum@{pidHum}}
+\index{pidHum@{pidHum}!heatX.ino@{heatX.ino}}
+\doxysubsubsection{\texorpdfstring{pidHum}{pidHum}}
+{\footnotesize\ttfamily \label{heat_x_8ino_aef5d588b80a67ac7814ab52b8b015428} 
+\mbox{\hyperlink{class_p_i_d__heat_x}{PID\+\_\+heatX}} pid\+Hum(\mbox{\hyperlink{group___p_i_d___config_ga5d658333229c717a66d0dcba124beb1a}{\+\_\+\+PID\+\_\+\+HUM\+\_\+\+KP\+\_\+\+PRESET}}, \mbox{\hyperlink{group___p_i_d___config_gae20370dbdf32a75c7d681f9eb0657a14}{\+\_\+\+PID\+\_\+\+HUM\+\_\+\+KI\+\_\+\+PRESET}}, \mbox{\hyperlink{group___p_i_d___config_ga4af03b066dcb655ba892a0cc55fda337}{\+\_\+\+PID\+\_\+\+HUM\+\_\+\+KD\+\_\+\+PRESET}}, 0) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___p_i_d___config_ga5d658333229c717a66d0dcba124beb1a}{\+\_\+\+PID\+\_\+\+HUM\+\_\+\+KP\+\_\+\+PRESET}}}]{}{, }\item[{\mbox{\hyperlink{group___p_i_d___config_gae20370dbdf32a75c7d681f9eb0657a14}{\+\_\+\+PID\+\_\+\+HUM\+\_\+\+KI\+\_\+\+PRESET}}}]{}{, }\item[{\mbox{\hyperlink{group___p_i_d___config_ga4af03b066dcb655ba892a0cc55fda337}{\+\_\+\+PID\+\_\+\+HUM\+\_\+\+KD\+\_\+\+PRESET}}}]{}{, }\item[{0}]{}{}\end{DoxyParamCaption})}
+

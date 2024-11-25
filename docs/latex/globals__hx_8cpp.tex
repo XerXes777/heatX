@@ -1,0 +1,189 @@
+\doxysection{C\+:/\+Users/\+Kevin\+Hinrichs/\+Documents/\+Arduino/heat\+X/src/globals\+\_\+hx.cpp File Reference}
+\hypertarget{globals__hx_8cpp}{}\label{globals__hx_8cpp}\index{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/globals\_hx.cpp@{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/globals\_hx.cpp}}
+
+
+Implementation of global variables for the heatX project.  
+
+
+{\ttfamily \#include "{}globals\+\_\+hx.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{globals__hx_8cpp_a55460c4dc172dab2f60b1e2f0bf23bed}{map\+Float}} (float x, float in\+\_\+min, float in\+\_\+max, float out\+\_\+min, float out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Maps a float value from one range to another. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_heating_values}{Heating\+Values}} \mbox{\hyperlink{globals__hx_8cpp_a9ed253ac67d95c3b86eee9bdd2acc62c}{actual\+Heating\+Value}} = \{ 0, 0 \}
+\begin{DoxyCompactList}\small\item\em Holds the current heating values (temperature and humidity). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_countdown}{Countdown}} \mbox{\hyperlink{globals__hx_8cpp_a3c74384ad48f8c601eca48c15d5144e5}{actual\+Countdown}} = \{ 0, 0 \}
+\begin{DoxyCompactList}\small\item\em Tracks the current countdown timer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_heating_values}{Heating\+Values}} \mbox{\hyperlink{globals__hx_8cpp_afb9928ebd3ee1139a026184f7cf7c02e}{target\+Heating\+Value}}
+\begin{DoxyCompactList}\small\item\em Holds the target heating values (temperature and humidity). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_countdown}{Countdown}} \mbox{\hyperlink{globals__hx_8cpp_a1c520326511c8cb96e6e246b1c168983}{target\+Countdown}}
+\begin{DoxyCompactList}\small\item\em Tracks the target countdown timer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_material_preset}{Material\+Preset}} \mbox{\hyperlink{globals__hx_8cpp_ab1d9afab7c0378a5e02013d6798c012f}{material\+Presets}} \mbox{[}\mbox{\hyperlink{group___material___config_gaac0667ed99a719112490b27b6dcfb133}{\+\_\+\+MATERIAL\+\_\+\+COUNT}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of material presets for heating profiles. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{globals__hx_8cpp_ad3b99bea74e0b1913eb0d76ddccd0f15}{material\+Names}} \mbox{[}\mbox{\hyperlink{group___material___config_gaac0667ed99a719112490b27b6dcfb133}{\+\_\+\+MATERIAL\+\_\+\+COUNT}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of material names derived from {\ttfamily material\+Presets}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of global variables for the heatX project. 
+
+This file contains the definitions of global variables used across the heatX project, such as heating values, countdown timers, and material presets.\hypertarget{globals__hx_8cpp_autotoc_md15}{}\doxysubsubsubsection{\texorpdfstring{Changelog}{Changelog}}\label{globals__hx_8cpp_autotoc_md15}
+
+\begin{DoxyItemize}
+\item {\bfseries{2024-\/11-\/08}}\+: Initial version created by Kevin Hinrichs
+\end{DoxyItemize}
+
+\begin{DoxyVersion}{Version}
+0.\+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/11-\/08 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Kevin Hinrichs
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 Kevin Hinrichs, Laurens Vaigt. ~\newline
+ Licensed under the MIT License. See the \href{LICENSE}{\texttt{ LICENSE}} file for details. ~\newline
+ 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{globals__hx_8cpp_a55460c4dc172dab2f60b1e2f0bf23bed}\index{globals\_hx.cpp@{globals\_hx.cpp}!mapFloat@{mapFloat}}
+\index{mapFloat@{mapFloat}!globals\_hx.cpp@{globals\_hx.cpp}}
+\doxysubsubsection{\texorpdfstring{mapFloat()}{mapFloat()}}
+{\footnotesize\ttfamily \label{globals__hx_8cpp_a55460c4dc172dab2f60b1e2f0bf23bed} 
+float map\+Float (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{in\+\_\+min}{, }\item[{float}]{in\+\_\+max}{, }\item[{float}]{out\+\_\+min}{, }\item[{float}]{out\+\_\+max}{}\end{DoxyParamCaption})}
+
+
+
+Maps a float value from one range to another. 
+
+Similar to the Arduino {\ttfamily map()} function, but supports floating-\/point numbers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Input value to map. \\
+\hline
+{\em in\+\_\+min} & Lower bound of the input range. \\
+\hline
+{\em in\+\_\+max} & Upper bound of the input range. \\
+\hline
+{\em out\+\_\+min} & Lower bound of the output range. \\
+\hline
+{\em out\+\_\+max} & Upper bound of the output range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The mapped value in the output range. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{globals__hx_8cpp_a3c74384ad48f8c601eca48c15d5144e5}\index{globals\_hx.cpp@{globals\_hx.cpp}!actualCountdown@{actualCountdown}}
+\index{actualCountdown@{actualCountdown}!globals\_hx.cpp@{globals\_hx.cpp}}
+\doxysubsubsection{\texorpdfstring{actualCountdown}{actualCountdown}}
+{\footnotesize\ttfamily \label{globals__hx_8cpp_a3c74384ad48f8c601eca48c15d5144e5} 
+\mbox{\hyperlink{struct_countdown}{Countdown}} actual\+Countdown = \{ 0, 0 \}}
+
+
+
+Tracks the current countdown timer. 
+
+This variable is used to store the remaining time for the heating operation. \Hypertarget{globals__hx_8cpp_a9ed253ac67d95c3b86eee9bdd2acc62c}\index{globals\_hx.cpp@{globals\_hx.cpp}!actualHeatingValue@{actualHeatingValue}}
+\index{actualHeatingValue@{actualHeatingValue}!globals\_hx.cpp@{globals\_hx.cpp}}
+\doxysubsubsection{\texorpdfstring{actualHeatingValue}{actualHeatingValue}}
+{\footnotesize\ttfamily \label{globals__hx_8cpp_a9ed253ac67d95c3b86eee9bdd2acc62c} 
+\mbox{\hyperlink{struct_heating_values}{Heating\+Values}} actual\+Heating\+Value = \{ 0, 0 \}}
+
+
+
+Holds the current heating values (temperature and humidity). 
+
+This variable is used to track the actual temperature and humidity values in real-\/time. \Hypertarget{globals__hx_8cpp_ad3b99bea74e0b1913eb0d76ddccd0f15}\index{globals\_hx.cpp@{globals\_hx.cpp}!materialNames@{materialNames}}
+\index{materialNames@{materialNames}!globals\_hx.cpp@{globals\_hx.cpp}}
+\doxysubsubsection{\texorpdfstring{materialNames}{materialNames}}
+{\footnotesize\ttfamily \label{globals__hx_8cpp_ad3b99bea74e0b1913eb0d76ddccd0f15} 
+String material\+Names\mbox{[}\mbox{\hyperlink{group___material___config_gaac0667ed99a719112490b27b6dcfb133}{\+\_\+\+MATERIAL\+\_\+\+COUNT}}\mbox{]}}
+
+
+
+Array of material names derived from {\ttfamily material\+Presets}. 
+
+This array is populated for use in an LCD item list, containing the names of all supported materials. \Hypertarget{globals__hx_8cpp_ab1d9afab7c0378a5e02013d6798c012f}\index{globals\_hx.cpp@{globals\_hx.cpp}!materialPresets@{materialPresets}}
+\index{materialPresets@{materialPresets}!globals\_hx.cpp@{globals\_hx.cpp}}
+\doxysubsubsection{\texorpdfstring{materialPresets}{materialPresets}}
+{\footnotesize\ttfamily \label{globals__hx_8cpp_ab1d9afab7c0378a5e02013d6798c012f} 
+\mbox{\hyperlink{struct_material_preset}{Material\+Preset}} material\+Presets\mbox{[}\mbox{\hyperlink{group___material___config_gaac0667ed99a719112490b27b6dcfb133}{\+\_\+\+MATERIAL\+\_\+\+COUNT}}\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}PLA"{}},\ \mbox{\hyperlink{group___material___config_ga8787edcefcffcaa1491e31e0cdc68150}{\_PLA\_PRESET}}\ \},\ \ \ }
+\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}PETG"{}},\ \mbox{\hyperlink{group___material___config_ga2acca300bf25aa446636b2ab5dfec9c1}{\_PETG\_PRESET}}\ \},\ }
+\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}ASA"{}},\ \mbox{\hyperlink{group___material___config_ga4b04a678f9d64d87178771f75d18ad51}{\_ASA\_PRESET}}\ \},\ \ \ }
+\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}ABS"{}},\ \mbox{\hyperlink{group___material___config_gac95cae9a620800d60c890b57fa7eedc2}{\_ABS\_PRESET}}\ \},\ \ \ }
+\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}PP"{}},\ \mbox{\hyperlink{group___material___config_ga0419e0b1ec6cb533c383f18999384dcf}{\_PP\_PRESET}}\ \},\ \ \ \ \ }
+\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}PA"{}},\ \mbox{\hyperlink{group___material___config_ga9e7fabad66d3f07106b3be4ab39bde01}{\_PA\_PRESET}}\ \},\ \ \ \ \ }
+\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}PC"{}},\ \mbox{\hyperlink{group___material___config_ga4133b82b21325d17862721a3c82f6dde}{\_PC\_PRESET}}\ \},\ \ \ \ \ }
+\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}TPU"{}},\ \mbox{\hyperlink{group___material___config_gac46fc0b032e054a56078bcc668ab6111}{\_TPU\_PRESET}}\ \}\ \ \ \ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Array of material presets for heating profiles. 
+
+Each entry contains a material name and its corresponding heating preset values.\hypertarget{globals__hx_8h_autotoc_md17}{}\doxysubsubsubsection{\texorpdfstring{Materials\+:}{Materials\+:}}\label{globals__hx_8h_autotoc_md17}
+
+\begin{DoxyItemize}
+\item {\ttfamily "{}\+PLA"{}}\+: Preset for PLA material.
+\item {\ttfamily "{}\+PETG"{}}\+: Preset for PETG material.
+\item {\ttfamily "{}\+ASA"{}}\+: Preset for ASA material.
+\item {\ttfamily "{}\+ABS"{}}\+: Preset for ABS material.
+\item {\ttfamily "{}\+PP"{}}\+: Preset for PP material.
+\item {\ttfamily "{}\+PA"{}}\+: Preset for PA material.
+\item {\ttfamily "{}\+PC"{}}\+: Preset for PC material.
+\item {\ttfamily "{}\+TPU"{}}\+: Preset for TPU material. 
+\end{DoxyItemize}\Hypertarget{globals__hx_8cpp_a1c520326511c8cb96e6e246b1c168983}\index{globals\_hx.cpp@{globals\_hx.cpp}!targetCountdown@{targetCountdown}}
+\index{targetCountdown@{targetCountdown}!globals\_hx.cpp@{globals\_hx.cpp}}
+\doxysubsubsection{\texorpdfstring{targetCountdown}{targetCountdown}}
+{\footnotesize\ttfamily \label{globals__hx_8cpp_a1c520326511c8cb96e6e246b1c168983} 
+\mbox{\hyperlink{struct_countdown}{Countdown}} target\+Countdown}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{group___heating___config_ga06bb44c452215f122d9d9c2acf08690d}{\_TIME\_PRESET}},\ }
+\DoxyCodeLine{\ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Tracks the target countdown timer. 
+
+This variable is used to store the desired countdown duration for heating. \Hypertarget{globals__hx_8cpp_afb9928ebd3ee1139a026184f7cf7c02e}\index{globals\_hx.cpp@{globals\_hx.cpp}!targetHeatingValue@{targetHeatingValue}}
+\index{targetHeatingValue@{targetHeatingValue}!globals\_hx.cpp@{globals\_hx.cpp}}
+\doxysubsubsection{\texorpdfstring{targetHeatingValue}{targetHeatingValue}}
+{\footnotesize\ttfamily \label{globals__hx_8cpp_afb9928ebd3ee1139a026184f7cf7c02e} 
+\mbox{\hyperlink{struct_heating_values}{Heating\+Values}} target\+Heating\+Value}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{group___heating___config_ga8ee7579b38c7fbd8447ab1bfd808997b}{\_TEMP\_PRESET}},\ }
+\DoxyCodeLine{\ \ \mbox{\hyperlink{group___heating___config_gad40049bb1109af3fb804ea2728671331}{\_HUM\_PRESET}}\ \ \ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Holds the target heating values (temperature and humidity). 
+
+This variable stores the desired setpoints for temperature and humidity. 

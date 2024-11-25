@@ -1,0 +1,170 @@
+\doxysection{pid\+\_\+hx.\+h}
+\hypertarget{pid__hx_8h_source}{}\label{pid__hx_8h_source}\index{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/pid\_hx.h@{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/pid\_hx.h}}
+\mbox{\hyperlink{pid__hx_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ PID\_HX\_H}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ PID\_HX\_H}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_p_i_d__heat_x}{PID\_heatX}}\ \{}
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ lastTime;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{float}\ input,\ output,\ setpoint;\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{float}\ outputSum,\ lastInput;\ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{float}\ kp,\ ki,\ kd;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{int}\ sampleTime;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{float}\ outMin,\ outMax;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{bool}\ inAuto;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{bool}\ pOnE,\ pOnM;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{float}\ pOnEKp,\ pOnMKp;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{int}\ controllerDirection;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{class_p_i_d__heat_x_a31d04aa785b0ed61d1101160d9ace8d3}{PID\_heatX}}(\textcolor{keywordtype}{float}\ Kp,\ \textcolor{keywordtype}{float}\ Ki,\ \textcolor{keywordtype}{float}\ Kd,\ \textcolor{keywordtype}{int}\ ControllerDirection)}
+\DoxyCodeLine{00078\ \ \ \ \ :\ kp(Kp),\ ki(Ki),\ kd(Kd),\ sampleTime(100),\ inAuto(false),\ lastTime(0),}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ outputSum(0),\ lastInput(0),\ pOnE(true),\ pOnM(false),}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ controllerDirection(ControllerDirection),\ setpoint(0),}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ input(0),\ output(0),\ outMin(0),\ outMax(255)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_p_i_d__heat_x_a86d1fe7e48d4a9376f2da5d02b509c4f}{SetTunings}}(Kp,\ Ki,\ Kd);}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_p_i_d__heat_x_a2cfba448e2d7e5a32f974f45d8c9841f}{SetProportionalMode}}(1.0f);}
+\DoxyCodeLine{00084\ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_p_i_d__heat_x_a7c0128d51bb1829f4c400c819f7fb06e}{Compute}}()\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inAuto)\ \textcolor{keywordflow}{return}\ 0;\ \ \textcolor{comment}{//\ No\ computation\ if\ not\ in\ automatic\ mode}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ now\ =\ millis();}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{int}\ timeChange\ =\ now\ -\/\ lastTime;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{if}\ (timeChange\ >=\ sampleTime)\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ error\ and\ derivative}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ error\ =\ setpoint\ -\/\ input;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dInput\ =\ input\ -\/\ lastInput;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ the\ integral\ term}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ outputSum\ +=\ (ki\ *\ error);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \textcolor{comment}{//\ Adjust\ for\ proportional\ on\ measurement\ (if\ enabled)}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pOnM)\ outputSum\ -\/=\ pOnMKp\ *\ dInput;}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \textcolor{comment}{//\ Clamp\ the\ output\ sum\ to\ prevent\ windup}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (outputSum\ >\ outMax)\ outputSum\ =\ outMax;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (outputSum\ <\ outMin)\ outputSum\ =\ outMin;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ final\ PID\ output}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ proportional\ =\ pOnE\ ?\ (pOnEKp\ *\ error)\ :\ 0;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ derivative\ =\ -\/kd\ *\ dInput;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ output\ =\ proportional\ +\ outputSum\ +\ derivative;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \textcolor{comment}{//\ Clamp\ the\ output\ to\ specified\ limits}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (output\ >\ outMax)\ output\ =\ outMax;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (output\ <\ outMin)\ output\ =\ outMin;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \textcolor{comment}{//\ Save\ state\ for\ the\ next\ iteration}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ lastInput\ =\ input;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ lastTime\ =\ now;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;\ \ \textcolor{comment}{//\ Indicate\ that\ new\ values\ were\ computed}}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ \ \textcolor{comment}{//\ No\ new\ computation}}
+\DoxyCodeLine{00132\ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00140\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d__heat_x_a86d1fe7e48d4a9376f2da5d02b509c4f}{SetTunings}}(\textcolor{keywordtype}{float}\ Kp,\ \textcolor{keywordtype}{float}\ Ki,\ \textcolor{keywordtype}{float}\ Kd)\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordflow}{if}\ (Kp\ <\ 0\ ||\ Ki\ <\ 0\ ||\ Kd\ <\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{float}\ sampleTimeInSec\ =\ ((float)sampleTime)\ /\ 1000.0f;}
+\DoxyCodeLine{00144\ \ \ \ \ kp\ =\ Kp;}
+\DoxyCodeLine{00145\ \ \ \ \ ki\ =\ Ki\ *\ sampleTimeInSec;}
+\DoxyCodeLine{00146\ \ \ \ \ kd\ =\ Kd\ /\ sampleTimeInSec;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{comment}{//\ Adjust\ parameters\ for\ reverse\ direction}}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordflow}{if}\ (controllerDirection\ ==\ 1)\ \{\ \ \textcolor{comment}{//\ 1\ =\ reverse}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ kp\ =\ -\/kp;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ ki\ =\ -\/ki;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ kd\ =\ -\/kd;}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{comment}{//\ Update\ proportional\ gains\ based\ on\ current\ proportional\ mode}}
+\DoxyCodeLine{00156\ \ \ \ \ pOnEKp\ =\ pOnE\ ?\ kp\ :\ 0.0f;}
+\DoxyCodeLine{00157\ \ \ \ \ pOnMKp\ =\ pOnM\ ?\ kp\ :\ 0.0f;}
+\DoxyCodeLine{00158\ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00164\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d__heat_x_a2cfba448e2d7e5a32f974f45d8c9841f}{SetProportionalMode}}(\textcolor{keywordtype}{float}\ pOn)\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordflow}{if}\ (pOn\ <\ 0\ ||\ pOn\ >\ 1)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ pOnE\ =\ (pOn\ >\ 0);\ \ \textcolor{comment}{//\ Enable\ proportional\ on\ error\ if\ pOn\ >\ 0}}
+\DoxyCodeLine{00168\ \ \ \ \ pOnM\ =\ (pOn\ <\ 1);\ \ \textcolor{comment}{//\ Enable\ proportional\ on\ measurement\ if\ pOn\ <\ 1}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{comment}{//\ Update\ proportional\ scaling}}
+\DoxyCodeLine{00171\ \ \ \ \ pOnEKp\ =\ pOn\ *\ kp;}
+\DoxyCodeLine{00172\ \ \ \ \ pOnMKp\ =\ (1\ -\/\ pOn)\ *\ kp;}
+\DoxyCodeLine{00173\ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00179\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d__heat_x_a61ba84370712441eb46c3a8c9c272ce6}{SetSampleTime}}(\textcolor{keywordtype}{int}\ newSampleTime)\ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordflow}{if}\ (newSampleTime\ >\ 0)\ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ ratio\ =\ (float)newSampleTime\ /\ (\textcolor{keywordtype}{float})sampleTime;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ ki\ *=\ ratio;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ kd\ /=\ ratio;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ sampleTime\ =\ newSampleTime;}
+\DoxyCodeLine{00185\ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00193\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d__heat_x_a13ee60997142d29f7b9eb6036c9c6097}{SetOutputLimits}}(\textcolor{keywordtype}{float}\ min,\ \textcolor{keywordtype}{float}\ max)\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordflow}{if}\ (min\ >=\ max)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00195\ \ \ \ \ outMin\ =\ min;}
+\DoxyCodeLine{00196\ \ \ \ \ outMax\ =\ max;}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordflow}{if}\ (output\ >\ outMax)\ output\ =\ outMax;}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (output\ <\ outMin)\ output\ =\ outMin;}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordflow}{if}\ (outputSum\ >\ outMax)\ outputSum\ =\ outMax;}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (outputSum\ <\ outMin)\ outputSum\ =\ outMin;}
+\DoxyCodeLine{00203\ \ \ \}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00209\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d__heat_x_affd30c2c5e0b5612d657251b5b137cfd}{SetMode}}(\textcolor{keywordtype}{bool}\ mode)\ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordtype}{bool}\ newAuto\ =\ mode\ ==\ 1;\ \ \textcolor{comment}{//\ 1\ =\ Automatic\ -\/-\/>\ On}}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{if}\ (newAuto\ !=\ inAuto)\ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \mbox{\hyperlink{class_p_i_d__heat_x_a871a611b93054ec42d1289e9ae22a0fd}{Initialize}}();}
+\DoxyCodeLine{00213\ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \ \ inAuto\ =\ newAuto;}
+\DoxyCodeLine{00215\ \ \ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00220\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d__heat_x_a871a611b93054ec42d1289e9ae22a0fd}{Initialize}}()\ \{}
+\DoxyCodeLine{00221\ \ \ \ \ outputSum\ =\ output;}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{if}\ (outputSum\ >\ outMax)\ outputSum\ =\ outMax;}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (outputSum\ <\ outMin)\ outputSum\ =\ outMin;}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ lastInput\ =\ input;}
+\DoxyCodeLine{00226\ \ \ \}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00232\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d__heat_x_ad009f3c2b5762aa9d5764c592d55e550}{SetControllerDirection}}(\textcolor{keywordtype}{int}\ direction)\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ controllerDirection\ =\ direction;}
+\DoxyCodeLine{00234\ \ \ \}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00240\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d__heat_x_a2d8cec01d1e9de3896911d32abeb570c}{SetInput}}(\textcolor{keywordtype}{float}\ newInput)\ \{}
+\DoxyCodeLine{00241\ \ \ \ \ input\ =\ newInput;}
+\DoxyCodeLine{00242\ \ \ \}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00248\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_i_d__heat_x_a0cd034084d7e92fdf8d4937b60b22069}{SetSetpoint}}(\textcolor{keywordtype}{float}\ newSetpoint)\ \{}
+\DoxyCodeLine{00249\ \ \ \ \ setpoint\ =\ newSetpoint;}
+\DoxyCodeLine{00250\ \ \ \}}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00256\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_p_i_d__heat_x_ab39cb16d6eca4dda2d6cee8baaa0bce3}{GetInput}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordflow}{return}\ input;}
+\DoxyCodeLine{00258\ \ \ \}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00264\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_p_i_d__heat_x_ae9dca7d7b969199aa1ceb1002c064f7b}{GetOutput}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00266\ \ \ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00272\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_p_i_d__heat_x_ac96f0e28254643ab69ad1e0fe79700d5}{GetSetpoint}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordflow}{return}\ setpoint;}
+\DoxyCodeLine{00274\ \ \ \}}
+\DoxyCodeLine{00275\ \};}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ PID\_HX\_H}}
+
+\end{DoxyCode}

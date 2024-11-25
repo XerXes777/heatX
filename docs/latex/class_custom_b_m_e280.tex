@@ -1,0 +1,87 @@
+\doxysection{Custom\+BME280 Class Reference}
+\hypertarget{class_custom_b_m_e280}{}\label{class_custom_b_m_e280}\index{CustomBME280@{CustomBME280}}
+
+
+Custom BME280 sensor class for efficient status polling.  
+
+
+
+
+{\ttfamily \#include $<$sensor\+\_\+hx.\+h$>$}
+
+Inheritance diagram for Custom\+BME280\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_custom_b_m_e280}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_custom_b_m_e280_ac9e0d99643161c61dc80b9192e3e8c3a}{read\+Register}} (uint8\+\_\+t reg)
+\begin{DoxyCompactList}\small\item\em Reads a specified register from the BME280 sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Custom BME280 sensor class for efficient status polling. 
+
+This class extends the {\ttfamily Adafruit\+\_\+\+BME280} library to allow direct access to the {\ttfamily read\+Register} function, enabling efficient polling of the {\ttfamily BME280\+\_\+\+REGISTER\+\_\+\+STATUS} register to detect when new sensor data is available.\hypertarget{class_custom_b_m_e280_autotoc_md31}{}\doxysubsubsubsection{\texorpdfstring{Use Case}{Use Case}}\label{class_custom_b_m_e280_autotoc_md31}
+The {\ttfamily read\+Register} method allows high-\/frequency polling of the BME280 sensor\textquotesingle{}s status register (e.\+g., bit 3\+: Measuring) to determine precisely when new data becomes available. The polling interval is managed to balance responsiveness and system efficiency. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_custom_b_m_e280_ac9e0d99643161c61dc80b9192e3e8c3a}\index{CustomBME280@{CustomBME280}!readRegister@{readRegister}}
+\index{readRegister@{readRegister}!CustomBME280@{CustomBME280}}
+\doxysubsubsection{\texorpdfstring{readRegister()}{readRegister()}}
+{\footnotesize\ttfamily \label{class_custom_b_m_e280_ac9e0d99643161c61dc80b9192e3e8c3a} 
+uint8\+\_\+t Custom\+BME280\+::read\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads a specified register from the BME280 sensor. 
+
+This function is intended for high-\/frequency polling of registers, such as {\ttfamily BME280\+\_\+\+REGISTER\+\_\+\+STATUS} to monitor the sensor\textquotesingle{}s state. 
+\begin{DoxyParams}{Parameters}
+{\em reg} & The register address to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value read from the specified register.
+\end{DoxyReturn}
+\hypertarget{class_custom_b_m_e280_autotoc_md32}{}\doxysubsubsubsection{\texorpdfstring{Example Usage}{Example Usage}}\label{class_custom_b_m_e280_autotoc_md32}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_custom_b_m_e280}{CustomBME280}}\ sensor;}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ lastMillis\ =\ 0;}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ currentMillis;}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ sensorIsMeasuring\ =\ 0;}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ lastSensorMeasuringState\ =\ 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{heat_x_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
+\DoxyCodeLine{\ \ Serial.begin(9600);}
+\DoxyCodeLine{\ \ sensor.begin(0x76);\ \textcolor{comment}{//\ Initialize\ with\ the\ sensor's\ I2C\ address}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{heat_x_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
+\DoxyCodeLine{\ \ currentMillis\ =\ millis();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (currentMillis\ -\/\ lastMillis\ >=\ 5)\ \{\ \textcolor{comment}{//\ Poll\ every\ 5\ ms}}
+\DoxyCodeLine{\ \ \ \ lastMillis\ =\ currentMillis;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ uint8\_t\ status\ =\ sensor.\mbox{\hyperlink{class_custom_b_m_e280_ac9e0d99643161c61dc80b9192e3e8c3a}{readRegister}}(BME280\_REGISTER\_STATUS);}
+\DoxyCodeLine{\ \ \ \ sensorIsMeasuring\ =\ status\ \&\ 0x08;\ \ \textcolor{comment}{//\ Bit\ 3:\ Measuring}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (sensorIsMeasuring\ \&\&\ !lastSensorMeasuringState)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}New\ measurement\ started."{}});}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!sensorIsMeasuring\ \&\&\ lastSensorMeasuringState)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}Measurement\ complete,\ new\ data\ available."{}});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ lastSensorMeasuringState\ =\ sensorIsMeasuring;}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kevin\+Hinrichs/\+Documents/\+Arduino/heat\+X/src/\mbox{\hyperlink{sensor__hx_8h}{sensor\+\_\+hx.\+h}}\end{DoxyCompactItemize}

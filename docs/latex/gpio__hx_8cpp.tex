@@ -1,0 +1,65 @@
+\doxysection{C\+:/\+Users/\+Kevin\+Hinrichs/\+Documents/\+Arduino/heat\+X/src/gpio\+\_\+hx.cpp File Reference}
+\hypertarget{gpio__hx_8cpp}{}\label{gpio__hx_8cpp}\index{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/gpio\_hx.cpp@{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/gpio\_hx.cpp}}
+
+
+...  
+
+
+{\ttfamily \#include "{}gpio\+\_\+hx.\+h"{}}\newline
+{\ttfamily \#include "{}globals\+\_\+hx.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gpio__hx_8cpp_a5ded0afaa418d4d5328c95bb82f4f5fb}{setup\+Debug}} ()
+\begin{DoxyCompactList}\small\item\em Initializes debug pins for output and sets them to LOW. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gpio__hx_8cpp_ad4e0c88560cf11558cafaded5334a413}{setup\+Serial}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the serial communication interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+... 
+
+...\hypertarget{gpio__hx_8cpp_autotoc_md18}{}\doxysubsubsubsection{\texorpdfstring{Changelog}{Changelog}}\label{gpio__hx_8cpp_autotoc_md18}
+
+\begin{DoxyItemize}
+\item {\bfseries{2024-\/11-\/08}}\+: Initial version created by Kevin Hinrichs
+\end{DoxyItemize}
+
+\begin{DoxyVersion}{Version}
+0.\+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/11-\/08 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Kevin Hinrichs
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 Kevin Hinrichs, Laurens Vaigt. ~\newline
+ Licensed under the MIT License. See the \href{LICENSE}{\texttt{ LICENSE}} file for details. ~\newline
+ 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gpio__hx_8cpp_a5ded0afaa418d4d5328c95bb82f4f5fb}\index{gpio\_hx.cpp@{gpio\_hx.cpp}!setupDebug@{setupDebug}}
+\index{setupDebug@{setupDebug}!gpio\_hx.cpp@{gpio\_hx.cpp}}
+\doxysubsubsection{\texorpdfstring{setupDebug()}{setupDebug()}}
+{\footnotesize\ttfamily \label{gpio__hx_8cpp_a5ded0afaa418d4d5328c95bb82f4f5fb} 
+void setup\+Debug (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes debug pins for output and sets them to LOW. 
+
+Configures GPIO debug pins for use with a logic analyzer. \Hypertarget{gpio__hx_8cpp_ad4e0c88560cf11558cafaded5334a413}\index{gpio\_hx.cpp@{gpio\_hx.cpp}!setupSerial@{setupSerial}}
+\index{setupSerial@{setupSerial}!gpio\_hx.cpp@{gpio\_hx.cpp}}
+\doxysubsubsection{\texorpdfstring{setupSerial()}{setupSerial()}}
+{\footnotesize\ttfamily \label{gpio__hx_8cpp_ad4e0c88560cf11558cafaded5334a413} 
+void setup\+Serial (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the serial communication interface. 
+
+Configures the serial port with the baud rate {\ttfamily \+\_\+\+SERIAL\+\_\+\+BAUD} (115200), the standard default for ESP32. 

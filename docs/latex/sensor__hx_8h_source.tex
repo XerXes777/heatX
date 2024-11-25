@@ -1,0 +1,21 @@
+\doxysection{sensor\+\_\+hx.\+h}
+\hypertarget{sensor__hx_8h_source}{}\label{sensor__hx_8h_source}\index{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/sensor\_hx.h@{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/sensor\_hx.h}}
+\mbox{\hyperlink{sensor__hx_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ SENSOR\_HX\_H}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ SENSOR\_HX\_H}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <Adafruit\_BME280.h>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_custom_b_m_e280}{CustomBME280}}\ :\ \textcolor{keyword}{public}\ Adafruit\_BME280\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ uint8\_t\ \mbox{\hyperlink{class_custom_b_m_e280_ac9e0d99643161c61dc80b9192e3e8c3a}{readRegister}}(uint8\_t\ reg)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{return}\ read8(reg);}
+\DoxyCodeLine{00079\ \ \ \}}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SENSOR\_HX\_H}}
+
+\end{DoxyCode}

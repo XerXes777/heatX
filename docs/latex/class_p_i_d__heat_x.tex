@@ -1,0 +1,300 @@
+\doxysection{PID\+\_\+heatX Class Reference}
+\hypertarget{class_p_i_d__heat_x}{}\label{class_p_i_d__heat_x}\index{PID\_heatX@{PID\_heatX}}
+
+
+PID controller class for controlling systems based on feedback.  
+
+
+
+
+{\ttfamily \#include $<$pid\+\_\+hx.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_p_i_d__heat_x_a31d04aa785b0ed61d1101160d9ace8d3}{PID\+\_\+heatX}} (float Kp, float Ki, float Kd, int Controller\+Direction)
+\begin{DoxyCompactList}\small\item\em Constructor\+: Initializes the PID controller. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_p_i_d__heat_x_a7c0128d51bb1829f4c400c819f7fb06e}{Compute}} ()
+\begin{DoxyCompactList}\small\item\em Perform PID computation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d__heat_x_a86d1fe7e48d4a9376f2da5d02b509c4f}{Set\+Tunings}} (float Kp, float Ki, float Kd)
+\begin{DoxyCompactList}\small\item\em Sets the PID parameters (Kp, Ki, Kd) and adjusts them for the sample time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d__heat_x_a2cfba448e2d7e5a32f974f45d8c9841f}{Set\+Proportional\+Mode}} (float p\+On)
+\begin{DoxyCompactList}\small\item\em Sets the proportional mode (error, measurement, or a mix). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d__heat_x_a61ba84370712441eb46c3a8c9c272ce6}{Set\+Sample\+Time}} (int new\+Sample\+Time)
+\begin{DoxyCompactList}\small\item\em Sets the sample time for the PID controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d__heat_x_a13ee60997142d29f7b9eb6036c9c6097}{Set\+Output\+Limits}} (float min, float max)
+\begin{DoxyCompactList}\small\item\em Sets the output limits for the PID controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d__heat_x_affd30c2c5e0b5612d657251b5b137cfd}{Set\+Mode}} (bool mode)
+\begin{DoxyCompactList}\small\item\em Enables or disables automatic mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d__heat_x_a871a611b93054ec42d1289e9ae22a0fd}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the PID controller state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d__heat_x_ad009f3c2b5762aa9d5764c592d55e550}{Set\+Controller\+Direction}} (int direction)
+\begin{DoxyCompactList}\small\item\em Sets the control direction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d__heat_x_a2d8cec01d1e9de3896911d32abeb570c}{Set\+Input}} (float new\+Input)
+\begin{DoxyCompactList}\small\item\em Sets the process variable input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_p_i_d__heat_x_a0cd034084d7e92fdf8d4937b60b22069}{Set\+Setpoint}} (float new\+Setpoint)
+\begin{DoxyCompactList}\small\item\em Sets the setpoint. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_p_i_d__heat_x_ab39cb16d6eca4dda2d6cee8baaa0bce3}{Get\+Input}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current input value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_p_i_d__heat_x_ae9dca7d7b969199aa1ceb1002c064f7b}{Get\+Output}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current output value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_p_i_d__heat_x_ac96f0e28254643ab69ad1e0fe79700d5}{Get\+Setpoint}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current setpoint value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+PID controller class for controlling systems based on feedback. 
+
+This class implements a PID (Proportional-\/\+Integral-\/\+Derivative) controller with\+:
+\begin{DoxyItemize}
+\item Support for proportional on error or measurement.
+\item Adjustable sample time, output limits, and tuning parameters.
+\item Automatic or manual modes.
+\end{DoxyItemize}\hypertarget{class_p_i_d__heat_x_autotoc_md28}{}\doxysubsubsubsection{\texorpdfstring{Example Usage}{Example Usage}}\label{class_p_i_d__heat_x_autotoc_md28}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pid__hx_8h}{pid\_hx.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{class_p_i_d__heat_x}{PID\_heatX}}\ temperaturePID(2.0,\ 5.0,\ 1.0,\ 0);\ \ \textcolor{comment}{//\ Kp=2.0,\ Ki=5.0,\ Kd=1.0,\ DIRECT\ control}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{heat_x_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
+\DoxyCodeLine{\ \ Serial.begin(9600);}
+\DoxyCodeLine{\ \ temperaturePID.SetOutputLimits(0,\ 255);\ \ \textcolor{comment}{//\ Set\ output\ range}}
+\DoxyCodeLine{\ \ temperaturePID.SetSampleTime(100);\ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ sample\ time\ to\ 100\ ms}}
+\DoxyCodeLine{\ \ temperaturePID.SetMode(\textcolor{keyword}{true});\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Enable\ automatic\ mode}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{heat_x_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{float}\ currentTemperature\ =\ ReadTemperatureSensor();\ \ \textcolor{comment}{//\ Your\ function\ to\ get\ input}}
+\DoxyCodeLine{\ \ temperaturePID.SetInput(currentTemperature);\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ input}}
+\DoxyCodeLine{\ \ temperaturePID.SetSetpoint(25.0);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Desired\ temperature}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (temperaturePID.Compute())\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Perform\ PID\ computation}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{float}\ controlOutput\ =\ temperaturePID.GetOutput();\ \ \textcolor{comment}{//\ Get\ output}}
+\DoxyCodeLine{\ \ \ \ ApplyHeaterPower(controlOutput);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ output\ to\ heater}}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_p_i_d__heat_x_a31d04aa785b0ed61d1101160d9ace8d3}\index{PID\_heatX@{PID\_heatX}!PID\_heatX@{PID\_heatX}}
+\index{PID\_heatX@{PID\_heatX}!PID\_heatX@{PID\_heatX}}
+\doxysubsubsection{\texorpdfstring{PID\_heatX()}{PID\_heatX()}}
+{\footnotesize\ttfamily \label{class_p_i_d__heat_x_a31d04aa785b0ed61d1101160d9ace8d3} 
+PID\+\_\+heat\+X\+::\+PID\+\_\+heatX (\begin{DoxyParamCaption}\item[{float}]{Kp}{, }\item[{float}]{Ki}{, }\item[{float}]{Kd}{, }\item[{int}]{Controller\+Direction}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor\+: Initializes the PID controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Kp} & Proportional gain. \\
+\hline
+{\em Ki} & Integral gain. \\
+\hline
+{\em Kd} & Derivative gain. \\
+\hline
+{\em Controller\+Direction} & Control direction\+: DIRECT (0) or REVERSE (1). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_p_i_d__heat_x_a7c0128d51bb1829f4c400c819f7fb06e}\index{PID\_heatX@{PID\_heatX}!Compute@{Compute}}
+\index{Compute@{Compute}!PID\_heatX@{PID\_heatX}}
+\doxysubsubsection{\texorpdfstring{Compute()}{Compute()}}
+{\footnotesize\ttfamily \label{class_p_i_d__heat_x_a7c0128d51bb1829f4c400c819f7fb06e} 
+int PID\+\_\+heat\+X\+::\+Compute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Perform PID computation. 
+
+Computes the PID output based on the current setpoint and input. ~\newline
+ This function should be called frequently, preferably in the loop function. ~\newline
+ New computations are performed only after the specified sample time has elapsed. \begin{DoxyReturn}{Returns}
+1 if a new output is computed, 0 otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_p_i_d__heat_x_ab39cb16d6eca4dda2d6cee8baaa0bce3}\index{PID\_heatX@{PID\_heatX}!GetInput@{GetInput}}
+\index{GetInput@{GetInput}!PID\_heatX@{PID\_heatX}}
+\doxysubsubsection{\texorpdfstring{GetInput()}{GetInput()}}
+{\footnotesize\ttfamily \label{class_p_i_d__heat_x_ab39cb16d6eca4dda2d6cee8baaa0bce3} 
+float PID\+\_\+heat\+X\+::\+Get\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current input value. 
+
+\begin{DoxyReturn}{Returns}
+Current process variable value. 
+\end{DoxyReturn}
+\Hypertarget{class_p_i_d__heat_x_ae9dca7d7b969199aa1ceb1002c064f7b}\index{PID\_heatX@{PID\_heatX}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!PID\_heatX@{PID\_heatX}}
+\doxysubsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily \label{class_p_i_d__heat_x_ae9dca7d7b969199aa1ceb1002c064f7b} 
+float PID\+\_\+heat\+X\+::\+Get\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current output value. 
+
+\begin{DoxyReturn}{Returns}
+Current output value. 
+\end{DoxyReturn}
+\Hypertarget{class_p_i_d__heat_x_ac96f0e28254643ab69ad1e0fe79700d5}\index{PID\_heatX@{PID\_heatX}!GetSetpoint@{GetSetpoint}}
+\index{GetSetpoint@{GetSetpoint}!PID\_heatX@{PID\_heatX}}
+\doxysubsubsection{\texorpdfstring{GetSetpoint()}{GetSetpoint()}}
+{\footnotesize\ttfamily \label{class_p_i_d__heat_x_ac96f0e28254643ab69ad1e0fe79700d5} 
+float PID\+\_\+heat\+X\+::\+Get\+Setpoint (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current setpoint value. 
+
+\begin{DoxyReturn}{Returns}
+Current setpoint value. 
+\end{DoxyReturn}
+\Hypertarget{class_p_i_d__heat_x_a871a611b93054ec42d1289e9ae22a0fd}\index{PID\_heatX@{PID\_heatX}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!PID\_heatX@{PID\_heatX}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{class_p_i_d__heat_x_a871a611b93054ec42d1289e9ae22a0fd} 
+void PID\+\_\+heat\+X\+::\+Initialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes the PID controller state. 
+
+\Hypertarget{class_p_i_d__heat_x_ad009f3c2b5762aa9d5764c592d55e550}\index{PID\_heatX@{PID\_heatX}!SetControllerDirection@{SetControllerDirection}}
+\index{SetControllerDirection@{SetControllerDirection}!PID\_heatX@{PID\_heatX}}
+\doxysubsubsection{\texorpdfstring{SetControllerDirection()}{SetControllerDirection()}}
+{\footnotesize\ttfamily \label{class_p_i_d__heat_x_ad009f3c2b5762aa9d5764c592d55e550} 
+void PID\+\_\+heat\+X\+::\+Set\+Controller\+Direction (\begin{DoxyParamCaption}\item[{int}]{direction}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the control direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & Control direction\+: 0 for DIRECT, 1 for REVERSE. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_p_i_d__heat_x_a2d8cec01d1e9de3896911d32abeb570c}\index{PID\_heatX@{PID\_heatX}!SetInput@{SetInput}}
+\index{SetInput@{SetInput}!PID\_heatX@{PID\_heatX}}
+\doxysubsubsection{\texorpdfstring{SetInput()}{SetInput()}}
+{\footnotesize\ttfamily \label{class_p_i_d__heat_x_a2d8cec01d1e9de3896911d32abeb570c} 
+void PID\+\_\+heat\+X\+::\+Set\+Input (\begin{DoxyParamCaption}\item[{float}]{new\+Input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the process variable input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Input} & Current process variable value. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_p_i_d__heat_x_affd30c2c5e0b5612d657251b5b137cfd}\index{PID\_heatX@{PID\_heatX}!SetMode@{SetMode}}
+\index{SetMode@{SetMode}!PID\_heatX@{PID\_heatX}}
+\doxysubsubsection{\texorpdfstring{SetMode()}{SetMode()}}
+{\footnotesize\ttfamily \label{class_p_i_d__heat_x_affd30c2c5e0b5612d657251b5b137cfd} 
+void PID\+\_\+heat\+X\+::\+Set\+Mode (\begin{DoxyParamCaption}\item[{bool}]{mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enables or disables automatic mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & true to enable automatic mode, false for manual mode. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_p_i_d__heat_x_a13ee60997142d29f7b9eb6036c9c6097}\index{PID\_heatX@{PID\_heatX}!SetOutputLimits@{SetOutputLimits}}
+\index{SetOutputLimits@{SetOutputLimits}!PID\_heatX@{PID\_heatX}}
+\doxysubsubsection{\texorpdfstring{SetOutputLimits()}{SetOutputLimits()}}
+{\footnotesize\ttfamily \label{class_p_i_d__heat_x_a13ee60997142d29f7b9eb6036c9c6097} 
+void PID\+\_\+heat\+X\+::\+Set\+Output\+Limits (\begin{DoxyParamCaption}\item[{float}]{min}{, }\item[{float}]{max}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the output limits for the PID controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & Minimum output value. \\
+\hline
+{\em max} & Maximum output value. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_p_i_d__heat_x_a2cfba448e2d7e5a32f974f45d8c9841f}\index{PID\_heatX@{PID\_heatX}!SetProportionalMode@{SetProportionalMode}}
+\index{SetProportionalMode@{SetProportionalMode}!PID\_heatX@{PID\_heatX}}
+\doxysubsubsection{\texorpdfstring{SetProportionalMode()}{SetProportionalMode()}}
+{\footnotesize\ttfamily \label{class_p_i_d__heat_x_a2cfba448e2d7e5a32f974f45d8c9841f} 
+void PID\+\_\+heat\+X\+::\+Set\+Proportional\+Mode (\begin{DoxyParamCaption}\item[{float}]{p\+On}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the proportional mode (error, measurement, or a mix). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+On} & Proportional mode scaling\+: 1.\+0 for full error, 0.\+0 for full measurement. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_p_i_d__heat_x_a61ba84370712441eb46c3a8c9c272ce6}\index{PID\_heatX@{PID\_heatX}!SetSampleTime@{SetSampleTime}}
+\index{SetSampleTime@{SetSampleTime}!PID\_heatX@{PID\_heatX}}
+\doxysubsubsection{\texorpdfstring{SetSampleTime()}{SetSampleTime()}}
+{\footnotesize\ttfamily \label{class_p_i_d__heat_x_a61ba84370712441eb46c3a8c9c272ce6} 
+void PID\+\_\+heat\+X\+::\+Set\+Sample\+Time (\begin{DoxyParamCaption}\item[{int}]{new\+Sample\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the sample time for the PID controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Sample\+Time} & Sample time in milliseconds. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_p_i_d__heat_x_a0cd034084d7e92fdf8d4937b60b22069}\index{PID\_heatX@{PID\_heatX}!SetSetpoint@{SetSetpoint}}
+\index{SetSetpoint@{SetSetpoint}!PID\_heatX@{PID\_heatX}}
+\doxysubsubsection{\texorpdfstring{SetSetpoint()}{SetSetpoint()}}
+{\footnotesize\ttfamily \label{class_p_i_d__heat_x_a0cd034084d7e92fdf8d4937b60b22069} 
+void PID\+\_\+heat\+X\+::\+Set\+Setpoint (\begin{DoxyParamCaption}\item[{float}]{new\+Setpoint}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the setpoint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Setpoint} & Desired setpoint value. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_p_i_d__heat_x_a86d1fe7e48d4a9376f2da5d02b509c4f}\index{PID\_heatX@{PID\_heatX}!SetTunings@{SetTunings}}
+\index{SetTunings@{SetTunings}!PID\_heatX@{PID\_heatX}}
+\doxysubsubsection{\texorpdfstring{SetTunings()}{SetTunings()}}
+{\footnotesize\ttfamily \label{class_p_i_d__heat_x_a86d1fe7e48d4a9376f2da5d02b509c4f} 
+void PID\+\_\+heat\+X\+::\+Set\+Tunings (\begin{DoxyParamCaption}\item[{float}]{Kp}{, }\item[{float}]{Ki}{, }\item[{float}]{Kd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the PID parameters (Kp, Ki, Kd) and adjusts them for the sample time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Kp} & Proportional gain. \\
+\hline
+{\em Ki} & Integral gain. \\
+\hline
+{\em Kd} & Derivative gain. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kevin\+Hinrichs/\+Documents/\+Arduino/heat\+X/src/\mbox{\hyperlink{pid__hx_8h}{pid\+\_\+hx.\+h}}\end{DoxyCompactItemize}

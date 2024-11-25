@@ -1,0 +1,116 @@
+\chapter{Arduino CLI Usage}
+\hypertarget{arduino_cli_usage_page}{}\label{arduino_cli_usage_page}\index{Arduino CLI Usage@{Arduino CLI Usage}}
+A guide on how to compile and upload the heatX project using Arduino CLI.\hypertarget{arduino_cli_usage_page_autotoc_md0}{}\doxysubsubsection{\texorpdfstring{Quick Note for Arduino IDE Users\+:}{Quick Note for Arduino IDE Users\+:}}\label{arduino_cli_usage_page_autotoc_md0}
+If you prefer a graphical interface, the heatX project can be edited and managed in the Arduino IDE. However, the Arduino CLI is designed for advanced users who want to work without an editor or automate the process.\hypertarget{arduino_cli_usage_page_autotoc_md1}{}\doxysubsubsection{\texorpdfstring{Getting Started with Arduino CLI\+:}{Getting Started with Arduino CLI\+:}}\label{arduino_cli_usage_page_autotoc_md1}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Download the heatX Project\+:}} Download the heatX project archive and extract its contents into\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C:\(\backslash\)Users\(\backslash\)<YourUsername>\(\backslash\)Documents\(\backslash\)Arduino}
+
+\end{DoxyCode}
+
+\item {\bfseries{Open Terminal\+:}}
+\begin{DoxyItemize}
+\item Press {\ttfamily Win + R}, type {\ttfamily cmd}, and press {\ttfamily Enter}.
+\item Navigate to the project folder\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ \textcolor{stringliteral}{"{}\%USERPROFILE\%\(\backslash\)Documents\(\backslash\)Arduino"{}}}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+\item {\bfseries{Configure Arduino CLI\+:}} Initialize the Arduino CLI configuration\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{arduino-\/cli\ config\ init\ -\/-\/overwrite}
+
+\end{DoxyCode}
+
+
+Set the directory for platform data\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{arduino-\/cli\ config\ set\ directories.data\ \textcolor{stringliteral}{"{}\%USERPROFILE\%\(\backslash\)Documents\(\backslash\)Arduino\(\backslash\)platforms"{}}}
+
+\end{DoxyCode}
+
+
+Set the directory for temporary downloads\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{arduino-\/cli\ config\ set\ directories.downloads\ \textcolor{stringliteral}{"{}\%USERPROFILE\%\(\backslash\)Documents\(\backslash\)Arduino\(\backslash\)platforms\(\backslash\)temp"{}}}
+
+\end{DoxyCode}
+
+
+Set the directory for your projects\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{arduino-\/cli\ config\ set\ directories.user\ \textcolor{stringliteral}{"{}\%USERPROFILE\%\(\backslash\)Documents\(\backslash\)Arduino"{}}}
+
+\end{DoxyCode}
+
+
+Set the directory for built-\/in libraries\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{arduino-\/cli\ config\ set\ directories.builtin.libraries\ \textcolor{stringliteral}{"{}\%USERPROFILE\%\(\backslash\)Documents\(\backslash\)Arduino\(\backslash\)platforms\(\backslash\)libraries"{}}}
+
+\end{DoxyCode}
+
+\item {\bfseries{Verify the Configuration\+:}} Check the current configuration\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{arduino-\/cli\ config\ dump}
+
+\end{DoxyCode}
+
+\item {\bfseries{Update the Core Index\+:}} Update the list of available cores and platforms\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{arduino-\/cli\ core\ update-\/index}
+
+\end{DoxyCode}
+
+\item {\bfseries{List Connected Boards\+:}} Check if your ESP32-\/\+S3 board is connected\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{arduino-\/cli\ board\ list}
+
+\end{DoxyCode}
+
+
+Example output\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Port\ Protokoll\ Typ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Platinenname\ FQBN\ Kern}
+\DoxyCodeLine{COM5\ serial\ \ \ \ Serial\ Port\ (USB)\ Unbekannt}
+
+\end{DoxyCode}
+ Note the port (e.\+g., {\ttfamily COM5}) for the next steps.
+\item {\bfseries{Compile the heatX Project\+:}} Compile the sketch and store the build artifacts in the {\ttfamily build} directory\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{arduino-\/cli\ compile\ heatX\ -\/-\/clean\ -\/-\/log-\/level\ warn\ -\/-\/log\ -\/-\/build-\/path\ \textcolor{stringliteral}{"{}\%USERPROFILE\%\(\backslash\)Documents\(\backslash\)Arduino\(\backslash\)heatX\(\backslash\)build"{}}}
+
+\end{DoxyCode}
+
+\item {\bfseries{Upload the Firmware\+:}} Upload the compiled firmware to the ESP32-\/\+S3\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{arduino-\/cli\ upload\ heatX\ -\/p\ COM5\ -\/-\/log-\/level\ warn\ -\/-\/log\ -\/-\/input-\/dir\ \textcolor{stringliteral}{"{}\%USERPROFILE\%\(\backslash\)Documents\(\backslash\)Arduino\(\backslash\)heatX\(\backslash\)build"{}}}
+
+\end{DoxyCode}
+
+\item {\bfseries{Monitor the Serial Output\+:}} Open the serial monitor to view the device\textquotesingle{}s output\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{arduino-\/cli\ monitor\ heatX\ -\/p\ COM5\ -\/-\/config\ 115200}
+
+\end{DoxyCode}
+
+\item {\bfseries{Combine Upload and Monitor\+:}} For convenience, you can combine the upload and monitor commands\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{arduino-\/cli\ compile\ heatX\ -\/-\/clean\ -\/-\/log-\/level\ warn\ -\/-\/log\ -\/-\/build-\/path\ \textcolor{stringliteral}{"{}\%USERPROFILE\%\(\backslash\)Documents\(\backslash\)Arduino\(\backslash\)heatX\(\backslash\)build"{}}\ \&\ arduino-\/cli\ upload\ heatX\ -\/p\ COM5\ -\/-\/log-\/level\ warn\ -\/-\/log\ -\/-\/input-\/dir\ \textcolor{stringliteral}{"{}\%USERPROFILE\%\(\backslash\)Documents\(\backslash\)Arduino\(\backslash\)heatX\(\backslash\)build"{}}}
+
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item Press {\ttfamily Ctrl + C} to exit the monitor.
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{arduino_cli_usage_page_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{Notes\+:}{Notes\+:}}\label{arduino_cli_usage_page_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Ensure your board is properly connected and drivers are installed.
+\item Replace {\ttfamily COM5} with the appropriate port for your device.
+\item The Arduino CLI setup is a one-\/time process for your development environment. 
+\end{DoxyItemize}

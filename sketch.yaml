@@ -1,0 +1,18 @@
+profiles:
+  esp32s3_profile:
+    notes: ESP32-S3 project with specific configurations
+    fqbn: esp32:esp32:esp32s3:USBMode=default,FlashSize=16M,PartitionScheme=app3M_fat9M_16MB,DebugLevel=debug,PSRAM=opi,EraseFlash=all
+    platforms:
+      - platform: esp32:esp32 (3.0.7)
+        platform_index_url: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+    libraries:
+      - LiquidCrystal I2C (1.1.2)
+      - LcdMenu (5.3.1)
+      - SimpleRotary (1.1.3)
+      - Adafruit BME280 Library (2.2.4)
+      - Adafruit BusIO (1.16.2)
+      - Adafruit Unified Sensor (1.1.14)
+      - Adafruit NeoPixel (1.12.3)
+      - Buzzer (1.0.0)
+      - ArduinoJson (7.2.1)
+default_profile: esp32s3_profile

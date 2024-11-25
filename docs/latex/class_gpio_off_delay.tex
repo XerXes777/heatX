@@ -1,0 +1,100 @@
+\doxysection{Gpio\+Off\+Delay Class Reference}
+\hypertarget{class_gpio_off_delay}{}\label{class_gpio_off_delay}\index{GpioOffDelay@{GpioOffDelay}}
+
+
+Class to manage GPIO state with off-\/delay functionality.  
+
+
+
+
+{\ttfamily \#include $<$gpio\+\_\+hx.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gpio_off_delay_a294de6fec0146fefa085b5521b64c87c}{Gpio\+Off\+Delay}} (uint8\+\_\+t control\+Pin, unsigned long delay\+Time)
+\begin{DoxyCompactList}\small\item\em Constructor to initialize the GPIO pin and off-\/delay time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gpio_off_delay_a7baf8445d063dd5ade36f03b4f8fc3af}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the state of the GPIO pin based on the off-\/delay logic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gpio_off_delay_a35c46e9f011acb0f8c38129928f81ad3}{control}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the desired state of the GPIO pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to manage GPIO state with off-\/delay functionality. 
+
+This class allows you to control a GPIO pin, ensuring that it stays on for a specified duration (off-\/delay) before turning off when requested.\hypertarget{class_gpio_off_delay_autotoc_md21}{}\doxysubsubsubsection{\texorpdfstring{Example Usage}{Example Usage}}\label{class_gpio_off_delay_autotoc_md21}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_gpio_off_delay}{GpioOffDelay}}\ fanControl(5,\ 3000);\ \ \textcolor{comment}{//\ Control\ GPIO\ pin\ 5\ with\ a\ 3-\/second\ off\ delay}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{heat_x_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
+\DoxyCodeLine{\ \ fanControl.control(\textcolor{keyword}{true});\ \ \ \textcolor{comment}{//\ Turn\ GPIO\ on}}
+\DoxyCodeLine{\ \ delay(5000);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Wait\ for\ 5\ seconds}}
+\DoxyCodeLine{\ \ fanControl.control(\textcolor{keyword}{false});\ \ \textcolor{comment}{//\ Request\ GPIO\ off}}
+\DoxyCodeLine{\ \ fanControl.update();\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ensure\ proper\ state\ management}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/11-\/21 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Kevin Hinrichs 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gpio_off_delay_a294de6fec0146fefa085b5521b64c87c}\index{GpioOffDelay@{GpioOffDelay}!GpioOffDelay@{GpioOffDelay}}
+\index{GpioOffDelay@{GpioOffDelay}!GpioOffDelay@{GpioOffDelay}}
+\doxysubsubsection{\texorpdfstring{GpioOffDelay()}{GpioOffDelay()}}
+{\footnotesize\ttfamily \label{class_gpio_off_delay_a294de6fec0146fefa085b5521b64c87c} 
+Gpio\+Off\+Delay\+::\+Gpio\+Off\+Delay (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{control\+Pin}{, }\item[{unsigned long}]{delay\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor to initialize the GPIO pin and off-\/delay time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em control\+Pin} & The GPIO pin to be controlled. \\
+\hline
+{\em delay\+Time} & The duration of the off delay in milliseconds. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gpio_off_delay_a35c46e9f011acb0f8c38129928f81ad3}\index{GpioOffDelay@{GpioOffDelay}!control@{control}}
+\index{control@{control}!GpioOffDelay@{GpioOffDelay}}
+\doxysubsubsection{\texorpdfstring{control()}{control()}}
+{\footnotesize\ttfamily \label{class_gpio_off_delay_a35c46e9f011acb0f8c38129928f81ad3} 
+void Gpio\+Off\+Delay\+::control (\begin{DoxyParamCaption}\item[{bool}]{state}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the desired state of the GPIO pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The desired state of the GPIO (true = ON, false = OFF). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gpio_off_delay_a7baf8445d063dd5ade36f03b4f8fc3af}\index{GpioOffDelay@{GpioOffDelay}!update@{update}}
+\index{update@{update}!GpioOffDelay@{GpioOffDelay}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_gpio_off_delay_a7baf8445d063dd5ade36f03b4f8fc3af} 
+void Gpio\+Off\+Delay\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the state of the GPIO pin based on the off-\/delay logic. 
+
+This method should be called cyclically to ensure that the off-\/delay mechanism functions correctly. If the GPIO is set to OFF, the method keeps the pin ON until the off-\/delay time has elapsed. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kevin\+Hinrichs/\+Documents/\+Arduino/heat\+X/src/\mbox{\hyperlink{gpio__hx_8h}{gpio\+\_\+hx.\+h}}\end{DoxyCompactItemize}
