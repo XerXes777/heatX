@@ -1,8 +1,0 @@
-# Specify filepatterns you want git to ignore.
-
-build
-doxygen
-*.sublime-workspace
-*.sublime-project
-.gitattributes
-.gitignore
