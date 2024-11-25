@@ -4,3 +4,5 @@ build
 doxygen
 *.sublime-workspace
 *.sublime-project
+.gitattributes
+.gitignore
