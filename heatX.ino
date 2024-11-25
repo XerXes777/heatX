@@ -1,7 +1,9 @@
 /**
  * @file heatX.ino
- * @brief Main implementation for heatX
- * @details This file contains the main logic for controlling the heatX device.
+ *  \~english @brief Main implementation for heatX
+ *  \~german @brief Hauptimplementierung für heatX
+ *  \~english @details This file contains the main logic for controlling the heatX device.
+ *  \~german @details Diese Datei enthält die Hauptlogik zur Steuerung des heatX-Geräts.
  * 
  * ### Changelog
  * - **2024-11-08**: Initial version created by Kevin Hinrichs
@@ -13,7 +15,7 @@
  * @copyright
  * Copyright (c) 2024 Kevin Hinrichs, Laurens Vaigt.  
  * Licensed under the MIT License. See the 
- * <a href="LICENSE" target="_blank">LICENSE</a> file for details.  
+ * <a href="LICENSE" target="_blank">LICENSE</a> file for details.
  */
 
 #include <ItemIntRange.h>
