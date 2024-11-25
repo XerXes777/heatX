@@ -1,7 +1,7 @@
-# HeatX Project
+# heatX Project
 
 ## Introduction
-**HeatX** is a device designed to improve 3D print quality by drying filament and maintaining an optimal filament temperature. This ensures consistent and reliable printing performance, especially when working with moisture-sensitive filaments.
+**heatX** is a device designed to improve 3D print quality by drying filament and maintaining an optimal filament temperature. This ensures consistent and reliable printing performance, especially when working with moisture-sensitive filaments.
 
 ## Features
 - **Filament Drying:** Removes moisture to prevent print defects.
