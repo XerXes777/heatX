@@ -9,5 +9,5 @@
 - **Improved 3D Print Quality:** Ensures consistent results, even with challenging materials.
 
 ## Documentation
-The full project documentation is available online, generated with Doxygen.  
-👉 [View the Documentation](https://<username>.github.io/<repository-name>/html/)
+The full project documentation is available online.  
+👉 [View the Documentation](https://XerXes777.github.io/heatX/html/)
