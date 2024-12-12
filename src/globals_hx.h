@@ -2,7 +2,7 @@
  * @file globals_hx.h
  * @brief Static project information for heatX
  * @details This file contains the all the settings, macros and prototypes
- * 
+ *
  * ### Changelog
  * - **2024-11-08**: Initial version created by Kevin Hinrichs
  *
@@ -11,9 +11,9 @@
  * @author Kevin Hinrichs
  *
  * @copyright
- * Copyright (c) 2024 Kevin Hinrichs, Laurens Vaigt.  
- * Licensed under the MIT License. See the 
- * <a href="LICENSE" target="_blank">LICENSE</a> file for details.  
+ * Copyright (c) 2024 Kevin Hinrichs, Laurens Vaigt.
+ * Licensed under the MIT License. See the
+ * <a href="LICENSE" target="_blank">LICENSE</a> file for details.
  */
 
 #ifndef GLOBALS_HX_H
@@ -31,12 +31,11 @@
  * @brief GPIO pins assigned for debugging purposes.
  * @{
  */
-#define _PIN_DEBUG_CH0 1   ///< GPIO pin for debug
-#define _PIN_DEBUG_CH1 2   ///< GPIO pin for debug
-#define _PIN_DEBUG_CH2 4   ///< GPIO pin for debug
-#define _PIN_DEBUG_CH3 5   ///< GPIO pin for debug
-#define _PIN_DEBUG_CH4 6   ///< GPIO pin for debug
-#define _PIN_DEBUG_POTI 7  ///< GPIO pin for debug
+#define _PIN_DEBUG_POTI 1  ///< GPIO pin for simulate actual temp
+#define _PIN_DEBUG_CH4 4   ///< GPIO pin for debug with logic analyzer
+#define _PIN_DEBUG_CH5 5   ///< GPIO pin for debug with logic analyzer
+#define _PIN_DEBUG_CH6 6   ///< GPIO pin for debug with logic analyzer
+#define _PIN_DEBUG_CH7 7   ///< GPIO pin for debug with logic analyzer
 /** @} */
 
 /** @defgroup PIN_I2C I²C Communication Pins
@@ -65,18 +64,19 @@
 #define _PIN_STOP 15   ///< GPIO pin for the STOP button
 
 #define _PIN_ENC_BUTTON 16  ///< GPIO pin for encoder button
-#define _PIN_ENC_B 17       ///< GPIO pin for encoder B
-#define _PIN_ENC_A 18       ///< GPIO pin for encoder A
+#define _PIN_ENC_DT 17      ///< GPIO pin for encoder DT
+#define _PIN_ENC_CLK 18     ///< GPIO pin for encoder CLK
 /** @} */
 
 /** @defgroup PIN_Output Output Pins
  * @brief GPIO pins assigned for output devices.
  * @{
  */
-#define _PIN_HEATING 21  ///< GPIO pin for heating control
-#define _PIN_FAN 38      ///< GPIO pin for fan control
-#define _PIN_BUZZER 47   ///< GPIO pin for buzzer
-#define _PIN_RGB_LED 48  ///< GPIO pin for RGB LED (requires 5V solder joint!)
+#define _PIN_FAN 4        ///< GPIO pin for fan control
+#define _PIN_HEAT 21      ///< GPIO pin for heating control
+#define _PIN_FAN_HEAT 38  ///< GPIO pin for fan heating control
+#define _PIN_BUZZER 47    ///< GPIO pin for buzzer
+#define _PIN_RGB_LED 48   ///< GPIO pin for RGB LED (requires 5V solder joint!)
 /** @} */
 
 /** @} */  // End of GPIO_Config
@@ -84,7 +84,7 @@
 /**
  * @defgroup Peripheral_Config Peripheral Configuration
  * @brief Configuration for connected peripherals, such as sensors.
- * 
+ *
  * This section defines addresses and other settings for peripherals
  * connected to the project.
  * @{
@@ -95,9 +95,9 @@
  * @brief Macros for configuring the LCD display.
  * @{
  */
-#define _LCD_I2C_ADDRESS 0x27  ///< I²C address for the LCD
-#define _LCD_ROWS 4            ///< Number of rows on the LCD
-#define _LCD_COLS 20           ///< Number of columns on the LCD
+#define _LCD_ADDRESS (0x7c >> 1)
+#define _LCD_ROWS 2   ///< Number of rows on the LCD
+#define _LCD_COLS 16  ///< Number of columns on the LCD
 /** @} */
 
 /**
@@ -129,9 +129,9 @@
  * @brief Configuration for the BME280 temperature sensor.
  * @{
  */
-#define _TEMPSENSOR_I2C_ADDRESS_1 0x76  ///< I2C first address for the BME280 sensor
-#define _TEMPSENSOR_I2C_ADDRESS_2 0x77  ///< I2C sec address for the BME280 sensor
-#define SEALEVELPRESSURE_HPA (1013.25)  ///< Standard sea level pressure in hPa
+#define _TEMPSENSOR_I2C_ADDRESS_1 0x76   ///< I2C first address for the BME280 sensor
+#define _TEMPSENSOR_I2C_ADDRESS_2 0x77   ///< I2C sec address for the BME280 sensor
+#define _SEALEVELPRESSURE_HPA (1013.25)  ///< Standard sea level pressure in hPa
 /** @} */
 
 /**
@@ -159,7 +159,8 @@
 #define _TIME_MAX 72    ///< Maximum time in hours
 #define _TIME_PRESET 5  ///< Default preset time in hours
 
-#define _FAN_OFFDELAY 3000  ///< Fan delay time in milliseconds
+#define _FAN_OFFDELAY 6000       ///< Fan delay time in milliseconds
+#define _FAN_HEAT_OFFDELAY 3000  ///< Fan heat delay time in milliseconds
 /** @} */
 
 /**
@@ -228,7 +229,7 @@ enum enumMenuState {
   MENU_INFO       ///< Info page.
 };
 
-/** 
+/**
  * @brief Represents the state of the menu.
  */
 typedef struct {
@@ -236,7 +237,7 @@ typedef struct {
   int totalPages;   ///< Total number of pages.
 } MenuState;
 
-/** 
+/**
  * @brief Holds data from the BME280 sensor.
  */
 typedef struct {
@@ -248,7 +249,7 @@ typedef struct {
 } SensorData;
 
 
-/** 
+/**
  * @brief Contains target values for heating and humidity control.
  */
 typedef struct {
@@ -256,7 +257,7 @@ typedef struct {
   int humidity;     ///< Target humidity (%).
 } HeatingValues;
 
-/** 
+/**
  * @brief Represents a countdown timer.
  */
 typedef struct {
@@ -264,7 +265,7 @@ typedef struct {
   int minutes;  ///< Countdown minutes.
 } Countdown;
 
-/** 
+/**
  * @brief Represents a material preset for heating configuration.
  */
 typedef struct {
@@ -321,7 +322,7 @@ extern String materialNames[_MATERIAL_COUNT];
 /**
  * @brief Maps a float value from one range to another.
  * @details Similar to the Arduino `map()` function, but supports floating-point numbers.
- * 
+ *
  * @param x Input value to map.
  * @param in_min Lower bound of the input range.
  * @param in_max Upper bound of the input range.
