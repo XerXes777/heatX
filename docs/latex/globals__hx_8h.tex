@@ -22,18 +22,16 @@ struct \mbox{\hyperlink{struct_material_preset}{Material\+Preset}}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{group___p_i_n___debug_ga96846bfd4c30901ee754fc642015696a}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+CH0}}~1
-\begin{DoxyCompactList}\small\item\em GPIO pin for debug. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___p_i_n___debug_ga91817955e4f5ab04601776eb2b84b52b}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+CH1}}~2
-\begin{DoxyCompactList}\small\item\em GPIO pin for debug. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___p_i_n___debug_gac29a59a415b6f48afdea0c66f3048295}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+CH2}}~4
-\begin{DoxyCompactList}\small\item\em GPIO pin for debug. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___p_i_n___debug_ga8d62bb91969566af4610dad55461afba}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+CH3}}~5
-\begin{DoxyCompactList}\small\item\em GPIO pin for debug. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___p_i_n___debug_gac09cabd8933f8e06f82ced755ac9fee4}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+CH4}}~6
-\begin{DoxyCompactList}\small\item\em GPIO pin for debug. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___p_i_n___debug_ga7f6af44a91b62659762fc0adc1d123d1}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+POTI}}~7
-\begin{DoxyCompactList}\small\item\em GPIO pin for debug. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___debug_ga7f6af44a91b62659762fc0adc1d123d1}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+POTI}}~1
+\begin{DoxyCompactList}\small\item\em GPIO pin for simulate actual temp. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___debug_gac09cabd8933f8e06f82ced755ac9fee4}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+CH4}}~4
+\begin{DoxyCompactList}\small\item\em GPIO pin for debug with logic analyzer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___debug_ga7da50bbf1941fc19fa08f6e876a81e22}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+CH5}}~5
+\begin{DoxyCompactList}\small\item\em GPIO pin for debug with logic analyzer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___debug_ga2cdb395bd3538fa5136c692db4d32a2a}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+CH6}}~6
+\begin{DoxyCompactList}\small\item\em GPIO pin for debug with logic analyzer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___debug_gacb9ef6f7db4fecd20a51c8f8a9c82639}{\+\_\+\+PIN\+\_\+\+DEBUG\+\_\+\+CH7}}~7
+\begin{DoxyCompactList}\small\item\em GPIO pin for debug with logic analyzer. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___p_i_n___i2_c_gae0daf9824065bac09748eabf1a9523e9}{\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SDA}}~8
 \begin{DoxyCompactList}\small\item\em GPIO pin for I²C SDA (data line) \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___p_i_n___i2_c_gab534e39d9b5744e5a4020717dd501eb5}{\+\_\+\+PIN\+\_\+\+I2\+C\+\_\+\+SCL}}~9
@@ -52,23 +50,25 @@ struct \mbox{\hyperlink{struct_material_preset}{Material\+Preset}}
 \begin{DoxyCompactList}\small\item\em GPIO pin for the STOP button. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___p_i_n___control_ga477d705367d4012ee7117892e2e8f3a3}{\+\_\+\+PIN\+\_\+\+ENC\+\_\+\+BUTTON}}~16
 \begin{DoxyCompactList}\small\item\em GPIO pin for encoder button. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___p_i_n___control_ga41c71b8478c20e05b798ff18df68ef00}{\+\_\+\+PIN\+\_\+\+ENC\+\_\+B}}~17
-\begin{DoxyCompactList}\small\item\em GPIO pin for encoder B. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___p_i_n___control_ga774acabbbfb3ffed1a0cf86ee28adf9c}{\+\_\+\+PIN\+\_\+\+ENC\+\_\+A}}~18
-\begin{DoxyCompactList}\small\item\em GPIO pin for encoder A. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___p_i_n___output_ga4fc1f0684e28426ebe7bf4acf8defa3d}{\+\_\+\+PIN\+\_\+\+HEATING}}~21
-\begin{DoxyCompactList}\small\item\em GPIO pin for heating control. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___p_i_n___output_ga664bcbe0fe4c70da3daaa149423b4160}{\+\_\+\+PIN\+\_\+\+FAN}}~38
+\#define \mbox{\hyperlink{group___p_i_n___control_ga52d4a0d78596e479c33c7312b3be6958}{\+\_\+\+PIN\+\_\+\+ENC\+\_\+\+DT}}~17
+\begin{DoxyCompactList}\small\item\em GPIO pin for encoder DT. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___control_gacd680cec2326a44fe1a8f6bce3b075db}{\+\_\+\+PIN\+\_\+\+ENC\+\_\+\+CLK}}~18
+\begin{DoxyCompactList}\small\item\em GPIO pin for encoder CLK. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___output_ga664bcbe0fe4c70da3daaa149423b4160}{\+\_\+\+PIN\+\_\+\+FAN}}~4
 \begin{DoxyCompactList}\small\item\em GPIO pin for fan control. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___output_gac364e7130cfe697c0ac3f1ebf59e3fd9}{\+\_\+\+PIN\+\_\+\+HEAT}}~21
+\begin{DoxyCompactList}\small\item\em GPIO pin for heating control. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___p_i_n___output_gaa7d4202003c7d19e29458694ec8a281a}{\+\_\+\+PIN\+\_\+\+FAN\+\_\+\+HEAT}}~38
+\begin{DoxyCompactList}\small\item\em GPIO pin for fan heating control. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___p_i_n___output_ga2a188d6efba2a679644a338795dbc736}{\+\_\+\+PIN\+\_\+\+BUZZER}}~47
 \begin{DoxyCompactList}\small\item\em GPIO pin for buzzer. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___p_i_n___output_gac5f0bf08977aaead0d2600a221e3e298}{\+\_\+\+PIN\+\_\+\+RGB\+\_\+\+LED}}~48
 \begin{DoxyCompactList}\small\item\em GPIO pin for RGB LED (requires 5V solder joint!) \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___l_c_d___config_gadfed1bd46db6294233cb205e679ab88d}{\+\_\+\+LCD\+\_\+\+I2\+C\+\_\+\+ADDRESS}}~0x27
-\begin{DoxyCompactList}\small\item\em I²C address for the LCD. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___l_c_d___config_ga1279ed244a3b216bb5cc0ebb7f30948d}{\+\_\+\+LCD\+\_\+\+ROWS}}~4
+\#define \mbox{\hyperlink{group___l_c_d___config_gadcba4172e92d84d317509426476185fd}{\+\_\+\+LCD\+\_\+\+ADDRESS}}~(0x7c $>$$>$ 1)
+\item 
+\#define \mbox{\hyperlink{group___l_c_d___config_ga1279ed244a3b216bb5cc0ebb7f30948d}{\+\_\+\+LCD\+\_\+\+ROWS}}~2
 \begin{DoxyCompactList}\small\item\em Number of rows on the LCD. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___l_c_d___config_ga83372468204dd8f50d7e5afdc372e3f8}{\+\_\+\+LCD\+\_\+\+COLS}}~20
+\#define \mbox{\hyperlink{group___l_c_d___config_ga83372468204dd8f50d7e5afdc372e3f8}{\+\_\+\+LCD\+\_\+\+COLS}}~16
 \begin{DoxyCompactList}\small\item\em Number of columns on the LCD. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___serial___config_gacc3b3c3178068fd096e20b5268d2fb40}{\+\_\+\+SERIAL\+\_\+\+BAUD}}~115200
 \begin{DoxyCompactList}\small\item\em Baud rate for serial communication. \end{DoxyCompactList}\item 
@@ -80,7 +80,7 @@ struct \mbox{\hyperlink{struct_material_preset}{Material\+Preset}}
 \begin{DoxyCompactList}\small\item\em I2C first address for the BME280 sensor. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___temperature___sensor_gadd1f69e584523621166082ba7b9fdcaa}{\+\_\+\+TEMPSENSOR\+\_\+\+I2\+C\+\_\+\+ADDRESS\+\_\+2}}~0x77
 \begin{DoxyCompactList}\small\item\em I2C sec address for the BME280 sensor. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___temperature___sensor_ga3fd1be5675628ccdd1cd809ee995b2e7}{SEALEVELPRESSURE\+\_\+\+HPA}}~(1013.\+25)
+\#define \mbox{\hyperlink{group___temperature___sensor_ga9d3874b5395b023e4a5ec081e42304d2}{\+\_\+\+SEALEVELPRESSURE\+\_\+\+HPA}}~(1013.\+25)
 \begin{DoxyCompactList}\small\item\em Standard sea level pressure in h\+Pa. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___heating___config_gab94ad1d90ce4e427a510019a4ecf021a}{\+\_\+\+PWM\+\_\+\+FREQUENCY}}~5000
 \begin{DoxyCompactList}\small\item\em PWM frequency in Hz. \end{DoxyCompactList}\item 
@@ -112,8 +112,10 @@ struct \mbox{\hyperlink{struct_material_preset}{Material\+Preset}}
 \begin{DoxyCompactList}\small\item\em Maximum time in hours. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___heating___config_ga06bb44c452215f122d9d9c2acf08690d}{\+\_\+\+TIME\+\_\+\+PRESET}}~5
 \begin{DoxyCompactList}\small\item\em Default preset time in hours. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___heating___config_gaea4ded38812e550fcd4a1763808e67fa}{\+\_\+\+FAN\+\_\+\+OFFDELAY}}~3000
+\#define \mbox{\hyperlink{group___heating___config_gaea4ded38812e550fcd4a1763808e67fa}{\+\_\+\+FAN\+\_\+\+OFFDELAY}}~6000
 \begin{DoxyCompactList}\small\item\em Fan delay time in milliseconds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_ga4e4fbad8f0f2fc8783b356aeaa471ef4}{\+\_\+\+FAN\+\_\+\+HEAT\+\_\+\+OFFDELAY}}~3000
+\begin{DoxyCompactList}\small\item\em Fan heat delay time in milliseconds. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___p_i_d___config_ga1557935ef4e5c1d6cddc3b23e19f2503}{\+\_\+\+PID\+\_\+\+TEMP\+\_\+\+KP\+\_\+\+PRESET}}~2.\+0
 \begin{DoxyCompactList}\small\item\em Proportional gain for temperature control. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___p_i_d___config_ga86ee09604de200e53bc8bcbd742b89a4}{\+\_\+\+PID\+\_\+\+TEMP\+\_\+\+KI\+\_\+\+PRESET}}~5.\+0
@@ -193,7 +195,7 @@ String \mbox{\hyperlink{globals__hx_8h_ad3b99bea74e0b1913eb0d76ddccd0f15}{materi
 \doxysubsection{Detailed Description}
 Static project information for heatX. 
 
-This file contains the all the settings, macros and prototypes\hypertarget{globals__hx_8h_autotoc_md16}{}\doxysubsubsubsection{\texorpdfstring{Changelog}{Changelog}}\label{globals__hx_8h_autotoc_md16}
+This file contains the all the settings, macros and prototypes\hypertarget{globals__hx_8h_autotoc_md15}{}\doxysubsubsubsection{\texorpdfstring{Changelog}{Changelog}}\label{globals__hx_8h_autotoc_md15}
 
 \begin{DoxyItemize}
 \item {\bfseries{2024-\/11-\/08}}\+: Initial version created by Kevin Hinrichs
@@ -209,9 +211,7 @@ This file contains the all the settings, macros and prototypes\hypertarget{globa
 Kevin Hinrichs
 \end{DoxyAuthor}
 \begin{DoxyCopyright}{Copyright}
-Copyright (c) 2024 Kevin Hinrichs, Laurens Vaigt. ~\newline
- Licensed under the MIT License. See the \href{LICENSE}{\texttt{ LICENSE}} file for details. ~\newline
- 
+Copyright (c) 2024 Kevin Hinrichs, Laurens Vaigt. Licensed under the MIT License. See the \href{LICENSE}{\texttt{ LICENSE}} file for details. 
 \end{DoxyCopyright}
 
 
@@ -326,7 +326,7 @@ This array is populated for use in an LCD item list, containing the names of all
 
 Array of material presets for heating profiles. 
 
-Each entry contains a material name and its corresponding heating preset values.\hypertarget{globals__hx_8h_autotoc_md17}{}\doxysubsubsubsection{\texorpdfstring{Materials\+:}{Materials\+:}}\label{globals__hx_8h_autotoc_md17}
+Each entry contains a material name and its corresponding heating preset values.\hypertarget{globals__hx_8h_autotoc_md16}{}\doxysubsubsubsection{\texorpdfstring{Materials\+:}{Materials\+:}}\label{globals__hx_8h_autotoc_md16}
 
 \begin{DoxyItemize}
 \item {\ttfamily "{}\+PLA"{}}\+: Preset for PLA material.

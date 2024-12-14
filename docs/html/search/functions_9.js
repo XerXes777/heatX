@@ -1,20 +1,4 @@
 var searchData=
 [
-  ['set_5floop_5ftask_5fstack_5fsize_0',['SET_LOOP_TASK_STACK_SIZE',['../heat_x_8ino.html#aa862a8a97a04212776c3ce9f5194c34b',1,'heatX.ino']]],
-  ['setcontrollerdirection_1',['SetControllerDirection',['../class_p_i_d__heat_x.html#ad009f3c2b5762aa9d5764c592d55e550',1,'PID_heatX']]],
-  ['setcountdownheattime_2',['setCountdownHeatTime',['../heat_x_8ino.html#abc1245b577f45e29e0f9cca732c0d174',1,'heatX.ino']]],
-  ['setinput_3',['SetInput',['../class_p_i_d__heat_x.html#a2d8cec01d1e9de3896911d32abeb570c',1,'PID_heatX']]],
-  ['setmode_4',['SetMode',['../class_p_i_d__heat_x.html#affd30c2c5e0b5612d657251b5b137cfd',1,'PID_heatX']]],
-  ['setoutputlimits_5',['SetOutputLimits',['../class_p_i_d__heat_x.html#a13ee60997142d29f7b9eb6036c9c6097',1,'PID_heatX']]],
-  ['setproportionalmode_6',['SetProportionalMode',['../class_p_i_d__heat_x.html#a2cfba448e2d7e5a32f974f45d8c9841f',1,'PID_heatX']]],
-  ['setsampletime_7',['SetSampleTime',['../class_p_i_d__heat_x.html#a61ba84370712441eb46c3a8c9c272ce6',1,'PID_heatX']]],
-  ['setsetpoint_8',['SetSetpoint',['../class_p_i_d__heat_x.html#a0cd034084d7e92fdf8d4937b60b22069',1,'PID_heatX']]],
-  ['setstatichomecontent_9',['setStaticHomeContent',['../heat_x_8ino.html#ab261c6432bfad1677342a93f603d09dd',1,'heatX.ino']]],
-  ['settunings_10',['SetTunings',['../class_p_i_d__heat_x.html#a86d1fe7e48d4a9376f2da5d02b509c4f',1,'PID_heatX']]],
-  ['setup_11',['setup',['../heat_x_8ino.html#a4fc01d736fe50cf5b977f755b675f11d',1,'heatX.ino']]],
-  ['setupdebug_12',['setupDebug',['../gpio__hx_8cpp.html#a5ded0afaa418d4d5328c95bb82f4f5fb',1,'setupDebug():&#160;gpio_hx.cpp'],['../gpio__hx_8h.html#a5ded0afaa418d4d5328c95bb82f4f5fb',1,'setupDebug():&#160;gpio_hx.cpp']]],
-  ['setupheating_13',['setupHeating',['../heat_x_8ino.html#a43737df33f28d8942e3ce8d08bf4d6c7',1,'heatX.ino']]],
-  ['setupheatsensor_14',['setupHeatSensor',['../heat_x_8ino.html#a32562aa49449920491a49c507ad75189',1,'heatX.ino']]],
-  ['setuplcd_15',['setupLcd',['../heat_x_8ino.html#aa328d1e7a632d84c82bd0ca3d0385db1',1,'heatX.ino']]],
-  ['setupserial_16',['setupSerial',['../gpio__hx_8cpp.html#ad4e0c88560cf11558cafaded5334a413',1,'setupSerial():&#160;gpio_hx.cpp'],['../gpio__hx_8h.html#ad4e0c88560cf11558cafaded5334a413',1,'setupSerial():&#160;gpio_hx.cpp']]]
+  ['mapfloat_0',['mapFloat',['../globals__hx_8cpp.html#a55460c4dc172dab2f60b1e2f0bf23bed',1,'mapFloat(float x, float in_min, float in_max, float out_min, float out_max):&#160;globals_hx.cpp'],['../globals__hx_8h.html#a55460c4dc172dab2f60b1e2f0bf23bed',1,'mapFloat(float x, float in_min, float in_max, float out_min, float out_max):&#160;globals_hx.cpp']]]
 ];

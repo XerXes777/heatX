@@ -8,11 +8,11 @@ Macros for configuring the LCD display.
 \doxysubsubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{group___l_c_d___config_gadfed1bd46db6294233cb205e679ab88d}{\+\_\+\+LCD\+\_\+\+I2\+C\+\_\+\+ADDRESS}}~0x27
-\begin{DoxyCompactList}\small\item\em I²C address for the LCD. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___l_c_d___config_ga1279ed244a3b216bb5cc0ebb7f30948d}{\+\_\+\+LCD\+\_\+\+ROWS}}~4
+\#define \mbox{\hyperlink{group___l_c_d___config_gadcba4172e92d84d317509426476185fd}{\+\_\+\+LCD\+\_\+\+ADDRESS}}~(0x7c $>$$>$ 1)
+\item 
+\#define \mbox{\hyperlink{group___l_c_d___config_ga1279ed244a3b216bb5cc0ebb7f30948d}{\+\_\+\+LCD\+\_\+\+ROWS}}~2
 \begin{DoxyCompactList}\small\item\em Number of rows on the LCD. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___l_c_d___config_ga83372468204dd8f50d7e5afdc372e3f8}{\+\_\+\+LCD\+\_\+\+COLS}}~20
+\#define \mbox{\hyperlink{group___l_c_d___config_ga83372468204dd8f50d7e5afdc372e3f8}{\+\_\+\+LCD\+\_\+\+COLS}}~16
 \begin{DoxyCompactList}\small\item\em Number of columns on the LCD. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -22,31 +22,27 @@ Macros for configuring the LCD display.
 
 
 \doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{group___l_c_d___config_gadcba4172e92d84d317509426476185fd}\index{LCD Display Configuration@{LCD Display Configuration}!\_LCD\_ADDRESS@{\_LCD\_ADDRESS}}
+\index{\_LCD\_ADDRESS@{\_LCD\_ADDRESS}!LCD Display Configuration@{LCD Display Configuration}}
+\doxysubsubsubsection{\texorpdfstring{\_LCD\_ADDRESS}{\_LCD\_ADDRESS}}
+{\footnotesize\ttfamily \label{group___l_c_d___config_gadcba4172e92d84d317509426476185fd} 
+\#define \+\_\+\+LCD\+\_\+\+ADDRESS~(0x7c $>$$>$ 1)}
+
 \Hypertarget{group___l_c_d___config_ga83372468204dd8f50d7e5afdc372e3f8}\index{LCD Display Configuration@{LCD Display Configuration}!\_LCD\_COLS@{\_LCD\_COLS}}
 \index{\_LCD\_COLS@{\_LCD\_COLS}!LCD Display Configuration@{LCD Display Configuration}}
 \doxysubsubsubsection{\texorpdfstring{\_LCD\_COLS}{\_LCD\_COLS}}
 {\footnotesize\ttfamily \label{group___l_c_d___config_ga83372468204dd8f50d7e5afdc372e3f8} 
-\#define \+\_\+\+LCD\+\_\+\+COLS~20}
+\#define \+\_\+\+LCD\+\_\+\+COLS~16}
 
 
 
 Number of columns on the LCD. 
 
-\Hypertarget{group___l_c_d___config_gadfed1bd46db6294233cb205e679ab88d}\index{LCD Display Configuration@{LCD Display Configuration}!\_LCD\_I2C\_ADDRESS@{\_LCD\_I2C\_ADDRESS}}
-\index{\_LCD\_I2C\_ADDRESS@{\_LCD\_I2C\_ADDRESS}!LCD Display Configuration@{LCD Display Configuration}}
-\doxysubsubsubsection{\texorpdfstring{\_LCD\_I2C\_ADDRESS}{\_LCD\_I2C\_ADDRESS}}
-{\footnotesize\ttfamily \label{group___l_c_d___config_gadfed1bd46db6294233cb205e679ab88d} 
-\#define \+\_\+\+LCD\+\_\+\+I2\+C\+\_\+\+ADDRESS~0x27}
-
-
-
-I²C address for the LCD. 
-
 \Hypertarget{group___l_c_d___config_ga1279ed244a3b216bb5cc0ebb7f30948d}\index{LCD Display Configuration@{LCD Display Configuration}!\_LCD\_ROWS@{\_LCD\_ROWS}}
 \index{\_LCD\_ROWS@{\_LCD\_ROWS}!LCD Display Configuration@{LCD Display Configuration}}
 \doxysubsubsubsection{\texorpdfstring{\_LCD\_ROWS}{\_LCD\_ROWS}}
 {\footnotesize\ttfamily \label{group___l_c_d___config_ga1279ed244a3b216bb5cc0ebb7f30948d} 
-\#define \+\_\+\+LCD\+\_\+\+ROWS~4}
+\#define \+\_\+\+LCD\+\_\+\+ROWS~2}
 
 
 

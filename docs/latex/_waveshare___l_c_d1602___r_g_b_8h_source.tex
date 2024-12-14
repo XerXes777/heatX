@@ -1,0 +1,106 @@
+\doxysection{Waveshare\+\_\+\+LCD1602\+\_\+\+RGB.\+h}
+\hypertarget{_waveshare___l_c_d1602___r_g_b_8h_source}{}\label{_waveshare___l_c_d1602___r_g_b_8h_source}\index{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/Waveshare\_LCD1602\_RGB.h@{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/Waveshare\_LCD1602\_RGB.h}}
+\mbox{\hyperlink{_waveshare___l_c_d1602___r_g_b_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_Waveshare\_LCD1602\_RGB\_H\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_Waveshare\_LCD1602\_RGB\_H\_\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <inttypes.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Print.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ LCD\_ADDRESS\ \ \ \ \ (0x7c>>1)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ RGB\_ADDRESS\ \ \ \ \ (0xc0>>1)}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ WHITE\ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ RED\ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ GREEN\ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ BLUE\ \ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ REG\_RED\ \ \ \ \ \ \ \ \ 0x04\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ pwm2}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ REG\_GREEN\ \ \ \ \ \ \ 0x03\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ pwm1}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ REG\_BLUE\ \ \ \ \ \ \ \ 0x02\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ pwm0}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ REG\_MODE1\ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ REG\_MODE2\ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ REG\_OUTPUT\ \ \ \ \ \ 0x08}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ LCD\_CLEARDISPLAY\ 0x01}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ LCD\_RETURNHOME\ 0x02}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYMODESET\ 0x04}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYCONTROL\ 0x08}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ LCD\_CURSORSHIFT\ 0x10}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ LCD\_FUNCTIONSET\ 0x20}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ LCD\_SETCGRAMADDR\ 0x40}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ LCD\_SETDDRAMADDR\ 0x80}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYRIGHT\ 0x00}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYLEFT\ 0x02}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYSHIFTINCREMENT\ 0x01}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYSHIFTDECREMENT\ 0x00}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYON\ 0x04}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYOFF\ 0x00}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ LCD\_CURSORON\ 0x02}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ LCD\_CURSOROFF\ 0x00}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ LCD\_BLINKON\ 0x01}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ LCD\_BLINKOFF\ 0x00}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYMOVE\ 0x08}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ LCD\_CURSORMOVE\ 0x00}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ LCD\_MOVERIGHT\ 0x04}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ LCD\_MOVELEFT\ 0x00}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ LCD\_8BITMODE\ 0x10}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ LCD\_4BITMODE\ 0x00}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ LCD\_2LINE\ 0x08}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ LCD\_1LINE\ 0x00}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ LCD\_5x8DOTS\ 0x00}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b}{Waveshare\_LCD1602\_RGB}}}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a0e4a2620aa64d423540416f708e1ff4a}{Waveshare\_LCD1602\_RGB}}(uint8\_t\ lcd\_cols,uint8\_t\ lcd\_rows);}
+\DoxyCodeLine{00082\ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a860832e990e7b4efeb1358c659f0c764}{init}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_aa93ea6ac7d8a671d188a2f60e04d2e4a}{home}}();}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a3c978e7744d62516d386d6fcf18e8692}{display}}();}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_ac8216261f29099dd874323f32c38309e}{command}}(uint8\_t);}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_ad67d5c2cd240558f66dde35e3b4ae1e7}{send}}(uint8\_t\ *data,\ uint8\_t\ len);}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a4b5678b386641784ad8a837b47cd48ec}{setReg}}(uint8\_t\ addr,\ uint8\_t\ data);}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a4343e7375fa75b97752993d69a10bc65}{setRGB}}(uint8\_t\ r,\ uint8\_t\ g,\ uint8\_t\ b);}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a79d59196a93e8858079b783bc2b98170}{setCursor}}(uint8\_t\ col,\ uint8\_t\ row);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a4493945044274c27296733afbfe9cd26}{clear}}();}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a3ce28251b5d43757b258c671339e0104}{BlinkLED}}();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a77ddeee60e66ed639daea3f7f5c89303}{noBlinkLED}}();}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a6f81887b34ba2d05cc37ad74f76b47e2}{write\_char}}(uint8\_t\ value);}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_afb29cc4ae7769b9a6595bec0604d9389}{send\_string}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_af766f8830ecc458442c666f88a76091f}{stopBlink}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a6c3f2821e402deeea3f7ecb4aacc9745}{blink}}();}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a738bd42cfc9fbab40c316c8b8153aeb6}{noCursor}}();}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a20813f5612369c9545037aa9128612da}{cursor}}();}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_af3a0c824e51f32d6a4047654a921fdb3}{scrollDisplayLeft}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a9a5acd8eee87ce82bb5d53dca2720a09}{scrollDisplayRight}}();}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a311b82361cf2cdc405cfebb16f9e5dbe}{leftToRight}}();}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_aa53f72cdffb75e70bc95f784d7bd6d13}{rightToLeft}}();}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_aaa6c23d329f1bfad9f3fca392685c1d4}{noAutoscroll}}();}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_ab6f3e52feab4542750a300147796aa2c}{autoscroll}}();}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a00a96b9894706b5f9828e79b61f0e2ba}{customSymbol}}(uint8\_t\ location,\ uint8\_t\ charmap[]);}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_ae229d003dd29e1d3dcdae411ea545a2d}{setColorWhite}}()\{\mbox{\hyperlink{class_waveshare___l_c_d1602___r_g_b_a4343e7375fa75b97752993d69a10bc65}{setRGB}}(255,\ 255,\ 255);\}}
+\DoxyCodeLine{00108\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ begin(uint8\_t\ cols,\ uint8\_t\ rows);}
+\DoxyCodeLine{00110\ \ \ \ \ uint8\_t\ \_showfunction;}
+\DoxyCodeLine{00111\ \ \ \ \ uint8\_t\ \_showcontrol;}
+\DoxyCodeLine{00112\ \ \ \ \ uint8\_t\ \_showmode;}
+\DoxyCodeLine{00113\ \ \ \ \ uint8\_t\ \_initialized;}
+\DoxyCodeLine{00114\ \ \ \ \ uint8\_t\ \_numlines,\_currline;}
+\DoxyCodeLine{00115\ \ \ \ \ uint8\_t\ \_lcdAddr;}
+\DoxyCodeLine{00116\ \ \ \ \ uint8\_t\ \_RGBAddr;}
+\DoxyCodeLine{00117\ \ \ \ \ uint8\_t\ \_cols;}
+\DoxyCodeLine{00118\ \ \ \ \ uint8\_t\ \_rows;}
+\DoxyCodeLine{00119\ \ \ \ \ uint8\_t\ \_backlightval;}
+\DoxyCodeLine{00120\ \};}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

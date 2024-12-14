@@ -1,0 +1,353 @@
+\doxysection{C\+:/\+Users/\+Kevin\+Hinrichs/\+Documents/\+Arduino/heat\+X/src/\+Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2C.h File Reference}
+\hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h}{}\label{_liquid_crystal___a_i_p31068___i2_c_8h}\index{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/LiquidCrystal\_AIP31068\_I2C.h@{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/LiquidCrystal\_AIP31068\_I2C.h}}
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+{\ttfamily \#include $<$Print.\+h$>$}\newline
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c}{Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2C}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a2e3762a739bed0a17cfdc7e314fbd9aa}{RGB\+\_\+\+ADDRESS}}~(0xc0 $>$$>$ 1)
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a87b537f5fa5c109d3c05c13d6b18f382}{WHITE}}~0
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a8d23feea868a983c8c2b661e1e16972f}{RED}}~1
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_acfbc006ea433ad708fdee3e82996e721}{GREEN}}~2
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a79d10e672abb49ad63eeaa8aaef57c38}{BLUE}}~3
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a536cb6b9337bdc28365d65467b85323c}{REG\+\_\+\+RED}}~0x04
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_ac96ed11272aaf7cec530691ba0edd614}{REG\+\_\+\+GREEN}}~0x03
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_aecc673a9e070db8d16ae3d25f99efc8c}{REG\+\_\+\+BLUE}}~0x02
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a01082c2505bcd579197cb2f1163c352c}{REG\+\_\+\+MODE1}}~0x00
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a80d98ba6dfe312e7cdf817a10a9bfda3}{REG\+\_\+\+MODE2}}~0x01
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a2cb2bb355c8ce0c0fa50b7bc60db2ffa}{REG\+\_\+\+OUTPUT}}~0x08
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_acc3509bc0442b41e2b816555de473ed2}{LCD\+\_\+\+CLEARDISPLAY}}~0x01
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a154c86a887633d0f6d9988e4dbb1f419}{LCD\+\_\+\+RETURNHOME}}~0x02
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a5597e1d5819ea2f0734ad4313abf6703}{LCD\+\_\+\+ENTRYMODESET}}~0x04
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_adfb8b2b8b8a08d7313504d7a4f89d99f}{LCD\+\_\+\+DISPLAYCONTROL}}~0x08
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a61f16a2b7550e4700f7898a7587c5594}{LCD\+\_\+\+CURSORSHIFT}}~0x10
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_aaef882ae70d1f485cd132815d9716111}{LCD\+\_\+\+FUNCTIONSET}}~0x20
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_aae6ea856879c11dee58493184582a52f}{LCD\+\_\+\+SETCGRAMADDR}}~0x40
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a15008b832807a208d9d88c74e6751ebf}{LCD\+\_\+\+SETDDRAMADDR}}~0x80
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a43c26ba2e66880fac95ef640b56873ad}{LCD\+\_\+\+ENTRYRIGHT}}~0x00
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_ae7c6309fce6200bd7526d090a4a84dd0}{LCD\+\_\+\+ENTRYLEFT}}~0x02
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_aa2cf1d0f4a319e53c009cffe1184466c}{LCD\+\_\+\+ENTRYSHIFTINCREMENT}}~0x01
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a049ee97e98d04788c1da9a55590fbe42}{LCD\+\_\+\+ENTRYSHIFTDECREMENT}}~0x00
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a76236ae8317b34bbc98ea56bc0a2639c}{LCD\+\_\+\+DISPLAYON}}~0x04
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a257ebe775cac7140cf82aa40d8ce545a}{LCD\+\_\+\+DISPLAYOFF}}~0x00
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_ab67f0adccde68de88eee0513fdfc4574}{LCD\+\_\+\+CURSORON}}~0x02
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a32b194a3adaa0a0bb69acee2e6a754fa}{LCD\+\_\+\+CURSOROFF}}~0x00
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_ac3b19d4e6553b9bbf18a23387e439206}{LCD\+\_\+\+BLINKON}}~0x01
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a4b28243034cec656b0ed490ba6979752}{LCD\+\_\+\+BLINKOFF}}~0x00
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_ab2f7b67abfac33f610acfd5d7a971f40}{LCD\+\_\+\+DISPLAYMOVE}}~0x08
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_ac21f0302ac4136775877d5f4759e4f74}{LCD\+\_\+\+CURSORMOVE}}~0x00
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_acf5999180233790bb2c9902efde58f7f}{LCD\+\_\+\+MOVERIGHT}}~0x04
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_aafb86adb0dfca1e65d65b2cd1946a009}{LCD\+\_\+\+MOVELEFT}}~0x00
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a59a57ca857dae5d89eb5f2a38c4ac6f0}{LCD\+\_\+8\+BITMODE}}~0x10
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_ab8c35d355d2372090c7a347e961c9224}{LCD\+\_\+4\+BITMODE}}~0x00
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a7987e93538df2819583ba43b81ddbb25}{LCD\+\_\+2\+LINE}}~0x08
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a8c85cf88d8af66a47c42249d81c94641}{LCD\+\_\+1\+LINE}}~0x00
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_abb3210156d88d3fe18c9352eb161fe42}{LCD\+\_\+5x10\+DOTS}}~0x04
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a9ef57e724c1b846dae0f531aff6fb464}{LCD\+\_\+5x8\+DOTS}}~0x00
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_ab5ef25ebfe582f7bf0d93e2770548e2c}{En}}~0b00000000
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a98b6a2661a04ebbc1b3f38da70306814}{Rw}}~0b00000000
+\item 
+\#define \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a345d1a871beb9e772c3bf9ef75412bb5}{Rs}}~0b01000000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a79d10e672abb49ad63eeaa8aaef57c38}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!BLUE@{BLUE}}
+\index{BLUE@{BLUE}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{BLUE}{BLUE}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a79d10e672abb49ad63eeaa8aaef57c38} 
+\#define BLUE~3}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_ab5ef25ebfe582f7bf0d93e2770548e2c}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!En@{En}}
+\index{En@{En}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{En}{En}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_ab5ef25ebfe582f7bf0d93e2770548e2c} 
+\#define En~0b00000000}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_acfbc006ea433ad708fdee3e82996e721}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!GREEN@{GREEN}}
+\index{GREEN@{GREEN}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{GREEN}{GREEN}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_acfbc006ea433ad708fdee3e82996e721} 
+\#define GREEN~2}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a8c85cf88d8af66a47c42249d81c94641}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_1LINE@{LCD\_1LINE}}
+\index{LCD\_1LINE@{LCD\_1LINE}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_1LINE}{LCD\_1LINE}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a8c85cf88d8af66a47c42249d81c94641} 
+\#define LCD\+\_\+1\+LINE~0x00}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a7987e93538df2819583ba43b81ddbb25}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_2LINE@{LCD\_2LINE}}
+\index{LCD\_2LINE@{LCD\_2LINE}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_2LINE}{LCD\_2LINE}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a7987e93538df2819583ba43b81ddbb25} 
+\#define LCD\+\_\+2\+LINE~0x08}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_ab8c35d355d2372090c7a347e961c9224}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_4BITMODE@{LCD\_4BITMODE}}
+\index{LCD\_4BITMODE@{LCD\_4BITMODE}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_4BITMODE}{LCD\_4BITMODE}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_ab8c35d355d2372090c7a347e961c9224} 
+\#define LCD\+\_\+4\+BITMODE~0x00}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_abb3210156d88d3fe18c9352eb161fe42}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_5x10DOTS@{LCD\_5x10DOTS}}
+\index{LCD\_5x10DOTS@{LCD\_5x10DOTS}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_5x10DOTS}{LCD\_5x10DOTS}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_abb3210156d88d3fe18c9352eb161fe42} 
+\#define LCD\+\_\+5x10\+DOTS~0x04}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a9ef57e724c1b846dae0f531aff6fb464}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_5x8DOTS@{LCD\_5x8DOTS}}
+\index{LCD\_5x8DOTS@{LCD\_5x8DOTS}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_5x8DOTS}{LCD\_5x8DOTS}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a9ef57e724c1b846dae0f531aff6fb464} 
+\#define LCD\+\_\+5x8\+DOTS~0x00}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a59a57ca857dae5d89eb5f2a38c4ac6f0}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_8BITMODE@{LCD\_8BITMODE}}
+\index{LCD\_8BITMODE@{LCD\_8BITMODE}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_8BITMODE}{LCD\_8BITMODE}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a59a57ca857dae5d89eb5f2a38c4ac6f0} 
+\#define LCD\+\_\+8\+BITMODE~0x10}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a4b28243034cec656b0ed490ba6979752}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_BLINKOFF@{LCD\_BLINKOFF}}
+\index{LCD\_BLINKOFF@{LCD\_BLINKOFF}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_BLINKOFF}{LCD\_BLINKOFF}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a4b28243034cec656b0ed490ba6979752} 
+\#define LCD\+\_\+\+BLINKOFF~0x00}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_ac3b19d4e6553b9bbf18a23387e439206}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_BLINKON@{LCD\_BLINKON}}
+\index{LCD\_BLINKON@{LCD\_BLINKON}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_BLINKON}{LCD\_BLINKON}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_ac3b19d4e6553b9bbf18a23387e439206} 
+\#define LCD\+\_\+\+BLINKON~0x01}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_acc3509bc0442b41e2b816555de473ed2}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_CLEARDISPLAY@{LCD\_CLEARDISPLAY}}
+\index{LCD\_CLEARDISPLAY@{LCD\_CLEARDISPLAY}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_CLEARDISPLAY}{LCD\_CLEARDISPLAY}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_acc3509bc0442b41e2b816555de473ed2} 
+\#define LCD\+\_\+\+CLEARDISPLAY~0x01}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_ac21f0302ac4136775877d5f4759e4f74}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_CURSORMOVE@{LCD\_CURSORMOVE}}
+\index{LCD\_CURSORMOVE@{LCD\_CURSORMOVE}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_CURSORMOVE}{LCD\_CURSORMOVE}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_ac21f0302ac4136775877d5f4759e4f74} 
+\#define LCD\+\_\+\+CURSORMOVE~0x00}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a32b194a3adaa0a0bb69acee2e6a754fa}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_CURSOROFF@{LCD\_CURSOROFF}}
+\index{LCD\_CURSOROFF@{LCD\_CURSOROFF}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_CURSOROFF}{LCD\_CURSOROFF}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a32b194a3adaa0a0bb69acee2e6a754fa} 
+\#define LCD\+\_\+\+CURSOROFF~0x00}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_ab67f0adccde68de88eee0513fdfc4574}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_CURSORON@{LCD\_CURSORON}}
+\index{LCD\_CURSORON@{LCD\_CURSORON}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_CURSORON}{LCD\_CURSORON}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_ab67f0adccde68de88eee0513fdfc4574} 
+\#define LCD\+\_\+\+CURSORON~0x02}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a61f16a2b7550e4700f7898a7587c5594}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_CURSORSHIFT@{LCD\_CURSORSHIFT}}
+\index{LCD\_CURSORSHIFT@{LCD\_CURSORSHIFT}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_CURSORSHIFT}{LCD\_CURSORSHIFT}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a61f16a2b7550e4700f7898a7587c5594} 
+\#define LCD\+\_\+\+CURSORSHIFT~0x10}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_adfb8b2b8b8a08d7313504d7a4f89d99f}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_DISPLAYCONTROL@{LCD\_DISPLAYCONTROL}}
+\index{LCD\_DISPLAYCONTROL@{LCD\_DISPLAYCONTROL}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_DISPLAYCONTROL}{LCD\_DISPLAYCONTROL}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_adfb8b2b8b8a08d7313504d7a4f89d99f} 
+\#define LCD\+\_\+\+DISPLAYCONTROL~0x08}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_ab2f7b67abfac33f610acfd5d7a971f40}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_DISPLAYMOVE@{LCD\_DISPLAYMOVE}}
+\index{LCD\_DISPLAYMOVE@{LCD\_DISPLAYMOVE}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_DISPLAYMOVE}{LCD\_DISPLAYMOVE}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_ab2f7b67abfac33f610acfd5d7a971f40} 
+\#define LCD\+\_\+\+DISPLAYMOVE~0x08}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a257ebe775cac7140cf82aa40d8ce545a}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_DISPLAYOFF@{LCD\_DISPLAYOFF}}
+\index{LCD\_DISPLAYOFF@{LCD\_DISPLAYOFF}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_DISPLAYOFF}{LCD\_DISPLAYOFF}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a257ebe775cac7140cf82aa40d8ce545a} 
+\#define LCD\+\_\+\+DISPLAYOFF~0x00}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a76236ae8317b34bbc98ea56bc0a2639c}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_DISPLAYON@{LCD\_DISPLAYON}}
+\index{LCD\_DISPLAYON@{LCD\_DISPLAYON}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_DISPLAYON}{LCD\_DISPLAYON}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a76236ae8317b34bbc98ea56bc0a2639c} 
+\#define LCD\+\_\+\+DISPLAYON~0x04}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_ae7c6309fce6200bd7526d090a4a84dd0}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_ENTRYLEFT@{LCD\_ENTRYLEFT}}
+\index{LCD\_ENTRYLEFT@{LCD\_ENTRYLEFT}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_ENTRYLEFT}{LCD\_ENTRYLEFT}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_ae7c6309fce6200bd7526d090a4a84dd0} 
+\#define LCD\+\_\+\+ENTRYLEFT~0x02}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a5597e1d5819ea2f0734ad4313abf6703}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_ENTRYMODESET@{LCD\_ENTRYMODESET}}
+\index{LCD\_ENTRYMODESET@{LCD\_ENTRYMODESET}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_ENTRYMODESET}{LCD\_ENTRYMODESET}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a5597e1d5819ea2f0734ad4313abf6703} 
+\#define LCD\+\_\+\+ENTRYMODESET~0x04}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a43c26ba2e66880fac95ef640b56873ad}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_ENTRYRIGHT@{LCD\_ENTRYRIGHT}}
+\index{LCD\_ENTRYRIGHT@{LCD\_ENTRYRIGHT}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_ENTRYRIGHT}{LCD\_ENTRYRIGHT}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a43c26ba2e66880fac95ef640b56873ad} 
+\#define LCD\+\_\+\+ENTRYRIGHT~0x00}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a049ee97e98d04788c1da9a55590fbe42}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_ENTRYSHIFTDECREMENT@{LCD\_ENTRYSHIFTDECREMENT}}
+\index{LCD\_ENTRYSHIFTDECREMENT@{LCD\_ENTRYSHIFTDECREMENT}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_ENTRYSHIFTDECREMENT}{LCD\_ENTRYSHIFTDECREMENT}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a049ee97e98d04788c1da9a55590fbe42} 
+\#define LCD\+\_\+\+ENTRYSHIFTDECREMENT~0x00}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_aa2cf1d0f4a319e53c009cffe1184466c}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_ENTRYSHIFTINCREMENT@{LCD\_ENTRYSHIFTINCREMENT}}
+\index{LCD\_ENTRYSHIFTINCREMENT@{LCD\_ENTRYSHIFTINCREMENT}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_ENTRYSHIFTINCREMENT}{LCD\_ENTRYSHIFTINCREMENT}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_aa2cf1d0f4a319e53c009cffe1184466c} 
+\#define LCD\+\_\+\+ENTRYSHIFTINCREMENT~0x01}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_aaef882ae70d1f485cd132815d9716111}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_FUNCTIONSET@{LCD\_FUNCTIONSET}}
+\index{LCD\_FUNCTIONSET@{LCD\_FUNCTIONSET}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_FUNCTIONSET}{LCD\_FUNCTIONSET}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_aaef882ae70d1f485cd132815d9716111} 
+\#define LCD\+\_\+\+FUNCTIONSET~0x20}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_aafb86adb0dfca1e65d65b2cd1946a009}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_MOVELEFT@{LCD\_MOVELEFT}}
+\index{LCD\_MOVELEFT@{LCD\_MOVELEFT}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_MOVELEFT}{LCD\_MOVELEFT}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_aafb86adb0dfca1e65d65b2cd1946a009} 
+\#define LCD\+\_\+\+MOVELEFT~0x00}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_acf5999180233790bb2c9902efde58f7f}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_MOVERIGHT@{LCD\_MOVERIGHT}}
+\index{LCD\_MOVERIGHT@{LCD\_MOVERIGHT}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_MOVERIGHT}{LCD\_MOVERIGHT}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_acf5999180233790bb2c9902efde58f7f} 
+\#define LCD\+\_\+\+MOVERIGHT~0x04}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a154c86a887633d0f6d9988e4dbb1f419}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_RETURNHOME@{LCD\_RETURNHOME}}
+\index{LCD\_RETURNHOME@{LCD\_RETURNHOME}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_RETURNHOME}{LCD\_RETURNHOME}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a154c86a887633d0f6d9988e4dbb1f419} 
+\#define LCD\+\_\+\+RETURNHOME~0x02}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_aae6ea856879c11dee58493184582a52f}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_SETCGRAMADDR@{LCD\_SETCGRAMADDR}}
+\index{LCD\_SETCGRAMADDR@{LCD\_SETCGRAMADDR}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_SETCGRAMADDR}{LCD\_SETCGRAMADDR}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_aae6ea856879c11dee58493184582a52f} 
+\#define LCD\+\_\+\+SETCGRAMADDR~0x40}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a15008b832807a208d9d88c74e6751ebf}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!LCD\_SETDDRAMADDR@{LCD\_SETDDRAMADDR}}
+\index{LCD\_SETDDRAMADDR@{LCD\_SETDDRAMADDR}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_SETDDRAMADDR}{LCD\_SETDDRAMADDR}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a15008b832807a208d9d88c74e6751ebf} 
+\#define LCD\+\_\+\+SETDDRAMADDR~0x80}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a8d23feea868a983c8c2b661e1e16972f}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!RED@{RED}}
+\index{RED@{RED}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{RED}{RED}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a8d23feea868a983c8c2b661e1e16972f} 
+\#define RED~1}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_aecc673a9e070db8d16ae3d25f99efc8c}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!REG\_BLUE@{REG\_BLUE}}
+\index{REG\_BLUE@{REG\_BLUE}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REG\_BLUE}{REG\_BLUE}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_aecc673a9e070db8d16ae3d25f99efc8c} 
+\#define REG\+\_\+\+BLUE~0x02}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_ac96ed11272aaf7cec530691ba0edd614}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!REG\_GREEN@{REG\_GREEN}}
+\index{REG\_GREEN@{REG\_GREEN}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REG\_GREEN}{REG\_GREEN}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_ac96ed11272aaf7cec530691ba0edd614} 
+\#define REG\+\_\+\+GREEN~0x03}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a01082c2505bcd579197cb2f1163c352c}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!REG\_MODE1@{REG\_MODE1}}
+\index{REG\_MODE1@{REG\_MODE1}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REG\_MODE1}{REG\_MODE1}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a01082c2505bcd579197cb2f1163c352c} 
+\#define REG\+\_\+\+MODE1~0x00}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a80d98ba6dfe312e7cdf817a10a9bfda3}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!REG\_MODE2@{REG\_MODE2}}
+\index{REG\_MODE2@{REG\_MODE2}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REG\_MODE2}{REG\_MODE2}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a80d98ba6dfe312e7cdf817a10a9bfda3} 
+\#define REG\+\_\+\+MODE2~0x01}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a2cb2bb355c8ce0c0fa50b7bc60db2ffa}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!REG\_OUTPUT@{REG\_OUTPUT}}
+\index{REG\_OUTPUT@{REG\_OUTPUT}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REG\_OUTPUT}{REG\_OUTPUT}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a2cb2bb355c8ce0c0fa50b7bc60db2ffa} 
+\#define REG\+\_\+\+OUTPUT~0x08}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a536cb6b9337bdc28365d65467b85323c}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!REG\_RED@{REG\_RED}}
+\index{REG\_RED@{REG\_RED}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REG\_RED}{REG\_RED}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a536cb6b9337bdc28365d65467b85323c} 
+\#define REG\+\_\+\+RED~0x04}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a2e3762a739bed0a17cfdc7e314fbd9aa}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!RGB\_ADDRESS@{RGB\_ADDRESS}}
+\index{RGB\_ADDRESS@{RGB\_ADDRESS}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{RGB\_ADDRESS}{RGB\_ADDRESS}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a2e3762a739bed0a17cfdc7e314fbd9aa} 
+\#define RGB\+\_\+\+ADDRESS~(0xc0 $>$$>$ 1)}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a345d1a871beb9e772c3bf9ef75412bb5}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!Rs@{Rs}}
+\index{Rs@{Rs}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{Rs}{Rs}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a345d1a871beb9e772c3bf9ef75412bb5} 
+\#define Rs~0b01000000}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a98b6a2661a04ebbc1b3f38da70306814}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!Rw@{Rw}}
+\index{Rw@{Rw}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{Rw}{Rw}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a98b6a2661a04ebbc1b3f38da70306814} 
+\#define Rw~0b00000000}
+
+\Hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_a87b537f5fa5c109d3c05c13d6b18f382}\index{LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}!WHITE@{WHITE}}
+\index{WHITE@{WHITE}!LiquidCrystal\_AIP31068\_I2C.h@{LiquidCrystal\_AIP31068\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{WHITE}{WHITE}}
+{\footnotesize\ttfamily \label{_liquid_crystal___a_i_p31068___i2_c_8h_a87b537f5fa5c109d3c05c13d6b18f382} 
+\#define WHITE~0}
+
+color define 

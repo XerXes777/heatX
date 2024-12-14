@@ -13,5 +13,6 @@ var searchData=
   ['gpio_5fhx_2eh_10',['gpio_hx.h',['../gpio__hx_8h.html',1,'']]],
   ['gpio_5fpin_5flayout_2edox_11',['gpio_pin_layout.dox',['../gpio__pin__layout_8dox.html',1,'']]],
   ['gpiooffdelay_12',['GpioOffDelay',['../class_gpio_off_delay.html',1,'GpioOffDelay'],['../class_gpio_off_delay.html#a294de6fec0146fefa085b5521b64c87c',1,'GpioOffDelay::GpioOffDelay()']]],
-  ['guide_13',['Guide',['../user_guide_page.html',1,'User Guide'],['../index.html#user_guide_sec',1,'User Guide']]]
+  ['green_13',['GREEN',['../_liquid_crystal___a_i_p31068___i2_c_8h.html#acfbc006ea433ad708fdee3e82996e721',1,'GREEN:&#160;LiquidCrystal_AIP31068_I2C.h'],['../_waveshare___l_c_d1602___r_g_b_8h.html#acfbc006ea433ad708fdee3e82996e721',1,'GREEN:&#160;Waveshare_LCD1602_RGB.h']]],
+  ['guide_14',['Guide',['../user_guide_page.html',1,'User Guide'],['../index.html#user_guide_sec',1,'User Guide']]]
 ];

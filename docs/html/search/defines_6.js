@@ -1,0 +1,13 @@
+var searchData=
+[
+  ['red_0',['RED',['../_liquid_crystal___a_i_p31068___i2_c_8h.html#a8d23feea868a983c8c2b661e1e16972f',1,'RED:&#160;LiquidCrystal_AIP31068_I2C.h'],['../_waveshare___l_c_d1602___r_g_b_8h.html#a8d23feea868a983c8c2b661e1e16972f',1,'RED:&#160;Waveshare_LCD1602_RGB.h']]],
+  ['reg_5fblue_1',['REG_BLUE',['../_liquid_crystal___a_i_p31068___i2_c_8h.html#aecc673a9e070db8d16ae3d25f99efc8c',1,'REG_BLUE:&#160;LiquidCrystal_AIP31068_I2C.h'],['../_waveshare___l_c_d1602___r_g_b_8h.html#aecc673a9e070db8d16ae3d25f99efc8c',1,'REG_BLUE:&#160;Waveshare_LCD1602_RGB.h']]],
+  ['reg_5fgreen_2',['REG_GREEN',['../_liquid_crystal___a_i_p31068___i2_c_8h.html#ac96ed11272aaf7cec530691ba0edd614',1,'REG_GREEN:&#160;LiquidCrystal_AIP31068_I2C.h'],['../_waveshare___l_c_d1602___r_g_b_8h.html#ac96ed11272aaf7cec530691ba0edd614',1,'REG_GREEN:&#160;Waveshare_LCD1602_RGB.h']]],
+  ['reg_5fmode1_3',['REG_MODE1',['../_liquid_crystal___a_i_p31068___i2_c_8h.html#a01082c2505bcd579197cb2f1163c352c',1,'REG_MODE1:&#160;LiquidCrystal_AIP31068_I2C.h'],['../_waveshare___l_c_d1602___r_g_b_8h.html#a01082c2505bcd579197cb2f1163c352c',1,'REG_MODE1:&#160;Waveshare_LCD1602_RGB.h']]],
+  ['reg_5fmode2_4',['REG_MODE2',['../_liquid_crystal___a_i_p31068___i2_c_8h.html#a80d98ba6dfe312e7cdf817a10a9bfda3',1,'REG_MODE2:&#160;LiquidCrystal_AIP31068_I2C.h'],['../_waveshare___l_c_d1602___r_g_b_8h.html#a80d98ba6dfe312e7cdf817a10a9bfda3',1,'REG_MODE2:&#160;Waveshare_LCD1602_RGB.h']]],
+  ['reg_5foutput_5',['REG_OUTPUT',['../_liquid_crystal___a_i_p31068___i2_c_8h.html#a2cb2bb355c8ce0c0fa50b7bc60db2ffa',1,'REG_OUTPUT:&#160;LiquidCrystal_AIP31068_I2C.h'],['../_waveshare___l_c_d1602___r_g_b_8h.html#a2cb2bb355c8ce0c0fa50b7bc60db2ffa',1,'REG_OUTPUT:&#160;Waveshare_LCD1602_RGB.h']]],
+  ['reg_5fred_6',['REG_RED',['../_liquid_crystal___a_i_p31068___i2_c_8h.html#a536cb6b9337bdc28365d65467b85323c',1,'REG_RED:&#160;LiquidCrystal_AIP31068_I2C.h'],['../_waveshare___l_c_d1602___r_g_b_8h.html#a536cb6b9337bdc28365d65467b85323c',1,'REG_RED:&#160;Waveshare_LCD1602_RGB.h']]],
+  ['rgb_5faddress_7',['RGB_ADDRESS',['../_liquid_crystal___a_i_p31068___i2_c_8h.html#a2e3762a739bed0a17cfdc7e314fbd9aa',1,'RGB_ADDRESS:&#160;LiquidCrystal_AIP31068_I2C.h'],['../_waveshare___l_c_d1602___r_g_b_8h.html#a2e3762a739bed0a17cfdc7e314fbd9aa',1,'RGB_ADDRESS:&#160;Waveshare_LCD1602_RGB.h']]],
+  ['rs_8',['Rs',['../_liquid_crystal___a_i_p31068___i2_c_8h.html#a345d1a871beb9e772c3bf9ef75412bb5',1,'LiquidCrystal_AIP31068_I2C.h']]],
+  ['rw_9',['Rw',['../_liquid_crystal___a_i_p31068___i2_c_8h.html#a98b6a2661a04ebbc1b3f38da70306814',1,'LiquidCrystal_AIP31068_I2C.h']]]
+];

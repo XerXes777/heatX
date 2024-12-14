@@ -98,19 +98,32 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:gadfed1bd46db6294233cb205e679ab88d" id="r_gadfed1bd46db6294233cb205e679ab88d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadfed1bd46db6294233cb205e679ab88d">_LCD_I2C_ADDRESS</a>&#160;&#160;&#160;0x27</td></tr>
-<tr class="memdesc:gadfed1bd46db6294233cb205e679ab88d"><td class="mdescLeft">&#160;</td><td class="mdescRight">I²C address for the LCD.  <br /></td></tr>
-<tr class="separator:gadfed1bd46db6294233cb205e679ab88d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1279ed244a3b216bb5cc0ebb7f30948d" id="r_ga1279ed244a3b216bb5cc0ebb7f30948d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1279ed244a3b216bb5cc0ebb7f30948d">_LCD_ROWS</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memitem:gadcba4172e92d84d317509426476185fd" id="r_gadcba4172e92d84d317509426476185fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadcba4172e92d84d317509426476185fd">_LCD_ADDRESS</a>&#160;&#160;&#160;(0x7c &gt;&gt; 1)</td></tr>
+<tr class="separator:gadcba4172e92d84d317509426476185fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1279ed244a3b216bb5cc0ebb7f30948d" id="r_ga1279ed244a3b216bb5cc0ebb7f30948d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1279ed244a3b216bb5cc0ebb7f30948d">_LCD_ROWS</a>&#160;&#160;&#160;2</td></tr>
 <tr class="memdesc:ga1279ed244a3b216bb5cc0ebb7f30948d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of rows on the LCD.  <br /></td></tr>
 <tr class="separator:ga1279ed244a3b216bb5cc0ebb7f30948d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga83372468204dd8f50d7e5afdc372e3f8" id="r_ga83372468204dd8f50d7e5afdc372e3f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga83372468204dd8f50d7e5afdc372e3f8">_LCD_COLS</a>&#160;&#160;&#160;20</td></tr>
+<tr class="memitem:ga83372468204dd8f50d7e5afdc372e3f8" id="r_ga83372468204dd8f50d7e5afdc372e3f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga83372468204dd8f50d7e5afdc372e3f8">_LCD_COLS</a>&#160;&#160;&#160;16</td></tr>
 <tr class="memdesc:ga83372468204dd8f50d7e5afdc372e3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of columns on the LCD.  <br /></td></tr>
 <tr class="separator:ga83372468204dd8f50d7e5afdc372e3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Macros for configuring the LCD display. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="gadcba4172e92d84d317509426476185fd" name="gadcba4172e92d84d317509426476185fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadcba4172e92d84d317509426476185fd">&#9670;&#160;</a></span>_LCD_ADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _LCD_ADDRESS&#160;&#160;&#160;(0x7c &gt;&gt; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ga83372468204dd8f50d7e5afdc372e3f8" name="ga83372468204dd8f50d7e5afdc372e3f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga83372468204dd8f50d7e5afdc372e3f8">&#9670;&#160;</a></span>_LCD_COLS</h2>
 
@@ -118,28 +131,12 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define _LCD_COLS&#160;&#160;&#160;20</td>
+          <td class="memname">#define _LCD_COLS&#160;&#160;&#160;16</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Number of columns on the LCD. </p>
-
-</div>
-</div>
-<a id="gadfed1bd46db6294233cb205e679ab88d" name="gadfed1bd46db6294233cb205e679ab88d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadfed1bd46db6294233cb205e679ab88d">&#9670;&#160;</a></span>_LCD_I2C_ADDRESS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _LCD_I2C_ADDRESS&#160;&#160;&#160;0x27</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>I²C address for the LCD. </p>
 
 </div>
 </div>
@@ -150,7 +147,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define _LCD_ROWS&#160;&#160;&#160;4</td>
+          <td class="memname">#define _LCD_ROWS&#160;&#160;&#160;2</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -1,0 +1,391 @@
+\doxysection{Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2C Class Reference}
+\hypertarget{class_liquid_crystal___a_i_p31068___i2_c}{}\label{class_liquid_crystal___a_i_p31068___i2_c}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+
+
+{\ttfamily \#include $<$Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C.\+h$>$}
+
+Inheritance diagram for Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2C\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_liquid_crystal___a_i_p31068___i2_c}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a743942ac14695a4ede5559fb69bb7790}{Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2C}} (uint8\+\_\+t lcd\+\_\+\+Addr, uint8\+\_\+t lcd\+\_\+cols, uint8\+\_\+t lcd\+\_\+rows)
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_aa0e22f956b1c08b3f8ebf8b76de3f07f}{begin}} (uint8\+\_\+t cols, uint8\+\_\+t rows, uint8\+\_\+t charsize=\mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a9ef57e724c1b846dae0f531aff6fb464}{LCD\+\_\+5x8\+DOTS}})
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a3dfc0ff4389cfcca0487b2541e5aa618}{clear}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a28785674c86c5009991821d02a4f33d3}{home}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a265fc75fd17e41f02ea21c9995344d51}{no\+Display}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_ae29c455efe287b67968b1bfd1d594440}{display}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_ac2c69b673c8958dfe6a99a5fdddac33e}{no\+Blink}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_ab40e301082536716bce55cac1ec50b8f}{blink}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a3f7736ecf2398bf3aac81614f142d356}{no\+Cursor}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a4ba4991632fca6f31bce492b13230710}{cursor}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a691fed2b565c99785ddab3c721d57d8b}{scroll\+Display\+Left}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_acdb05a18e54239523cc2061c1ead0f5a}{scroll\+Display\+Right}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_ab1485554514c76d0e022ddfb36739009}{print\+Left}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a4d390e8450ebbc9c860ee7ec1037d0fe}{print\+Right}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_ae2867c6529ca72d8810bfd1535e2eb4f}{left\+To\+Right}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a14d55c54f93bc1f84f211c3d594a1bf4}{right\+To\+Left}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a79b42737475a4ec7be3549a42aee5c73}{shift\+Increment}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_ab821098f2db54fdfb5b609777fe5fdc0}{shift\+Decrement}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_af0154e81f03c1f4214492d7751952bf6}{autoscroll}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a49e24d7cc1c2800960b37996e8865056}{no\+Autoscroll}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a610d07c8a95d62e053f4d110c5674c0e}{create\+Char}} (uint8\+\_\+t, uint8\+\_\+t\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a35c0906fe22a350a983e98a6b1370083}{create\+Char}} (uint8\+\_\+t location, const char \texorpdfstring{$\ast$}{*}charmap)
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a762665b62cbf83ca1081233a3f62e8e4}{set\+Reg}} (uint8\+\_\+t addr, uint8\+\_\+t data)
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a4ff3714d844688495e4af516f775fcaa}{set\+RGB}} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a1f1a94f0db519799a8bd64e5074f9d65}{set\+Color\+White}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a5ffc5a72add4fe122cd390063e969979}{set\+Cursor}} (uint8\+\_\+t, uint8\+\_\+t)
+\item 
+virtual void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_aaa6e0200c10fc3184b8078c0b3bbdf32}{write}} (uint8\+\_\+t)
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a94428ea490a70ae325162469155ce462}{command}} (uint8\+\_\+t)
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a7a7b78a5b4f16a534be6e730d3850c1d}{init}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_ac4241e6b7db1f1c62689e4712ae647a7}{oled\+\_\+init}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a20820388b40dde458d0ca8fa267663d0}{blink\+\_\+on}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_acad9ac6f2ca4e6c9ca997fea3c052a53}{blink\+\_\+off}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_af47114ee7dae2f6d7afa1588bc94a2fd}{cursor\+\_\+on}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a2e6d4d7c064896f2226de9ae9dc7060b}{cursor\+\_\+off}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a61b534bf6cb0838e076edabd651ba73d}{load\+\_\+custom\+\_\+character}} (uint8\+\_\+t char\+\_\+num, uint8\+\_\+t \texorpdfstring{$\ast$}{*}rows)
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a0baa91b70fd43ba5a92415b83ea72c64}{printstr}} (const char\mbox{[}$\,$\mbox{]})
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a7cc760fc49fb527e8329273ffd5fa159}{status}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a04b8308b0ab1b8d28370970ae4f8acb9}{set\+Contrast}} (uint8\+\_\+t new\+\_\+val)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_adb35b8846ac08a9794d607df16ef9951}{keypad}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a6733fede32f58f45da9be1508a4fdc6a}{set\+Delay}} (int, int)
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_acea63b887ff990e7536252f174a42eb3}{on}} ()
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_afd3893b43c4b3e5318c5f1b9f30fd1d8}{off}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_acf15d1a8a4a8cddf4fb14bfd9fd28ba3}{init\+\_\+bargraph}} (uint8\+\_\+t graphtype)
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a5958bbbe61eb3eefaf5badce1ebae6a8}{draw\+\_\+horizontal\+\_\+graph}} (uint8\+\_\+t row, uint8\+\_\+t column, uint8\+\_\+t len, uint8\+\_\+t pixel\+\_\+col\+\_\+end)
+\item 
+void \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a4260fda348df6dc9b324b633a455c08e}{draw\+\_\+vertical\+\_\+graph}} (uint8\+\_\+t row, uint8\+\_\+t column, uint8\+\_\+t len, uint8\+\_\+t pixel\+\_\+col\+\_\+end)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a743942ac14695a4ede5559fb69bb7790}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{LiquidCrystal\_AIP31068\_I2C()}{LiquidCrystal\_AIP31068\_I2C()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a743942ac14695a4ede5559fb69bb7790} 
+Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::\+Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2C (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{lcd\+\_\+\+Addr}{, }\item[{uint8\+\_\+t}]{lcd\+\_\+cols}{, }\item[{uint8\+\_\+t}]{lcd\+\_\+rows}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_af0154e81f03c1f4214492d7751952bf6}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!autoscroll@{autoscroll}}
+\index{autoscroll@{autoscroll}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{autoscroll()}{autoscroll()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_af0154e81f03c1f4214492d7751952bf6} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::autoscroll (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_aa0e22f956b1c08b3f8ebf8b76de3f07f}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!begin@{begin}}
+\index{begin@{begin}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_aa0e22f956b1c08b3f8ebf8b76de3f07f} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::begin (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cols}{, }\item[{uint8\+\_\+t}]{rows}{, }\item[{uint8\+\_\+t}]{charsize}{ = {\ttfamily \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a9ef57e724c1b846dae0f531aff6fb464}{LCD\+\_\+5x8\+DOTS}}}}\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<} backlight init
+
+\texorpdfstring{$<$}{<} set LEDs controllable by both PWM and GRPPWM registers
+
+\texorpdfstring{$<$}{<} set MODE2 values 0010 0000 -\/\texorpdfstring{$>$}{>} 0x20 (DMBLNK to 1, ie blinky mode)\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_ab40e301082536716bce55cac1ec50b8f}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!blink@{blink}}
+\index{blink@{blink}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{blink()}{blink()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_ab40e301082536716bce55cac1ec50b8f} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::blink (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_acad9ac6f2ca4e6c9ca997fea3c052a53}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!blink\_off@{blink\_off}}
+\index{blink\_off@{blink\_off}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{blink\_off()}{blink\_off()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_acad9ac6f2ca4e6c9ca997fea3c052a53} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::blink\+\_\+off (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a20820388b40dde458d0ca8fa267663d0}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!blink\_on@{blink\_on}}
+\index{blink\_on@{blink\_on}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{blink\_on()}{blink\_on()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a20820388b40dde458d0ca8fa267663d0} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::blink\+\_\+on (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a3dfc0ff4389cfcca0487b2541e5aa618}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!clear@{clear}}
+\index{clear@{clear}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a3dfc0ff4389cfcca0487b2541e5aa618} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a94428ea490a70ae325162469155ce462}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!command@{command}}
+\index{command@{command}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{command()}{command()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a94428ea490a70ae325162469155ce462} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::command (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a35c0906fe22a350a983e98a6b1370083}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!createChar@{createChar}}
+\index{createChar@{createChar}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{createChar()}{createChar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a35c0906fe22a350a983e98a6b1370083} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::create\+Char (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{location}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{charmap}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a610d07c8a95d62e053f4d110c5674c0e}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!createChar@{createChar}}
+\index{createChar@{createChar}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{createChar()}{createChar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a610d07c8a95d62e053f4d110c5674c0e} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::create\+Char (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{location}{, }\item[{uint8\+\_\+t}]{charmap}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a4ba4991632fca6f31bce492b13230710}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!cursor@{cursor}}
+\index{cursor@{cursor}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{cursor()}{cursor()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a4ba4991632fca6f31bce492b13230710} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::cursor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a2e6d4d7c064896f2226de9ae9dc7060b}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!cursor\_off@{cursor\_off}}
+\index{cursor\_off@{cursor\_off}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{cursor\_off()}{cursor\_off()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a2e6d4d7c064896f2226de9ae9dc7060b} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::cursor\+\_\+off (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_af47114ee7dae2f6d7afa1588bc94a2fd}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!cursor\_on@{cursor\_on}}
+\index{cursor\_on@{cursor\_on}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{cursor\_on()}{cursor\_on()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_af47114ee7dae2f6d7afa1588bc94a2fd} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::cursor\+\_\+on (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_ae29c455efe287b67968b1bfd1d594440}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!display@{display}}
+\index{display@{display}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_ae29c455efe287b67968b1bfd1d594440} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a5958bbbe61eb3eefaf5badce1ebae6a8}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!draw\_horizontal\_graph@{draw\_horizontal\_graph}}
+\index{draw\_horizontal\_graph@{draw\_horizontal\_graph}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{draw\_horizontal\_graph()}{draw\_horizontal\_graph()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a5958bbbe61eb3eefaf5badce1ebae6a8} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::draw\+\_\+horizontal\+\_\+graph (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{row}{, }\item[{uint8\+\_\+t}]{column}{, }\item[{uint8\+\_\+t}]{len}{, }\item[{uint8\+\_\+t}]{pixel\+\_\+col\+\_\+end}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a4260fda348df6dc9b324b633a455c08e}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!draw\_vertical\_graph@{draw\_vertical\_graph}}
+\index{draw\_vertical\_graph@{draw\_vertical\_graph}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{draw\_vertical\_graph()}{draw\_vertical\_graph()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a4260fda348df6dc9b324b633a455c08e} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::draw\+\_\+vertical\+\_\+graph (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{row}{, }\item[{uint8\+\_\+t}]{column}{, }\item[{uint8\+\_\+t}]{len}{, }\item[{uint8\+\_\+t}]{pixel\+\_\+col\+\_\+end}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a28785674c86c5009991821d02a4f33d3}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!home@{home}}
+\index{home@{home}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{home()}{home()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a28785674c86c5009991821d02a4f33d3} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::home (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a7a7b78a5b4f16a534be6e730d3850c1d}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!init@{init}}
+\index{init@{init}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a7a7b78a5b4f16a534be6e730d3850c1d} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_acf15d1a8a4a8cddf4fb14bfd9fd28ba3}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!init\_bargraph@{init\_bargraph}}
+\index{init\_bargraph@{init\_bargraph}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{init\_bargraph()}{init\_bargraph()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_acf15d1a8a4a8cddf4fb14bfd9fd28ba3} 
+uint8\+\_\+t Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::init\+\_\+bargraph (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{graphtype}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_adb35b8846ac08a9794d607df16ef9951}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!keypad@{keypad}}
+\index{keypad@{keypad}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{keypad()}{keypad()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_adb35b8846ac08a9794d607df16ef9951} 
+uint8\+\_\+t Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::keypad (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_ae2867c6529ca72d8810bfd1535e2eb4f}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!leftToRight@{leftToRight}}
+\index{leftToRight@{leftToRight}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{leftToRight()}{leftToRight()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_ae2867c6529ca72d8810bfd1535e2eb4f} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::left\+To\+Right (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a61b534bf6cb0838e076edabd651ba73d}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!load\_custom\_character@{load\_custom\_character}}
+\index{load\_custom\_character@{load\_custom\_character}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{load\_custom\_character()}{load\_custom\_character()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a61b534bf6cb0838e076edabd651ba73d} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::load\+\_\+custom\+\_\+character (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{char\+\_\+num}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{rows}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a49e24d7cc1c2800960b37996e8865056}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!noAutoscroll@{noAutoscroll}}
+\index{noAutoscroll@{noAutoscroll}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{noAutoscroll()}{noAutoscroll()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a49e24d7cc1c2800960b37996e8865056} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::no\+Autoscroll (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_ac2c69b673c8958dfe6a99a5fdddac33e}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!noBlink@{noBlink}}
+\index{noBlink@{noBlink}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{noBlink()}{noBlink()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_ac2c69b673c8958dfe6a99a5fdddac33e} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::no\+Blink (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a3f7736ecf2398bf3aac81614f142d356}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!noCursor@{noCursor}}
+\index{noCursor@{noCursor}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{noCursor()}{noCursor()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a3f7736ecf2398bf3aac81614f142d356} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::no\+Cursor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a265fc75fd17e41f02ea21c9995344d51}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!noDisplay@{noDisplay}}
+\index{noDisplay@{noDisplay}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{noDisplay()}{noDisplay()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a265fc75fd17e41f02ea21c9995344d51} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::no\+Display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_afd3893b43c4b3e5318c5f1b9f30fd1d8}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!off@{off}}
+\index{off@{off}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{off()}{off()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_afd3893b43c4b3e5318c5f1b9f30fd1d8} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::off (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_ac4241e6b7db1f1c62689e4712ae647a7}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!oled\_init@{oled\_init}}
+\index{oled\_init@{oled\_init}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{oled\_init()}{oled\_init()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_ac4241e6b7db1f1c62689e4712ae647a7} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::oled\+\_\+init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_acea63b887ff990e7536252f174a42eb3}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!on@{on}}
+\index{on@{on}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{on()}{on()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_acea63b887ff990e7536252f174a42eb3} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::on (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_ab1485554514c76d0e022ddfb36739009}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!printLeft@{printLeft}}
+\index{printLeft@{printLeft}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{printLeft()}{printLeft()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_ab1485554514c76d0e022ddfb36739009} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::print\+Left (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a4d390e8450ebbc9c860ee7ec1037d0fe}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!printRight@{printRight}}
+\index{printRight@{printRight}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{printRight()}{printRight()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a4d390e8450ebbc9c860ee7ec1037d0fe} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::print\+Right (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a0baa91b70fd43ba5a92415b83ea72c64}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!printstr@{printstr}}
+\index{printstr@{printstr}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{printstr()}{printstr()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a0baa91b70fd43ba5a92415b83ea72c64} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::printstr (\begin{DoxyParamCaption}\item[{const char}]{c}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a14d55c54f93bc1f84f211c3d594a1bf4}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!rightToLeft@{rightToLeft}}
+\index{rightToLeft@{rightToLeft}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{rightToLeft()}{rightToLeft()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a14d55c54f93bc1f84f211c3d594a1bf4} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::right\+To\+Left (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a691fed2b565c99785ddab3c721d57d8b}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!scrollDisplayLeft@{scrollDisplayLeft}}
+\index{scrollDisplayLeft@{scrollDisplayLeft}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{scrollDisplayLeft()}{scrollDisplayLeft()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a691fed2b565c99785ddab3c721d57d8b} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::scroll\+Display\+Left (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_acdb05a18e54239523cc2061c1ead0f5a}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!scrollDisplayRight@{scrollDisplayRight}}
+\index{scrollDisplayRight@{scrollDisplayRight}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{scrollDisplayRight()}{scrollDisplayRight()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_acdb05a18e54239523cc2061c1ead0f5a} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::scroll\+Display\+Right (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a1f1a94f0db519799a8bd64e5074f9d65}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!setColorWhite@{setColorWhite}}
+\index{setColorWhite@{setColorWhite}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{setColorWhite()}{setColorWhite()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a1f1a94f0db519799a8bd64e5074f9d65} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::set\+Color\+White (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a04b8308b0ab1b8d28370970ae4f8acb9}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!setContrast@{setContrast}}
+\index{setContrast@{setContrast}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{setContrast()}{setContrast()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a04b8308b0ab1b8d28370970ae4f8acb9} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::set\+Contrast (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+\_\+val}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a5ffc5a72add4fe122cd390063e969979}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!setCursor@{setCursor}}
+\index{setCursor@{setCursor}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{setCursor()}{setCursor()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a5ffc5a72add4fe122cd390063e969979} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::set\+Cursor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{col}{, }\item[{uint8\+\_\+t}]{row}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a6733fede32f58f45da9be1508a4fdc6a}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!setDelay@{setDelay}}
+\index{setDelay@{setDelay}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{setDelay()}{setDelay()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a6733fede32f58f45da9be1508a4fdc6a} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::set\+Delay (\begin{DoxyParamCaption}\item[{int}]{cmd\+Delay}{, }\item[{int}]{char\+Delay}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a762665b62cbf83ca1081233a3f62e8e4}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!setReg@{setReg}}
+\index{setReg@{setReg}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{setReg()}{setReg()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a762665b62cbf83ca1081233a3f62e8e4} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::set\+Reg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{, }\item[{uint8\+\_\+t}]{data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a4ff3714d844688495e4af516f775fcaa}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!setRGB@{setRGB}}
+\index{setRGB@{setRGB}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{setRGB()}{setRGB()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a4ff3714d844688495e4af516f775fcaa} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::set\+RGB (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{r}{, }\item[{uint8\+\_\+t}]{g}{, }\item[{uint8\+\_\+t}]{b}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_ab821098f2db54fdfb5b609777fe5fdc0}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!shiftDecrement@{shiftDecrement}}
+\index{shiftDecrement@{shiftDecrement}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{shiftDecrement()}{shiftDecrement()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_ab821098f2db54fdfb5b609777fe5fdc0} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::shift\+Decrement (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a79b42737475a4ec7be3549a42aee5c73}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!shiftIncrement@{shiftIncrement}}
+\index{shiftIncrement@{shiftIncrement}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{shiftIncrement()}{shiftIncrement()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a79b42737475a4ec7be3549a42aee5c73} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::shift\+Increment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_a7cc760fc49fb527e8329273ffd5fa159}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!status@{status}}
+\index{status@{status}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{status()}{status()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_a7cc760fc49fb527e8329273ffd5fa159} 
+uint8\+\_\+t Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_liquid_crystal___a_i_p31068___i2_c_aaa6e0200c10fc3184b8078c0b3bbdf32}\index{LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}!write@{write}}
+\index{write@{write}!LiquidCrystal\_AIP31068\_I2C@{LiquidCrystal\_AIP31068\_I2C}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily \label{class_liquid_crystal___a_i_p31068___i2_c_aaa6e0200c10fc3184b8078c0b3bbdf32} 
+void Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C\+::write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kevin\+Hinrichs/\+Documents/\+Arduino/heat\+X/src/\mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h}{Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C.\+h}}\item 
+C\+:/\+Users/\+Kevin\+Hinrichs/\+Documents/\+Arduino/heat\+X/src/\mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8cpp}{Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C.\+cpp}}\end{DoxyCompactItemize}

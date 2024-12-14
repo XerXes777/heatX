@@ -38,8 +38,10 @@ Macros for temperature, humidity, and fan control settings.
 \begin{DoxyCompactList}\small\item\em Maximum time in hours. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___heating___config_ga06bb44c452215f122d9d9c2acf08690d}{\+\_\+\+TIME\+\_\+\+PRESET}}~5
 \begin{DoxyCompactList}\small\item\em Default preset time in hours. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{group___heating___config_gaea4ded38812e550fcd4a1763808e67fa}{\+\_\+\+FAN\+\_\+\+OFFDELAY}}~3000
-\begin{DoxyCompactList}\small\item\em Fan delay time in milliseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\#define \mbox{\hyperlink{group___heating___config_gaea4ded38812e550fcd4a1763808e67fa}{\+\_\+\+FAN\+\_\+\+OFFDELAY}}~6000
+\begin{DoxyCompactList}\small\item\em Fan delay time in milliseconds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___heating___config_ga4e4fbad8f0f2fc8783b356aeaa471ef4}{\+\_\+\+FAN\+\_\+\+HEAT\+\_\+\+OFFDELAY}}~3000
+\begin{DoxyCompactList}\small\item\em Fan heat delay time in milliseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsubsection{Detailed Description}
@@ -48,6 +50,16 @@ Macros for temperature, humidity, and fan control settings.
 
 
 \doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{group___heating___config_ga4e4fbad8f0f2fc8783b356aeaa471ef4}\index{Heating Configuration@{Heating Configuration}!\_FAN\_HEAT\_OFFDELAY@{\_FAN\_HEAT\_OFFDELAY}}
+\index{\_FAN\_HEAT\_OFFDELAY@{\_FAN\_HEAT\_OFFDELAY}!Heating Configuration@{Heating Configuration}}
+\doxysubsubsubsection{\texorpdfstring{\_FAN\_HEAT\_OFFDELAY}{\_FAN\_HEAT\_OFFDELAY}}
+{\footnotesize\ttfamily \label{group___heating___config_ga4e4fbad8f0f2fc8783b356aeaa471ef4} 
+\#define \+\_\+\+FAN\+\_\+\+HEAT\+\_\+\+OFFDELAY~3000}
+
+
+
+Fan heat delay time in milliseconds. 
+
 \Hypertarget{group___heating___config_ga710226137859a4a9b14a04d1f0e42705}\index{Heating Configuration@{Heating Configuration}!\_FAN\_MAX@{\_FAN\_MAX}}
 \index{\_FAN\_MAX@{\_FAN\_MAX}!Heating Configuration@{Heating Configuration}}
 \doxysubsubsubsection{\texorpdfstring{\_FAN\_MAX}{\_FAN\_MAX}}
@@ -72,7 +84,7 @@ Minimum fan power in \%.
 \index{\_FAN\_OFFDELAY@{\_FAN\_OFFDELAY}!Heating Configuration@{Heating Configuration}}
 \doxysubsubsubsection{\texorpdfstring{\_FAN\_OFFDELAY}{\_FAN\_OFFDELAY}}
 {\footnotesize\ttfamily \label{group___heating___config_gaea4ded38812e550fcd4a1763808e67fa} 
-\#define \+\_\+\+FAN\+\_\+\+OFFDELAY~3000}
+\#define \+\_\+\+FAN\+\_\+\+OFFDELAY~6000}
 
 
 

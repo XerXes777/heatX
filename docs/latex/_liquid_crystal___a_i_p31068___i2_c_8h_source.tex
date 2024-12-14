@@ -1,0 +1,148 @@
+\doxysection{Liquid\+Crystal\+\_\+\+AIP31068\+\_\+\+I2\+C.\+h}
+\hypertarget{_liquid_crystal___a_i_p31068___i2_c_8h_source}{}\label{_liquid_crystal___a_i_p31068___i2_c_8h_source}\index{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/LiquidCrystal\_AIP31068\_I2C.h@{C:/Users/KevinHinrichs/Documents/Arduino/heatX/src/LiquidCrystal\_AIP31068\_I2C.h}}
+\mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ YWROBOT}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ LiquidCrystal\_AIP31068\_I2C\_h}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ LiquidCrystal\_AIP31068\_I2C\_h}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <inttypes.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <Print.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ RGB\_ADDRESS\ (0xc0\ >>\ 1)}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ WHITE\ 0}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ RED\ 1}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ GREEN\ 2}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ BLUE\ 3}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ REG\_RED\ 0x04\ \ \ \ }\textcolor{comment}{//\ pwm2}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ REG\_GREEN\ 0x03\ \ }\textcolor{comment}{//\ pwm1}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ REG\_BLUE\ 0x02\ \ \ }\textcolor{comment}{//\ pwm0}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ REG\_MODE1\ 0x00}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ REG\_MODE2\ 0x01}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ REG\_OUTPUT\ 0x08}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ commands}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ LCD\_CLEARDISPLAY\ 0x01}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ LCD\_RETURNHOME\ 0x02}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYMODESET\ 0x04}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYCONTROL\ 0x08}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ LCD\_CURSORSHIFT\ 0x10}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ LCD\_FUNCTIONSET\ 0x20}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ LCD\_SETCGRAMADDR\ 0x40}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ LCD\_SETDDRAMADDR\ 0x80}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ flags\ for\ display\ entry\ mode}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYRIGHT\ 0x00}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYLEFT\ 0x02}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYSHIFTINCREMENT\ 0x01}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ LCD\_ENTRYSHIFTDECREMENT\ 0x00}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ flags\ for\ display\ on/off\ control}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYON\ 0x04}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYOFF\ 0x00}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ LCD\_CURSORON\ 0x02}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ LCD\_CURSOROFF\ 0x00}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ LCD\_BLINKON\ 0x01}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ LCD\_BLINKOFF\ 0x00}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ flags\ for\ display/cursor\ shift}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAYMOVE\ 0x08}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ LCD\_CURSORMOVE\ 0x00}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ LCD\_MOVERIGHT\ 0x04}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ LCD\_MOVELEFT\ 0x00}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ flags\ for\ function\ set}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ LCD\_8BITMODE\ 0x10}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ LCD\_4BITMODE\ 0x00}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ LCD\_2LINE\ 0x08}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ LCD\_1LINE\ 0x00}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ LCD\_5x10DOTS\ 0x04}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ LCD\_5x8DOTS\ 0x00}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ En\ 0b00000000\ \ }\textcolor{comment}{//\ Enable\ bit}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ Rw\ 0b00000000\ \ }\textcolor{comment}{//\ Read/Write\ bit}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ Rs\ 0b01000000\ \ }\textcolor{comment}{//\ Register\ select\ bit}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c}{LiquidCrystal\_AIP31068\_I2C}}\ :\ \textcolor{keyword}{public}\ Print\ \{}
+\DoxyCodeLine{00070\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a743942ac14695a4ede5559fb69bb7790}{LiquidCrystal\_AIP31068\_I2C}}(uint8\_t\ lcd\_Addr,\ uint8\_t\ lcd\_cols,\ uint8\_t\ lcd\_rows);}
+\DoxyCodeLine{00072\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_aa0e22f956b1c08b3f8ebf8b76de3f07f}{begin}}(uint8\_t\ cols,\ uint8\_t\ rows,\ uint8\_t\ charsize\ =\ \mbox{\hyperlink{_liquid_crystal___a_i_p31068___i2_c_8h_a9ef57e724c1b846dae0f531aff6fb464}{LCD\_5x8DOTS}});}
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a3dfc0ff4389cfcca0487b2541e5aa618}{clear}}();}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a28785674c86c5009991821d02a4f33d3}{home}}();}
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a265fc75fd17e41f02ea21c9995344d51}{noDisplay}}();}
+\DoxyCodeLine{00076\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_ae29c455efe287b67968b1bfd1d594440}{display}}();}
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_ac2c69b673c8958dfe6a99a5fdddac33e}{noBlink}}();}
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_ab40e301082536716bce55cac1ec50b8f}{blink}}();}
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a3f7736ecf2398bf3aac81614f142d356}{noCursor}}();}
+\DoxyCodeLine{00080\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a4ba4991632fca6f31bce492b13230710}{cursor}}();}
+\DoxyCodeLine{00081\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a691fed2b565c99785ddab3c721d57d8b}{scrollDisplayLeft}}();}
+\DoxyCodeLine{00082\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_acdb05a18e54239523cc2061c1ead0f5a}{scrollDisplayRight}}();}
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_ab1485554514c76d0e022ddfb36739009}{printLeft}}();}
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a4d390e8450ebbc9c860ee7ec1037d0fe}{printRight}}();}
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_ae2867c6529ca72d8810bfd1535e2eb4f}{leftToRight}}();}
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a14d55c54f93bc1f84f211c3d594a1bf4}{rightToLeft}}();}
+\DoxyCodeLine{00087\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a79b42737475a4ec7be3549a42aee5c73}{shiftIncrement}}();}
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_ab821098f2db54fdfb5b609777fe5fdc0}{shiftDecrement}}();}
+\DoxyCodeLine{00089\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_af0154e81f03c1f4214492d7751952bf6}{autoscroll}}();}
+\DoxyCodeLine{00090\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a49e24d7cc1c2800960b37996e8865056}{noAutoscroll}}();}
+\DoxyCodeLine{00091\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a610d07c8a95d62e053f4d110c5674c0e}{createChar}}(uint8\_t,\ uint8\_t[]);}
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a610d07c8a95d62e053f4d110c5674c0e}{createChar}}(uint8\_t\ location,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *charmap);}
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a762665b62cbf83ca1081233a3f62e8e4}{setReg}}(uint8\_t\ addr,\ uint8\_t\ data);}
+\DoxyCodeLine{00094\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a4ff3714d844688495e4af516f775fcaa}{setRGB}}(uint8\_t\ r,\ uint8\_t\ g,\ uint8\_t\ b);}
+\DoxyCodeLine{00095\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a1f1a94f0db519799a8bd64e5074f9d65}{setColorWhite}}()\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a4ff3714d844688495e4af516f775fcaa}{setRGB}}(255,\ 255,\ 255);}
+\DoxyCodeLine{00097\ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \textcolor{comment}{//\ Example:\ \ \ const\ char\ bell[8]\ PROGMEM\ =\ \{B00100,B01110,B01110,B01110,B11111,B00000,B00100,B00000\};}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a5ffc5a72add4fe122cd390063e969979}{setCursor}}(uint8\_t,\ uint8\_t);}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#if\ defined(ARDUINO)\ \&\&\ ARDUINO\ >=\ 100}}
+\DoxyCodeLine{00102\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_aaa6e0200c10fc3184b8078c0b3bbdf32}{write}}(uint8\_t);}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00104\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_aaa6e0200c10fc3184b8078c0b3bbdf32}{write}}(uint8\_t);}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00106\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a94428ea490a70ae325162469155ce462}{command}}(uint8\_t);}
+\DoxyCodeLine{00107\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a7a7b78a5b4f16a534be6e730d3850c1d}{init}}();}
+\DoxyCodeLine{00108\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_ac4241e6b7db1f1c62689e4712ae647a7}{oled\_init}}();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00111\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a20820388b40dde458d0ca8fa267663d0}{blink\_on}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ alias\ for\ blink()}}
+\DoxyCodeLine{00112\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_acad9ac6f2ca4e6c9ca997fea3c052a53}{blink\_off}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ alias\ for\ noBlink()}}
+\DoxyCodeLine{00113\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_af47114ee7dae2f6d7afa1588bc94a2fd}{cursor\_on}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ alias\ for\ cursor()}}
+\DoxyCodeLine{00114\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a2e6d4d7c064896f2226de9ae9dc7060b}{cursor\_off}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ alias\ for\ noCursor()}}
+\DoxyCodeLine{00115\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a61b534bf6cb0838e076edabd651ba73d}{load\_custom\_character}}(uint8\_t\ char\_num,\ uint8\_t\ *rows);\ \ \textcolor{comment}{//\ alias\ for\ createChar()}}
+\DoxyCodeLine{00116\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a0baa91b70fd43ba5a92415b83ea72c64}{printstr}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}[]);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00119\ \ \ uint8\_t\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a7cc760fc49fb527e8329273ffd5fa159}{status}}();}
+\DoxyCodeLine{00120\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a04b8308b0ab1b8d28370970ae4f8acb9}{setContrast}}(uint8\_t\ new\_val);}
+\DoxyCodeLine{00121\ \ \ uint8\_t\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_adb35b8846ac08a9794d607df16ef9951}{keypad}}();}
+\DoxyCodeLine{00122\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a6733fede32f58f45da9be1508a4fdc6a}{setDelay}}(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00123\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_acea63b887ff990e7536252f174a42eb3}{on}}();}
+\DoxyCodeLine{00124\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_afd3893b43c4b3e5318c5f1b9f30fd1d8}{off}}();}
+\DoxyCodeLine{00125\ \ \ uint8\_t\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_acf15d1a8a4a8cddf4fb14bfd9fd28ba3}{init\_bargraph}}(uint8\_t\ graphtype);}
+\DoxyCodeLine{00126\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a5958bbbe61eb3eefaf5badce1ebae6a8}{draw\_horizontal\_graph}}(uint8\_t\ row,\ uint8\_t\ column,\ uint8\_t\ len,\ uint8\_t\ pixel\_col\_end);}
+\DoxyCodeLine{00127\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liquid_crystal___a_i_p31068___i2_c_a4260fda348df6dc9b324b633a455c08e}{draw\_vertical\_graph}}(uint8\_t\ row,\ uint8\_t\ column,\ uint8\_t\ len,\ uint8\_t\ pixel\_col\_end);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00131\ \ \ \textcolor{keywordtype}{void}\ init\_priv();}
+\DoxyCodeLine{00132\ \ \ \textcolor{keywordtype}{void}\ send(uint8\_t,\ uint8\_t);}
+\DoxyCodeLine{00133\ \ \ \textcolor{keywordtype}{void}\ write4bits(uint16\_t);}
+\DoxyCodeLine{00134\ \ \ \textcolor{keywordtype}{void}\ write8bits(uint16\_t);}
+\DoxyCodeLine{00135\ \ \ \textcolor{keywordtype}{void}\ controllerWrite(uint16\_t);}
+\DoxyCodeLine{00136\ \ \ \textcolor{comment}{//\ \ void\ pulseEnable(uint8\_t);}}
+\DoxyCodeLine{00137\ \ \ uint8\_t\ \_Addr;}
+\DoxyCodeLine{00138\ \ \ uint8\_t\ \_displayfunction;}
+\DoxyCodeLine{00139\ \ \ uint8\_t\ \_displaycontrol;}
+\DoxyCodeLine{00140\ \ \ uint8\_t\ \_displaymode;}
+\DoxyCodeLine{00141\ \ \ uint8\_t\ \_numlines;}
+\DoxyCodeLine{00142\ \ \ \textcolor{keywordtype}{bool}\ \_oled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00143\ \ \ uint8\_t\ \_cols;}
+\DoxyCodeLine{00144\ \ \ uint8\_t\ \_rows;}
+\DoxyCodeLine{00145\ \};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

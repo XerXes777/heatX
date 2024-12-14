@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['heatingvalues_0',['HeatingValues',['../struct_heating_values.html',1,'']]]
+  ['gpiooffdelay_0',['GpioOffDelay',['../class_gpio_off_delay.html',1,'']]]
 ];
